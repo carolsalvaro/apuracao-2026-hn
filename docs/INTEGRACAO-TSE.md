@@ -1,6 +1,40 @@
-# Integração TSE — etapa 1, bloqueada para ativação
+# Integração TSE — validação oficial em andamento
 
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Não houve alteração no Sul na Urna, implantação, merge ou remoção do noindex.
+
+
+## Retomada com a nova rede — 15/10/2026
+
+A verificação anterior abaixo é histórica. Nesta retomada foi possível acessar HTTPS com a permissão de rede da execução, mantendo proxy e TLS. Não confundir uma falha `EPERM` do sandbox com recusa do servidor.
+
+- Portal TSE, página técnica e quatro PDFs oficiais: HTTP 200. Configuração EA11 correta: `https://resultados.tse.jus.br/oficial/comum/config/ele-c.json` (sem o ciclo antes de `comum`). Tentativas iniciais com caminhos incorretos retornaram 404; não repetir nem tentar listar diretórios.
+- EA11 confirmou o pleito 3221 de 25/10/2026, presidente 6258 (tipo 8, turno 2) e governadores 6260 (tipo 1, turno 2), UFs ac/am/df/es/rn/to. Eleições suplementares existentes no mesmo pleito devem ser excluídas da descoberta.
+- EA20 nacional, SC presidencial e Acre governador: HTTP 200, fase oficial (`f=o`), eleição ordinária (`sup=n`), zero seções apuradas. Presidente: números 13/22; Acre: 10/11. A ordem do JSON presidencial começa por 22; nunca atribuir fotos/cores pela posição.
+- EA12 presidencial: HTTP 200 (534.026 bytes). A documentação descreve `cdi` como cinco dígitos, mas os dados observados usam códigos IBGE completos de sete dígitos. Não truncar nem completar códigos; o mapeamento visual ainda precisa de validação individual.
+- Site informado e API Netlify: HTTP 200. A API confirma o repositório correto e um único deploy publicado, contexto production/main, commit `3225218`. GET `/api/politica`: HTTP 200 com três notícias; GET `/api/resultados`: HTTP 404, pois a infraestrutura da branch ainda não está implantada. Isso não valida a nova função ou Blobs.
+- Consulta direta ao WordPress HN: HTTP 403. O endpoint de notícias hospedado funciona; isso não demonstra acesso direto ao WordPress a partir deste ambiente nem confirma atualização futura.
+- API GitHub autenticada disponível nesta retomada. Não há NETLIFY_AUTH_TOKEN/NETLIFY_SITE_ID no processo; a leitura pública da API Netlify não comprova permissão de deploy.
+
+### Fontes efetivamente lidas
+
+Página técnica: https://www.tse.jus.br/eleicoes/informacoes-tecnicas-sobre-a-divulgacao-de-resultados
+
+PDFs no diretório `https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/divulgacao-de-resultados/`:
+
+- `tse-instrucoes-para-download-dos-arquivos-da-divulgacao-2026`: versão 1.0, 25/05/2026.
+- `tse-ea11-arquivo-de-configuracao-de-eleicoes`: 23/06/2026.
+- `tse-ea12-arquivo-de-configuracao-de-municipios`: 22/05/2026.
+- `tse-ea20-arquivo-de-resultado-unificado`: 10/07/2026.
+
+A página técnica informa limite de **100 requisições por IP por segundo**, suporte a ETag/Last-Modified e contabilização de respostas 304 no limite. Não fixa um intervalo recomendado de polling. Mantido intervalo conservador de cinco minutos, lote de quatro e coleta desativada. Não gerar carga de teste contra o TSE. EA14/EA15 podem orientar consultas EA20, sem garantir sincronização simultânea.
+
+### Mudanças desta retomada
+
+`netlify/lib/tse-discovery.mjs` descobre apenas disputas ordinárias de segundo turno a partir de EA11 oficial e do template de diretório; rejeita fase simulada, diretório desconhecido e disputas ambíguas. É preparação isolada: não preenche configuração nem ativa coleta automaticamente. O parser EA20 agora exige fase oficial/ordinária e autorização `dv=s` para presidente; `dv=n` não pode ser interpretado como zero real.
+
+Respostas oficiais capturadas, URLs, horário e SHA-256 estão em `tests/fixtures/tse-official-2026-10-15/`. Servem somente aos testes, nunca como fallback da página. Testes cobrem descoberta real, exclusão de suplementares, zero antes da apuração, identidades, simulado e divulgação retida. Os testes existentes e os novos passaram. Carga local: 1.000 requisições, concorrência 25, zero erros, p95 21 ms, sem chamadas ao TSE; não mede capacidade Netlify. As três funções foram empacotadas.
+
+A configuração permanece desativada. Faltam validar todas as candidaturas/municípios, migrar componentes visuais e comprovar armazenamento/cache/recuperação em deploy de prévia. Layout, avisos de demonstração e noindex preservados.
 
 ## O que está implementado
 
@@ -22,7 +56,7 @@ O mapeamento município IBGE (sete dígitos, usado no mapa) para código eleitor
 
 A função de notícias continua com cache CDN de cinco minutos. Seu acesso ao WordPress real está bloqueado neste ambiente; a cópia do navegador é datada e pode envelhecer. Um retorno tratado 503 comprova tratamento de falha, não notícias atualizadas.
 
-## Evidência e bloqueios externos
+## Histórico: evidência e bloqueios externos da etapa 1
 
 Em 15/10/2026, tentativas HTTPS para `resultados.tse.jus.br`, `www.tse.jus.br`, `hnnoticias.com.br` e o domínio da prévia receberam CONNECT 403 do proxy. Isso impede consultar documentação, revalidar IDs, observar o schema atual e verificar a implantação existente. Domínios foram adicionados ao rascunho do ambiente; salvar o rascunho não aplica a política à máquina por si só.
 

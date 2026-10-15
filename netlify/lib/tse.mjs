@@ -19,8 +19,11 @@ export function validateConfig(c) {
   return true;
 }
 export function parseResult(d, t, config, now = Date.now()) {
+  // EA20: official ordinary elections only; withheld presidential votes are not zero results.
+  if (d.f !== 'o' || d.sup !== 'n') fail('wrong_election_phase');
+  if (t.office === '1' && d.dv !== 's') fail('invalid_vote_disclosure');
   if (d.ele !== t.election || d.t !== config.round || d.tpabr !== t.scope || d.cdabr !== t.area) fail('wrong_election_or_area');
-  // These field meanings must be revalidated against the current official schema before enabling.
+  // EA20 (2026-07-10): vap/pvap use votes to competing candidates (vvc).
   const cargo = d.carg?.find(c => c.cd === t.office);
   if (!cargo || !Array.isArray(cargo.agr)) fail('wrong_office');
   const candidates = cargo.agr.flatMap(a => a.par.flatMap(p => p.cand.map(c => ({number:c.n, name:c.nmu, party:p.sg, votes:integer(c.vap), percent:percent(c.pvap)}))));
