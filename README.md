@@ -55,3 +55,7 @@ Testes incluídos são unitários/de contrato, não substituem testes reais em n
 ## Atenção
 O noindex está ativo no HTML e no cabeçalho HTTP enquanto houver dados simulados. Isso NÃO restringe acesso: uma URL de teste Netlify pode ser pública. Use controles de acesso do projeto, quando disponíveis, e não divulgue como apuração real.
 O pacote não contém senhas, tokens, histórico Git nem identificação interna da hospedagem anterior. Não substitui nem altera o projeto Sul na Urna.
+
+## Integração TSE em desenvolvimento
+
+A etapa inicial adiciona `/api/resultados`, coletor agendado e último resultado válido em Netlify Blobs. A ativação está **desabilitada** em `config/tse.json` até validar fontes e configuração oficial. Presidente e mapas continuam demonstrativos. Consulte [o relatório de integração](docs/INTEGRACAO-TSE.md) para bloqueios, testes, limitações de escala e próximos passos. Instale as dependências com `npm ci` antes de executar os testes. Os governadores agora consultam a API local; não fazem mais consultas diretas do navegador ao TSE.

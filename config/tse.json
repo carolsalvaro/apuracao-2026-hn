@@ -1,0 +1,11 @@
+{
+  "enabled": false,
+  "schema": "tse-agr-v1",
+  "year": 2026,
+  "round": "2",
+  "verifiedAt": null,
+  "evidence": [],
+  "intervalSeconds": 300,
+  "staleSeconds": 900,
+  "targets": []
+}
