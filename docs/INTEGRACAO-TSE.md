@@ -1,6 +1,6 @@
 # Integração TSE — validação oficial em andamento
 
-Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Não houve alteração no Sul na Urna, implantação, merge ou remoção do noindex.
+Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
 ## Retomada com a nova rede — 15/10/2026
@@ -35,6 +35,13 @@ A página técnica informa limite de **100 requisições por IP por segundo**, s
 Respostas oficiais capturadas, URLs, horário e SHA-256 estão em `tests/fixtures/tse-official-2026-10-15/`. Servem somente aos testes, nunca como fallback da página. Testes cobrem descoberta real, exclusão de suplementares, zero antes da apuração, identidades, simulado e divulgação retida. Os testes existentes e os novos passaram. Carga local: 1.000 requisições, concorrência 25, zero erros, p95 21 ms, sem chamadas ao TSE; não mede capacidade Netlify. As três funções foram empacotadas.
 
 A configuração permanece desativada. Faltam validar todas as candidaturas/municípios, migrar componentes visuais e comprovar armazenamento/cache/recuperação em deploy de prévia. Layout, avisos de demonstração e noindex preservados.
+
+### Deploy de prévia criado e bloqueio de validação
+
+PR em rascunho: https://github.com/carolsalvaro/apuracao-2026-hn/pull/1 . A integração Git do Netlify criou o deploy `6ad1296f5d803df06a61d90c`, `state=ready`, `context=deploy-preview`, branch `feat/integracao-tse`, commit `65d659d`, no site confirmado `759f9585-92dc-4e18-9781-25eeff388f0e`.
+
+Prévia: https://deploy-preview-1--stupendous-muffin-2438f0.netlify.app . O proxy do ambiente retorna CONNECT 403 para esse host (página, `/api/politica`, `/api/resultados`), que não está na lista permitida. A liberação apenas do domínio original não inclui subdomínios de deploy. É necessário adicionar este host exato e aplicar a configuração para validar HTTP/navegador/Blobs nesta prévia. Não substituir o deploy de produção para contornar o bloqueio e não chamar o coletor publicamente. O estado `ready` da API confirma conclusão de deploy, não funcionamento das funções ou QA visual. Nenhum teste de navegador desta retomada foi declarado como concluído.
+
 
 ## O que está implementado
 
