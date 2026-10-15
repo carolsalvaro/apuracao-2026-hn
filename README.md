@@ -1,6 +1,6 @@
 # Apuração 2026 — HN Notícias + Vertical FM
 
-**BASE DE DESENVOLVIMENTO / PRÉVIA. Não está pronta para a cobertura eleitoral.**
+**PRÉVIA EM VALIDAÇÃO. Integração oficial disponível na branch feat/integracao-tse; ainda não liberar para cobertura eleitoral.**
 Layout exportado em 15/10/2026. Mantém fotos, mapas, patrocinadores, favoritos, navegação fixa, compartilhamento, bonequinhos e últimas notícias com imagens.
 
 ## Importar no GitHub
@@ -30,17 +30,16 @@ As funções precisam ser implantadas pelo Git/Netlify; arrastar apenas `public`
 
 A função consulta a categoria Política (ID 254) do WordPress do HN e usa cache CDN de cinco minutos. O navegador consulta `/api/politica` a cada cinco minutos enquanto visível. A rota é fixa, não um proxy aberto.
 
-## O que é real e o que é simulação
-- Presidente, percentuais, votos, mapa do Brasil, recorte SC e municípios: **demonstrativos**.
-- Governadores: consulta direta do navegador aos arquivos TSE do segundo turno, com seis UFs configuradas e cópia inicial. Precisa ser revalidada e migrada para a arquitetura de produção. Não há garantia de acesso CORS a partir do novo domínio.
-- Atualizar resultados: anima os bonequinhos e solicita consulta de governadores. NÃO integra presidente/mapas e NÃO recarrega a página.
-- Notícias: consulta real ao WordPress via Netlify Function.
-- Favoritos: localStorage do navegador; não são sincronizados entre aparelhos.
-- Compartilhamento: usa o domínio onde a página estiver aberta; a lista privada de favoritos não é enviada.
-- Analytics/GA4: ainda não configurado. Nenhum clique é contabilizado automaticamente como novo pageview pelo código.
+## Resultados e atualização na branch de integração
+- Presidente, 27 estados, SC, 303 municípios do catálogo, mapas, favoritas e seis governadores usam resultados oficiais do TSE pela API central. Zero seções significa “Aguardando apuração”; ausência de dados significa indisponível. Não há porcentagens fictícias como fallback.
+- A página informa data/hora da origem e da consulta. Cópia inicial oficial datada é identificada como atualização pendente; não é apresentada como apuração ao vivo.
+- A API usa fila, limite global de coleta e Netlify Blobs para preservar o último resultado válido. Os visitantes leem a API local; não consultam o TSE diretamente. A atualização central limitada também funciona na prévia, onde agendamentos Netlify não executam automaticamente.
+- Notícias continuam via Netlify Function. Favoritas ficam no localStorage do navegador; não são sincronizadas entre aparelhos nem enviadas no compartilhamento.
+- Analytics/GA4 não está configurado. Atualizar, rolar e animar não contam novos pageviews.
+- A cobertura e a capacidade ainda estão em validação. Manter noindex e não publicar em produção sem concluir o checklist.
 
 ## Testes e desenvolvimento
-Requer Node 22 ou superior. Execute `npm test` (sem instalar dependências).
+Requer Node >=22.12. Execute `npm ci`, `npm test` e `npm run test:browser`.
 Para simular as funções localmente, use Netlify CLI (`netlify dev`) se já disponível. Abrir o HTML pelo explorador de arquivos serve apenas para ver o layout e não executa a função de notícias.
 Testes incluídos são unitários/de contrato, não substituem testes reais em navegador, de carga nem o primeiro deploy no Netlify.
 
@@ -53,9 +52,9 @@ Testes incluídos são unitários/de contrato, não substituem testes reais em n
 - `PRODUCAO.md`: pendências antes da divulgação.
 
 ## Atenção
-O noindex está ativo no HTML e no cabeçalho HTTP enquanto houver dados simulados. Isso NÃO restringe acesso: uma URL de teste Netlify pode ser pública. Use controles de acesso do projeto, quando disponíveis, e não divulgue como apuração real.
+O noindex está ativo no HTML e no cabeçalho HTTP durante a validação da integração. Isso NÃO restringe acesso: uma URL de teste Netlify pode ser pública. Use controles de acesso do projeto, quando disponíveis, e não divulgue como apuração real.
 O pacote não contém senhas, tokens, histórico Git nem identificação interna da hospedagem anterior. Não substitui nem altera o projeto Sul na Urna.
 
 ## Integração TSE em desenvolvimento
 
-A etapa inicial adiciona `/api/resultados`, coletor agendado e último resultado válido em Netlify Blobs. A ativação está **desabilitada** em `config/tse.json` até validar fontes e configuração oficial. Presidente e mapas continuam demonstrativos. Consulte [o relatório de integração](docs/INTEGRACAO-TSE.md) para bloqueios, testes, limitações de escala e próximos passos. Instale as dependências com `npm ci` antes de executar os testes. Os governadores agora consultam a API local; não fazem mais consultas diretas do navegador ao TSE.
+A branch `feat/integracao-tse` liga os componentes à API oficial, com cache, fila de atualização e cópia do último resultado válido. Consulte [o relatório de integração](docs/INTEGRACAO-TSE.md) para limites, fontes verificadas e verificações ainda pendentes. O endereço principal permanece na main; as alterações estão no deploy-preview do PR #1.

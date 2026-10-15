@@ -1,11 +1,5374 @@
 {
-  "enabled": false,
+  "enabled": true,
   "schema": "tse-agr-v1",
   "year": 2026,
   "round": "2",
-  "verifiedAt": null,
-  "evidence": [],
+  "verifiedAt": "2026-10-15T20:18:22.812Z",
+  "evidence": [
+    "https://www.tse.jus.br/eleicoes/informacoes-tecnicas-sobre-a-divulgacao-de-resultados",
+    "https://resultados.tse.jus.br/oficial/comum/config/ele-c.json",
+    "https://resultados.tse.jus.br/oficial/ele2026/6258/config/mun-e006258-cm.json"
+  ],
   "intervalSeconds": 300,
   "staleSeconds": 900,
-  "targets": []
+  "targets": [
+    {
+      "id": "president-br",
+      "kind": "president",
+      "election": "6258",
+      "office": "1",
+      "scope": "br",
+      "area": "br",
+      "uf": "br",
+      "name": "Brasil",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ro",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ro",
+      "uf": "ro",
+      "name": "Rondônia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ro/ro-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ac",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ac",
+      "uf": "ac",
+      "name": "Acre",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ac/ac-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-am",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "am",
+      "uf": "am",
+      "name": "Amazonas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/am/am-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-rr",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "rr",
+      "uf": "rr",
+      "name": "Roraima",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rr/rr-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-pa",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "pa",
+      "uf": "pa",
+      "name": "Pará",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/pa/pa-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ap",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ap",
+      "uf": "ap",
+      "name": "Amapá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ap/ap-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-to",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "to",
+      "uf": "to",
+      "name": "Tocantins",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/to/to-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ma",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ma",
+      "uf": "ma",
+      "name": "Maranhão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ma/ma-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-pi",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "pi",
+      "uf": "pi",
+      "name": "Piauí",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/pi/pi-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ce",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ce",
+      "uf": "ce",
+      "name": "Ceará",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ce/ce-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-rn",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "rn",
+      "uf": "rn",
+      "name": "Rio Grande do Norte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rn/rn-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-pb",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "pb",
+      "uf": "pb",
+      "name": "Paraíba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/pb/pb-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-pe",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "pe",
+      "uf": "pe",
+      "name": "Pernambuco",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/pe/pe-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-al",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "al",
+      "uf": "al",
+      "name": "Alagoas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/al/al-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-se",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "se",
+      "uf": "se",
+      "name": "Sergipe",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/se/se-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ba",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ba",
+      "uf": "ba",
+      "name": "Bahia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ba/ba-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-mg",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "mg",
+      "uf": "mg",
+      "name": "Minas Gerais",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/mg/mg-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-es",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "es",
+      "uf": "es",
+      "name": "Espírito Santo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/es/es-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-rj",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "rj",
+      "uf": "rj",
+      "name": "Rio de Janeiro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rj/rj-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-sp",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "sp",
+      "uf": "sp",
+      "name": "São Paulo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sp/sp-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-pr",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "pr",
+      "uf": "pr",
+      "name": "Paraná",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/pr/pr-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-sc",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "sc",
+      "uf": "sc",
+      "name": "Santa Catarina",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-rs",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "rs",
+      "uf": "rs",
+      "name": "Rio Grande do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rs/rs-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-ms",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "ms",
+      "uf": "ms",
+      "name": "Mato Grosso do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ms/ms-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-mt",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "mt",
+      "uf": "mt",
+      "name": "Mato Grosso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/mt/mt-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-go",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "go",
+      "uf": "go",
+      "name": "Goiás",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/go/go-c0001-e006258-u.json"
+    },
+    {
+      "id": "state-df",
+      "kind": "state",
+      "election": "6258",
+      "office": "1",
+      "scope": "uf",
+      "area": "df",
+      "uf": "df",
+      "name": "Distrito Federal",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/df/df-c0001-e006258-u.json"
+    },
+    {
+      "id": "municipality-4204608",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80896",
+      "uf": "sc",
+      "name": "Criciúma",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80896-c0001-e006258-u.json",
+      "ibge": "4204608"
+    },
+    {
+      "id": "municipality-3550308",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "71072",
+      "uf": "sp",
+      "name": "São Paulo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sp/sp71072-c0001-e006258-u.json",
+      "ibge": "3550308"
+    },
+    {
+      "id": "municipality-4205407",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81051",
+      "uf": "sc",
+      "name": "Florianópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81051-c0001-e006258-u.json",
+      "ibge": "4205407"
+    },
+    {
+      "id": "municipality-4218707",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83674",
+      "uf": "sc",
+      "name": "Tubarão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83674-c0001-e006258-u.json",
+      "ibge": "4218707"
+    },
+    {
+      "id": "municipality-3304557",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "60011",
+      "uf": "rj",
+      "name": "Rio de Janeiro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rj/rj60011-c0001-e006258-u.json",
+      "ibge": "3304557"
+    },
+    {
+      "id": "municipality-4201406",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80276",
+      "uf": "sc",
+      "name": "Araranguá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80276-c0001-e006258-u.json",
+      "ibge": "4201406"
+    },
+    {
+      "id": "municipality-4207007",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81370",
+      "uf": "sc",
+      "name": "Içara",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81370-c0001-e006258-u.json",
+      "ibge": "4207007"
+    },
+    {
+      "id": "municipality-4209409",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81850",
+      "uf": "sc",
+      "name": "Laguna",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81850-c0001-e006258-u.json",
+      "ibge": "4209409"
+    },
+    {
+      "id": "municipality-4205456",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81060",
+      "uf": "sc",
+      "name": "Forquilhinha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81060-c0001-e006258-u.json",
+      "ibge": "4205456"
+    },
+    {
+      "id": "municipality-4201505",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80292",
+      "uf": "sc",
+      "name": "Armazém",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80292-c0001-e006258-u.json",
+      "ibge": "4201505"
+    },
+    {
+      "id": "municipality-4201950",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81728",
+      "uf": "sc",
+      "name": "Balneário Arroio do Silva",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81728-c0001-e006258-u.json",
+      "ibge": "4201950"
+    },
+    {
+      "id": "municipality-4202073",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81744",
+      "uf": "sc",
+      "name": "Balneário Gaivota",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81744-c0001-e006258-u.json",
+      "ibge": "4202073"
+    },
+    {
+      "id": "municipality-4202800",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80535",
+      "uf": "sc",
+      "name": "Braço do Norte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80535-c0001-e006258-u.json",
+      "ibge": "4202800"
+    },
+    {
+      "id": "municipality-4203956",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81027",
+      "uf": "sc",
+      "name": "Capivari de Baixo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81027-c0001-e006258-u.json",
+      "ibge": "4203956"
+    },
+    {
+      "id": "municipality-4204251",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80306",
+      "uf": "sc",
+      "name": "Cocal do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80306-c0001-e006258-u.json",
+      "ibge": "4204251"
+    },
+    {
+      "id": "municipality-4205191",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81167",
+      "uf": "sc",
+      "name": "Ermo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81167-c0001-e006258-u.json",
+      "ibge": "4205191"
+    },
+    {
+      "id": "municipality-4206108",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81191",
+      "uf": "sc",
+      "name": "Grão-Pará",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81191-c0001-e006258-u.json",
+      "ibge": "4206108"
+    },
+    {
+      "id": "municipality-4206207",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81213",
+      "uf": "sc",
+      "name": "Gravatal",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81213-c0001-e006258-u.json",
+      "ibge": "4206207"
+    },
+    {
+      "id": "municipality-4207205",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81418",
+      "uf": "sc",
+      "name": "Imaruí",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81418-c0001-e006258-u.json",
+      "ibge": "4207205"
+    },
+    {
+      "id": "municipality-4207304",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81434",
+      "uf": "sc",
+      "name": "Imbituba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81434-c0001-e006258-u.json",
+      "ibge": "4207304"
+    },
+    {
+      "id": "municipality-4208708",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81710",
+      "uf": "sc",
+      "name": "Jacinto Machado",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81710-c0001-e006258-u.json",
+      "ibge": "4208708"
+    },
+    {
+      "id": "municipality-4208807",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81736",
+      "uf": "sc",
+      "name": "Jaguaruna",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81736-c0001-e006258-u.json",
+      "ibge": "4208807"
+    },
+    {
+      "id": "municipality-4209607",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81892",
+      "uf": "sc",
+      "name": "Lauro Müller",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81892-c0001-e006258-u.json",
+      "ibge": "4209607"
+    },
+    {
+      "id": "municipality-4210407",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83917",
+      "uf": "sc",
+      "name": "Maracajá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83917-c0001-e006258-u.json",
+      "ibge": "4210407"
+    },
+    {
+      "id": "municipality-4210803",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82112",
+      "uf": "sc",
+      "name": "Meleiro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82112-c0001-e006258-u.json",
+      "ibge": "4210803"
+    },
+    {
+      "id": "municipality-4211207",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82198",
+      "uf": "sc",
+      "name": "Morro da Fumaça",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82198-c0001-e006258-u.json",
+      "ibge": "4211207"
+    },
+    {
+      "id": "municipality-4211256",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81086",
+      "uf": "sc",
+      "name": "Morro Grande",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81086-c0001-e006258-u.json",
+      "ibge": "4211256"
+    },
+    {
+      "id": "municipality-4211603",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82279",
+      "uf": "sc",
+      "name": "Nova Veneza",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82279-c0001-e006258-u.json",
+      "ibge": "4211603"
+    },
+    {
+      "id": "municipality-4211702",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82295",
+      "uf": "sc",
+      "name": "Orleans",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82295-c0001-e006258-u.json",
+      "ibge": "4211702"
+    },
+    {
+      "id": "municipality-4212254",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80403",
+      "uf": "sc",
+      "name": "Passo de Torres",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80403-c0001-e006258-u.json",
+      "ibge": "4212254"
+    },
+    {
+      "id": "municipality-4212403",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82430",
+      "uf": "sc",
+      "name": "Pedras Grandes",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82430-c0001-e006258-u.json",
+      "ibge": "4212403"
+    },
+    {
+      "id": "municipality-4212650",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83925",
+      "uf": "sc",
+      "name": "Pescaria Brava",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83925-c0001-e006258-u.json",
+      "ibge": "4212650"
+    },
+    {
+      "id": "municipality-4213807",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82716",
+      "uf": "sc",
+      "name": "Praia Grande",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82716-c0001-e006258-u.json",
+      "ibge": "4213807"
+    },
+    {
+      "id": "municipality-4214904",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82937",
+      "uf": "sc",
+      "name": "Rio Fortuna",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82937-c0001-e006258-u.json",
+      "ibge": "4214904"
+    },
+    {
+      "id": "municipality-4215455",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81000",
+      "uf": "sc",
+      "name": "Sangão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81000-c0001-e006258-u.json",
+      "ibge": "4215455"
+    },
+    {
+      "id": "municipality-4215604",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83070",
+      "uf": "sc",
+      "name": "Santa Rosa de Lima",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83070-c0001-e006258-u.json",
+      "ibge": "4215604"
+    },
+    {
+      "id": "municipality-4215653",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80241",
+      "uf": "sc",
+      "name": "Santa Rosa do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80241-c0001-e006258-u.json",
+      "ibge": "4215653"
+    },
+    {
+      "id": "municipality-4216404",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83232",
+      "uf": "sc",
+      "name": "São João do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83232-c0001-e006258-u.json",
+      "ibge": "4216404"
+    },
+    {
+      "id": "municipality-4217006",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83356",
+      "uf": "sc",
+      "name": "São Ludgero",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83356-c0001-e006258-u.json",
+      "ibge": "4217006"
+    },
+    {
+      "id": "municipality-4217105",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83372",
+      "uf": "sc",
+      "name": "São Martinho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83372-c0001-e006258-u.json",
+      "ibge": "4217105"
+    },
+    {
+      "id": "municipality-4217600",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83470",
+      "uf": "sc",
+      "name": "Siderópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83470-c0001-e006258-u.json",
+      "ibge": "4217600"
+    },
+    {
+      "id": "municipality-4217709",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83496",
+      "uf": "sc",
+      "name": "Sombrio",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83496-c0001-e006258-u.json",
+      "ibge": "4217709"
+    },
+    {
+      "id": "municipality-4218103",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83933",
+      "uf": "sc",
+      "name": "Timbé do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83933-c0001-e006258-u.json",
+      "ibge": "4218103"
+    },
+    {
+      "id": "municipality-4218350",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81345",
+      "uf": "sc",
+      "name": "Treviso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81345-c0001-e006258-u.json",
+      "ibge": "4218350"
+    },
+    {
+      "id": "municipality-4218400",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83615",
+      "uf": "sc",
+      "name": "Treze de Maio",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83615-c0001-e006258-u.json",
+      "ibge": "4218400"
+    },
+    {
+      "id": "municipality-4218806",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83690",
+      "uf": "sc",
+      "name": "Turvo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83690-c0001-e006258-u.json",
+      "ibge": "4218806"
+    },
+    {
+      "id": "municipality-4219002",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83739",
+      "uf": "sc",
+      "name": "Urussanga",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83739-c0001-e006258-u.json",
+      "ibge": "4219002"
+    },
+    {
+      "id": "municipality-4220000",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83909",
+      "uf": "sc",
+      "name": "Balneário Rincão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83909-c0001-e006258-u.json",
+      "ibge": "4220000"
+    },
+    {
+      "id": "municipality-4200051",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80225",
+      "uf": "sc",
+      "name": "Abdon Batista",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80225-c0001-e006258-u.json",
+      "ibge": "4200051"
+    },
+    {
+      "id": "municipality-4200101",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80012",
+      "uf": "sc",
+      "name": "Abelardo Luz",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80012-c0001-e006258-u.json",
+      "ibge": "4200101"
+    },
+    {
+      "id": "municipality-4200200",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80039",
+      "uf": "sc",
+      "name": "Agrolândia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80039-c0001-e006258-u.json",
+      "ibge": "4200200"
+    },
+    {
+      "id": "municipality-4200309",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80055",
+      "uf": "sc",
+      "name": "Agronômica",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80055-c0001-e006258-u.json",
+      "ibge": "4200309"
+    },
+    {
+      "id": "municipality-4200408",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80071",
+      "uf": "sc",
+      "name": "Água Doce",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80071-c0001-e006258-u.json",
+      "ibge": "4200408"
+    },
+    {
+      "id": "municipality-4200507",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80098",
+      "uf": "sc",
+      "name": "Águas de Chapecó",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80098-c0001-e006258-u.json",
+      "ibge": "4200507"
+    },
+    {
+      "id": "municipality-4200556",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80500",
+      "uf": "sc",
+      "name": "Águas Frias",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80500-c0001-e006258-u.json",
+      "ibge": "4200556"
+    },
+    {
+      "id": "municipality-4200606",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80110",
+      "uf": "sc",
+      "name": "Águas Mornas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80110-c0001-e006258-u.json",
+      "ibge": "4200606"
+    },
+    {
+      "id": "municipality-4200705",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80136",
+      "uf": "sc",
+      "name": "Alfredo Wagner",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80136-c0001-e006258-u.json",
+      "ibge": "4200705"
+    },
+    {
+      "id": "municipality-4200754",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81302",
+      "uf": "sc",
+      "name": "Alto Bela Vista",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81302-c0001-e006258-u.json",
+      "ibge": "4200754"
+    },
+    {
+      "id": "municipality-4200804",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80152",
+      "uf": "sc",
+      "name": "Anchieta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80152-c0001-e006258-u.json",
+      "ibge": "4200804"
+    },
+    {
+      "id": "municipality-4200903",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80179",
+      "uf": "sc",
+      "name": "Angelina",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80179-c0001-e006258-u.json",
+      "ibge": "4200903"
+    },
+    {
+      "id": "municipality-4201000",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80195",
+      "uf": "sc",
+      "name": "Anita Garibaldi",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80195-c0001-e006258-u.json",
+      "ibge": "4201000"
+    },
+    {
+      "id": "municipality-4201109",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80217",
+      "uf": "sc",
+      "name": "Anitápolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80217-c0001-e006258-u.json",
+      "ibge": "4201109"
+    },
+    {
+      "id": "municipality-4201208",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80233",
+      "uf": "sc",
+      "name": "Antônio Carlos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80233-c0001-e006258-u.json",
+      "ibge": "4201208"
+    },
+    {
+      "id": "municipality-4201257",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80063",
+      "uf": "sc",
+      "name": "Apiúna",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80063-c0001-e006258-u.json",
+      "ibge": "4201257"
+    },
+    {
+      "id": "municipality-4201273",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80489",
+      "uf": "sc",
+      "name": "Arabutã",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80489-c0001-e006258-u.json",
+      "ibge": "4201273"
+    },
+    {
+      "id": "municipality-4201307",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80250",
+      "uf": "sc",
+      "name": "Araquari",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80250-c0001-e006258-u.json",
+      "ibge": "4201307"
+    },
+    {
+      "id": "municipality-4201604",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80314",
+      "uf": "sc",
+      "name": "Arroio Trinta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80314-c0001-e006258-u.json",
+      "ibge": "4201604"
+    },
+    {
+      "id": "municipality-4201653",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80802",
+      "uf": "sc",
+      "name": "Arvoredo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80802-c0001-e006258-u.json",
+      "ibge": "4201653"
+    },
+    {
+      "id": "municipality-4201703",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80330",
+      "uf": "sc",
+      "name": "Ascurra",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80330-c0001-e006258-u.json",
+      "ibge": "4201703"
+    },
+    {
+      "id": "municipality-4201802",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80357",
+      "uf": "sc",
+      "name": "Atalanta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80357-c0001-e006258-u.json",
+      "ibge": "4201802"
+    },
+    {
+      "id": "municipality-4201901",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80373",
+      "uf": "sc",
+      "name": "Aurora",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80373-c0001-e006258-u.json",
+      "ibge": "4201901"
+    },
+    {
+      "id": "municipality-4202008",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80390",
+      "uf": "sc",
+      "name": "Balneário Camboriú",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80390-c0001-e006258-u.json",
+      "ibge": "4202008"
+    },
+    {
+      "id": "municipality-4202057",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80683",
+      "uf": "sc",
+      "name": "Balneário Barra do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80683-c0001-e006258-u.json",
+      "ibge": "4202057"
+    },
+    {
+      "id": "municipality-4202081",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81582",
+      "uf": "sc",
+      "name": "Bandeirante",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81582-c0001-e006258-u.json",
+      "ibge": "4202081"
+    },
+    {
+      "id": "municipality-4202099",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81760",
+      "uf": "sc",
+      "name": "Barra Bonita",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81760-c0001-e006258-u.json",
+      "ibge": "4202099"
+    },
+    {
+      "id": "municipality-4202107",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80411",
+      "uf": "sc",
+      "name": "Barra Velha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80411-c0001-e006258-u.json",
+      "ibge": "4202107"
+    },
+    {
+      "id": "municipality-4202131",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81221",
+      "uf": "sc",
+      "name": "Bela Vista do Toldo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81221-c0001-e006258-u.json",
+      "ibge": "4202131"
+    },
+    {
+      "id": "municipality-4202156",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80748",
+      "uf": "sc",
+      "name": "Belmonte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80748-c0001-e006258-u.json",
+      "ibge": "4202156"
+    },
+    {
+      "id": "municipality-4202206",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80438",
+      "uf": "sc",
+      "name": "Benedito Novo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80438-c0001-e006258-u.json",
+      "ibge": "4202206"
+    },
+    {
+      "id": "municipality-4202305",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80454",
+      "uf": "sc",
+      "name": "Biguaçu",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80454-c0001-e006258-u.json",
+      "ibge": "4202305"
+    },
+    {
+      "id": "municipality-4202404",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80470",
+      "uf": "sc",
+      "name": "Blumenau",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80470-c0001-e006258-u.json",
+      "ibge": "4202404"
+    },
+    {
+      "id": "municipality-4202438",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81280",
+      "uf": "sc",
+      "name": "Bocaina do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81280-c0001-e006258-u.json",
+      "ibge": "4202438"
+    },
+    {
+      "id": "municipality-4202453",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80985",
+      "uf": "sc",
+      "name": "Bombinhas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80985-c0001-e006258-u.json",
+      "ibge": "4202453"
+    },
+    {
+      "id": "municipality-4202503",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83895",
+      "uf": "sc",
+      "name": "Bom Jardim da Serra",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83895-c0001-e006258-u.json",
+      "ibge": "4202503"
+    },
+    {
+      "id": "municipality-4202537",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81388",
+      "uf": "sc",
+      "name": "Bom Jesus",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81388-c0001-e006258-u.json",
+      "ibge": "4202537"
+    },
+    {
+      "id": "municipality-4202578",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81469",
+      "uf": "sc",
+      "name": "Bom Jesus do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81469-c0001-e006258-u.json",
+      "ibge": "4202578"
+    },
+    {
+      "id": "municipality-4202602",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80497",
+      "uf": "sc",
+      "name": "Bom Retiro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80497-c0001-e006258-u.json",
+      "ibge": "4202602"
+    },
+    {
+      "id": "municipality-4202701",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80519",
+      "uf": "sc",
+      "name": "Botuverá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80519-c0001-e006258-u.json",
+      "ibge": "4202701"
+    },
+    {
+      "id": "municipality-4202859",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80420",
+      "uf": "sc",
+      "name": "Braço do Trombudo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80420-c0001-e006258-u.json",
+      "ibge": "4202859"
+    },
+    {
+      "id": "municipality-4202875",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81787",
+      "uf": "sc",
+      "name": "Brunópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81787-c0001-e006258-u.json",
+      "ibge": "4202875"
+    },
+    {
+      "id": "municipality-4202909",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80551",
+      "uf": "sc",
+      "name": "Brusque",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80551-c0001-e006258-u.json",
+      "ibge": "4202909"
+    },
+    {
+      "id": "municipality-4203006",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80578",
+      "uf": "sc",
+      "name": "Caçador",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80578-c0001-e006258-u.json",
+      "ibge": "4203006"
+    },
+    {
+      "id": "municipality-4203105",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80594",
+      "uf": "sc",
+      "name": "Caibi",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80594-c0001-e006258-u.json",
+      "ibge": "4203105"
+    },
+    {
+      "id": "municipality-4203154",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80667",
+      "uf": "sc",
+      "name": "Calmon",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80667-c0001-e006258-u.json",
+      "ibge": "4203154"
+    },
+    {
+      "id": "municipality-4203204",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80616",
+      "uf": "sc",
+      "name": "Camboriú",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80616-c0001-e006258-u.json",
+      "ibge": "4203204"
+    },
+    {
+      "id": "municipality-4203253",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81248",
+      "uf": "sc",
+      "name": "Capão Alto",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81248-c0001-e006258-u.json",
+      "ibge": "4203253"
+    },
+    {
+      "id": "municipality-4203303",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80632",
+      "uf": "sc",
+      "name": "Campo Alegre",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80632-c0001-e006258-u.json",
+      "ibge": "4203303"
+    },
+    {
+      "id": "municipality-4203402",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80659",
+      "uf": "sc",
+      "name": "Campo Belo do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80659-c0001-e006258-u.json",
+      "ibge": "4203402"
+    },
+    {
+      "id": "municipality-4203501",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80675",
+      "uf": "sc",
+      "name": "Campo Erê",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80675-c0001-e006258-u.json",
+      "ibge": "4203501"
+    },
+    {
+      "id": "municipality-4203600",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80691",
+      "uf": "sc",
+      "name": "Campos Novos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80691-c0001-e006258-u.json",
+      "ibge": "4203600"
+    },
+    {
+      "id": "municipality-4203709",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80713",
+      "uf": "sc",
+      "name": "Canelinha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80713-c0001-e006258-u.json",
+      "ibge": "4203709"
+    },
+    {
+      "id": "municipality-4203808",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80730",
+      "uf": "sc",
+      "name": "Canoinhas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80730-c0001-e006258-u.json",
+      "ibge": "4203808"
+    },
+    {
+      "id": "municipality-4203907",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80756",
+      "uf": "sc",
+      "name": "Capinzal",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80756-c0001-e006258-u.json",
+      "ibge": "4203907"
+    },
+    {
+      "id": "municipality-4204004",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80772",
+      "uf": "sc",
+      "name": "Catanduvas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80772-c0001-e006258-u.json",
+      "ibge": "4204004"
+    },
+    {
+      "id": "municipality-4204103",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80799",
+      "uf": "sc",
+      "name": "Caxambu do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80799-c0001-e006258-u.json",
+      "ibge": "4204103"
+    },
+    {
+      "id": "municipality-4204152",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80268",
+      "uf": "sc",
+      "name": "Celso Ramos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80268-c0001-e006258-u.json",
+      "ibge": "4204152"
+    },
+    {
+      "id": "municipality-4204178",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80381",
+      "uf": "sc",
+      "name": "Cerro Negro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80381-c0001-e006258-u.json",
+      "ibge": "4204178"
+    },
+    {
+      "id": "municipality-4204194",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81701",
+      "uf": "sc",
+      "name": "Chapadão do Lageado",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81701-c0001-e006258-u.json",
+      "ibge": "4204194"
+    },
+    {
+      "id": "municipality-4204202",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80810",
+      "uf": "sc",
+      "name": "Chapecó",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80810-c0001-e006258-u.json",
+      "ibge": "4204202"
+    },
+    {
+      "id": "municipality-4204301",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80837",
+      "uf": "sc",
+      "name": "Concórdia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80837-c0001-e006258-u.json",
+      "ibge": "4204301"
+    },
+    {
+      "id": "municipality-4204350",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81043",
+      "uf": "sc",
+      "name": "Cordilheira Alta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81043-c0001-e006258-u.json",
+      "ibge": "4204350"
+    },
+    {
+      "id": "municipality-4204400",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80853",
+      "uf": "sc",
+      "name": "Coronel Freitas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80853-c0001-e006258-u.json",
+      "ibge": "4204400"
+    },
+    {
+      "id": "municipality-4204459",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81108",
+      "uf": "sc",
+      "name": "Coronel Martins",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81108-c0001-e006258-u.json",
+      "ibge": "4204459"
+    },
+    {
+      "id": "municipality-4204509",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80870",
+      "uf": "sc",
+      "name": "Corupá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80870-c0001-e006258-u.json",
+      "ibge": "4204509"
+    },
+    {
+      "id": "municipality-4204558",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83950",
+      "uf": "sc",
+      "name": "Correia Pinto",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83950-c0001-e006258-u.json",
+      "ibge": "4204558"
+    },
+    {
+      "id": "municipality-4204707",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80918",
+      "uf": "sc",
+      "name": "Cunha Porã",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80918-c0001-e006258-u.json",
+      "ibge": "4204707"
+    },
+    {
+      "id": "municipality-4204756",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81620",
+      "uf": "sc",
+      "name": "Cunhataí",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81620-c0001-e006258-u.json",
+      "ibge": "4204756"
+    },
+    {
+      "id": "municipality-4204806",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80934",
+      "uf": "sc",
+      "name": "Curitibanos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80934-c0001-e006258-u.json",
+      "ibge": "4204806"
+    },
+    {
+      "id": "municipality-4204905",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80950",
+      "uf": "sc",
+      "name": "Descanso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80950-c0001-e006258-u.json",
+      "ibge": "4204905"
+    },
+    {
+      "id": "municipality-4205001",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80977",
+      "uf": "sc",
+      "name": "Dionísio Cerqueira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80977-c0001-e006258-u.json",
+      "ibge": "4205001"
+    },
+    {
+      "id": "municipality-4205100",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80993",
+      "uf": "sc",
+      "name": "Dona Emma",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80993-c0001-e006258-u.json",
+      "ibge": "4205100"
+    },
+    {
+      "id": "municipality-4205159",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80080",
+      "uf": "sc",
+      "name": "Doutor Pedrinho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80080-c0001-e006258-u.json",
+      "ibge": "4205159"
+    },
+    {
+      "id": "municipality-4205175",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81426",
+      "uf": "sc",
+      "name": "Entre Rios",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81426-c0001-e006258-u.json",
+      "ibge": "4205175"
+    },
+    {
+      "id": "municipality-4205209",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81019",
+      "uf": "sc",
+      "name": "Erval Velho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81019-c0001-e006258-u.json",
+      "ibge": "4205209"
+    },
+    {
+      "id": "municipality-4205308",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81035",
+      "uf": "sc",
+      "name": "Faxinal dos Guedes",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81035-c0001-e006258-u.json",
+      "ibge": "4205308"
+    },
+    {
+      "id": "municipality-4205357",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81604",
+      "uf": "sc",
+      "name": "Flor do Sertão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81604-c0001-e006258-u.json",
+      "ibge": "4205357"
+    },
+    {
+      "id": "municipality-4205431",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80888",
+      "uf": "sc",
+      "name": "Formosa do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80888-c0001-e006258-u.json",
+      "ibge": "4205431"
+    },
+    {
+      "id": "municipality-4205506",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81078",
+      "uf": "sc",
+      "name": "Fraiburgo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81078-c0001-e006258-u.json",
+      "ibge": "4205506"
+    },
+    {
+      "id": "municipality-4205555",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81329",
+      "uf": "sc",
+      "name": "Frei Rogério",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81329-c0001-e006258-u.json",
+      "ibge": "4205555"
+    },
+    {
+      "id": "municipality-4205605",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81094",
+      "uf": "sc",
+      "name": "Galvão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81094-c0001-e006258-u.json",
+      "ibge": "4205605"
+    },
+    {
+      "id": "municipality-4205704",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81132",
+      "uf": "sc",
+      "name": "Garopaba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81132-c0001-e006258-u.json",
+      "ibge": "4205704"
+    },
+    {
+      "id": "municipality-4205803",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81159",
+      "uf": "sc",
+      "name": "Garuva",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81159-c0001-e006258-u.json",
+      "ibge": "4205803"
+    },
+    {
+      "id": "municipality-4205902",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81175",
+      "uf": "sc",
+      "name": "Gaspar",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81175-c0001-e006258-u.json",
+      "ibge": "4205902"
+    },
+    {
+      "id": "municipality-4206009",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81116",
+      "uf": "sc",
+      "name": "Governador Celso Ramos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81116-c0001-e006258-u.json",
+      "ibge": "4206009"
+    },
+    {
+      "id": "municipality-4206306",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81230",
+      "uf": "sc",
+      "name": "Guabiruba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81230-c0001-e006258-u.json",
+      "ibge": "4206306"
+    },
+    {
+      "id": "municipality-4206405",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81256",
+      "uf": "sc",
+      "name": "Guaraciaba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81256-c0001-e006258-u.json",
+      "ibge": "4206405"
+    },
+    {
+      "id": "municipality-4206504",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81272",
+      "uf": "sc",
+      "name": "Guaramirim",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81272-c0001-e006258-u.json",
+      "ibge": "4206504"
+    },
+    {
+      "id": "municipality-4206603",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81299",
+      "uf": "sc",
+      "name": "Guarujá do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81299-c0001-e006258-u.json",
+      "ibge": "4206603"
+    },
+    {
+      "id": "municipality-4206652",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80527",
+      "uf": "sc",
+      "name": "Guatambú",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80527-c0001-e006258-u.json",
+      "ibge": "4206652"
+    },
+    {
+      "id": "municipality-4206702",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81310",
+      "uf": "sc",
+      "name": "Herval d'Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81310-c0001-e006258-u.json",
+      "ibge": "4206702"
+    },
+    {
+      "id": "municipality-4206751",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81400",
+      "uf": "sc",
+      "name": "Ibiam",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81400-c0001-e006258-u.json",
+      "ibge": "4206751"
+    },
+    {
+      "id": "municipality-4206801",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81337",
+      "uf": "sc",
+      "name": "Ibicaré",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81337-c0001-e006258-u.json",
+      "ibge": "4206801"
+    },
+    {
+      "id": "municipality-4206900",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81353",
+      "uf": "sc",
+      "name": "Ibirama",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81353-c0001-e006258-u.json",
+      "ibge": "4206900"
+    },
+    {
+      "id": "municipality-4207106",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81396",
+      "uf": "sc",
+      "name": "Ilhota",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81396-c0001-e006258-u.json",
+      "ibge": "4207106"
+    },
+    {
+      "id": "municipality-4207403",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81450",
+      "uf": "sc",
+      "name": "Imbuia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81450-c0001-e006258-u.json",
+      "ibge": "4207403"
+    },
+    {
+      "id": "municipality-4207502",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81477",
+      "uf": "sc",
+      "name": "Indaial",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81477-c0001-e006258-u.json",
+      "ibge": "4207502"
+    },
+    {
+      "id": "municipality-4207577",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81361",
+      "uf": "sc",
+      "name": "Iomerê",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81361-c0001-e006258-u.json",
+      "ibge": "4207577"
+    },
+    {
+      "id": "municipality-4207601",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81493",
+      "uf": "sc",
+      "name": "Ipira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81493-c0001-e006258-u.json",
+      "ibge": "4207601"
+    },
+    {
+      "id": "municipality-4207650",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80020",
+      "uf": "sc",
+      "name": "Iporã do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80020-c0001-e006258-u.json",
+      "ibge": "4207650"
+    },
+    {
+      "id": "municipality-4207684",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80829",
+      "uf": "sc",
+      "name": "Ipuaçu",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80829-c0001-e006258-u.json",
+      "ibge": "4207684"
+    },
+    {
+      "id": "municipality-4207700",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81515",
+      "uf": "sc",
+      "name": "Ipumirim",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81515-c0001-e006258-u.json",
+      "ibge": "4207700"
+    },
+    {
+      "id": "municipality-4207759",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80187",
+      "uf": "sc",
+      "name": "Iraceminha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80187-c0001-e006258-u.json",
+      "ibge": "4207759"
+    },
+    {
+      "id": "municipality-4207809",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81531",
+      "uf": "sc",
+      "name": "Irani",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81531-c0001-e006258-u.json",
+      "ibge": "4207809"
+    },
+    {
+      "id": "municipality-4207858",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80861",
+      "uf": "sc",
+      "name": "Irati",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80861-c0001-e006258-u.json",
+      "ibge": "4207858"
+    },
+    {
+      "id": "municipality-4207908",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81558",
+      "uf": "sc",
+      "name": "Irineópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81558-c0001-e006258-u.json",
+      "ibge": "4207908"
+    },
+    {
+      "id": "municipality-4208005",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81574",
+      "uf": "sc",
+      "name": "Itá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81574-c0001-e006258-u.json",
+      "ibge": "4208005"
+    },
+    {
+      "id": "municipality-4208104",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81590",
+      "uf": "sc",
+      "name": "Itaiópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81590-c0001-e006258-u.json",
+      "ibge": "4208104"
+    },
+    {
+      "id": "municipality-4208203",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81612",
+      "uf": "sc",
+      "name": "Itajaí",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81612-c0001-e006258-u.json",
+      "ibge": "4208203"
+    },
+    {
+      "id": "municipality-4208302",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81639",
+      "uf": "sc",
+      "name": "Itapema",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81639-c0001-e006258-u.json",
+      "ibge": "4208302"
+    },
+    {
+      "id": "municipality-4208401",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81655",
+      "uf": "sc",
+      "name": "Itapiranga",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81655-c0001-e006258-u.json",
+      "ibge": "4208401"
+    },
+    {
+      "id": "municipality-4208450",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81663",
+      "uf": "sc",
+      "name": "Itapoá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81663-c0001-e006258-u.json",
+      "ibge": "4208450"
+    },
+    {
+      "id": "municipality-4208500",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81671",
+      "uf": "sc",
+      "name": "Ituporanga",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81671-c0001-e006258-u.json",
+      "ibge": "4208500"
+    },
+    {
+      "id": "municipality-4208609",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81698",
+      "uf": "sc",
+      "name": "Jaborá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81698-c0001-e006258-u.json",
+      "ibge": "4208609"
+    },
+    {
+      "id": "municipality-4208906",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81752",
+      "uf": "sc",
+      "name": "Jaraguá do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81752-c0001-e006258-u.json",
+      "ibge": "4208906"
+    },
+    {
+      "id": "municipality-4208955",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81140",
+      "uf": "sc",
+      "name": "Jardinópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81140-c0001-e006258-u.json",
+      "ibge": "4208955"
+    },
+    {
+      "id": "municipality-4209003",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81779",
+      "uf": "sc",
+      "name": "Joaçaba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81779-c0001-e006258-u.json",
+      "ibge": "4209003"
+    },
+    {
+      "id": "municipality-4209102",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81795",
+      "uf": "sc",
+      "name": "Joinville",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81795-c0001-e006258-u.json",
+      "ibge": "4209102"
+    },
+    {
+      "id": "municipality-4209151",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80101",
+      "uf": "sc",
+      "name": "José Boiteux",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80101-c0001-e006258-u.json",
+      "ibge": "4209151"
+    },
+    {
+      "id": "municipality-4209177",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81540",
+      "uf": "sc",
+      "name": "Jupiá",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81540-c0001-e006258-u.json",
+      "ibge": "4209177"
+    },
+    {
+      "id": "municipality-4209201",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81817",
+      "uf": "sc",
+      "name": "Lacerdópolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81817-c0001-e006258-u.json",
+      "ibge": "4209201"
+    },
+    {
+      "id": "municipality-4209300",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81833",
+      "uf": "sc",
+      "name": "Lages",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81833-c0001-e006258-u.json",
+      "ibge": "4209300"
+    },
+    {
+      "id": "municipality-4209458",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80586",
+      "uf": "sc",
+      "name": "Lajeado Grande",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80586-c0001-e006258-u.json",
+      "ibge": "4209458"
+    },
+    {
+      "id": "municipality-4209508",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81876",
+      "uf": "sc",
+      "name": "Laurentino",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81876-c0001-e006258-u.json",
+      "ibge": "4209508"
+    },
+    {
+      "id": "municipality-4209706",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81914",
+      "uf": "sc",
+      "name": "Lebon Régis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81914-c0001-e006258-u.json",
+      "ibge": "4209706"
+    },
+    {
+      "id": "municipality-4209805",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81930",
+      "uf": "sc",
+      "name": "Leoberto Leal",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81930-c0001-e006258-u.json",
+      "ibge": "4209805"
+    },
+    {
+      "id": "municipality-4209854",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80047",
+      "uf": "sc",
+      "name": "Lindóia do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80047-c0001-e006258-u.json",
+      "ibge": "4209854"
+    },
+    {
+      "id": "municipality-4209904",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81957",
+      "uf": "sc",
+      "name": "Lontras",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81957-c0001-e006258-u.json",
+      "ibge": "4209904"
+    },
+    {
+      "id": "municipality-4210001",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81973",
+      "uf": "sc",
+      "name": "Luiz Alves",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81973-c0001-e006258-u.json",
+      "ibge": "4210001"
+    },
+    {
+      "id": "municipality-4210035",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81809",
+      "uf": "sc",
+      "name": "Luzerna",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81809-c0001-e006258-u.json",
+      "ibge": "4210035"
+    },
+    {
+      "id": "municipality-4210050",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80900",
+      "uf": "sc",
+      "name": "Macieira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80900-c0001-e006258-u.json",
+      "ibge": "4210050"
+    },
+    {
+      "id": "municipality-4210100",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81990",
+      "uf": "sc",
+      "name": "Mafra",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81990-c0001-e006258-u.json",
+      "ibge": "4210100"
+    },
+    {
+      "id": "municipality-4210209",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82015",
+      "uf": "sc",
+      "name": "Major Gercino",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82015-c0001-e006258-u.json",
+      "ibge": "4210209"
+    },
+    {
+      "id": "municipality-4210308",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82031",
+      "uf": "sc",
+      "name": "Major Vieira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82031-c0001-e006258-u.json",
+      "ibge": "4210308"
+    },
+    {
+      "id": "municipality-4210506",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82058",
+      "uf": "sc",
+      "name": "Maravilha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82058-c0001-e006258-u.json",
+      "ibge": "4210506"
+    },
+    {
+      "id": "municipality-4210555",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82066",
+      "uf": "sc",
+      "name": "Marema",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82066-c0001-e006258-u.json",
+      "ibge": "4210555"
+    },
+    {
+      "id": "municipality-4210605",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82074",
+      "uf": "sc",
+      "name": "Massaranduba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82074-c0001-e006258-u.json",
+      "ibge": "4210605"
+    },
+    {
+      "id": "municipality-4210704",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82090",
+      "uf": "sc",
+      "name": "Matos Costa",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82090-c0001-e006258-u.json",
+      "ibge": "4210704"
+    },
+    {
+      "id": "municipality-4210852",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80365",
+      "uf": "sc",
+      "name": "Mirim Doce",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80365-c0001-e006258-u.json",
+      "ibge": "4210852"
+    },
+    {
+      "id": "municipality-4210902",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82139",
+      "uf": "sc",
+      "name": "Modelo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82139-c0001-e006258-u.json",
+      "ibge": "4210902"
+    },
+    {
+      "id": "municipality-4211009",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82155",
+      "uf": "sc",
+      "name": "Mondaí",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82155-c0001-e006258-u.json",
+      "ibge": "4211009"
+    },
+    {
+      "id": "municipality-4211058",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80004",
+      "uf": "sc",
+      "name": "Monte Carlo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80004-c0001-e006258-u.json",
+      "ibge": "4211058"
+    },
+    {
+      "id": "municipality-4211108",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82171",
+      "uf": "sc",
+      "name": "Monte Castelo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82171-c0001-e006258-u.json",
+      "ibge": "4211108"
+    },
+    {
+      "id": "municipality-4211306",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82210",
+      "uf": "sc",
+      "name": "Navegantes",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82210-c0001-e006258-u.json",
+      "ibge": "4211306"
+    },
+    {
+      "id": "municipality-4211405",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82236",
+      "uf": "sc",
+      "name": "Nova Erechim",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82236-c0001-e006258-u.json",
+      "ibge": "4211405"
+    },
+    {
+      "id": "municipality-4211454",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80322",
+      "uf": "sc",
+      "name": "Nova Itaberaba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80322-c0001-e006258-u.json",
+      "ibge": "4211454"
+    },
+    {
+      "id": "municipality-4211504",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82252",
+      "uf": "sc",
+      "name": "Nova Trento",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82252-c0001-e006258-u.json",
+      "ibge": "4211504"
+    },
+    {
+      "id": "municipality-4211652",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80764",
+      "uf": "sc",
+      "name": "Novo Horizonte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80764-c0001-e006258-u.json",
+      "ibge": "4211652"
+    },
+    {
+      "id": "municipality-4211751",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83976",
+      "uf": "sc",
+      "name": "Otacílio Costa",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83976-c0001-e006258-u.json",
+      "ibge": "4211751"
+    },
+    {
+      "id": "municipality-4211801",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82317",
+      "uf": "sc",
+      "name": "Ouro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82317-c0001-e006258-u.json",
+      "ibge": "4211801"
+    },
+    {
+      "id": "municipality-4211850",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80845",
+      "uf": "sc",
+      "name": "Ouro Verde",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80845-c0001-e006258-u.json",
+      "ibge": "4211850"
+    },
+    {
+      "id": "municipality-4211876",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81442",
+      "uf": "sc",
+      "name": "Paial",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81442-c0001-e006258-u.json",
+      "ibge": "4211876"
+    },
+    {
+      "id": "municipality-4211892",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81264",
+      "uf": "sc",
+      "name": "Painel",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81264-c0001-e006258-u.json",
+      "ibge": "4211892"
+    },
+    {
+      "id": "municipality-4211900",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82333",
+      "uf": "sc",
+      "name": "Palhoça",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82333-c0001-e006258-u.json",
+      "ibge": "4211900"
+    },
+    {
+      "id": "municipality-4212007",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82350",
+      "uf": "sc",
+      "name": "Palma Sola",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82350-c0001-e006258-u.json",
+      "ibge": "4212007"
+    },
+    {
+      "id": "municipality-4212056",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81566",
+      "uf": "sc",
+      "name": "Palmeira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81566-c0001-e006258-u.json",
+      "ibge": "4212056"
+    },
+    {
+      "id": "municipality-4212106",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82376",
+      "uf": "sc",
+      "name": "Palmitos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82376-c0001-e006258-u.json",
+      "ibge": "4212106"
+    },
+    {
+      "id": "municipality-4212205",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82392",
+      "uf": "sc",
+      "name": "Papanduva",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82392-c0001-e006258-u.json",
+      "ibge": "4212205"
+    },
+    {
+      "id": "municipality-4212239",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80705",
+      "uf": "sc",
+      "name": "Paraíso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80705-c0001-e006258-u.json",
+      "ibge": "4212239"
+    },
+    {
+      "id": "municipality-4212270",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80624",
+      "uf": "sc",
+      "name": "Passos Maia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80624-c0001-e006258-u.json",
+      "ibge": "4212270"
+    },
+    {
+      "id": "municipality-4212304",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82414",
+      "uf": "sc",
+      "name": "Paulo Lopes",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82414-c0001-e006258-u.json",
+      "ibge": "4212304"
+    },
+    {
+      "id": "municipality-4212502",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82457",
+      "uf": "sc",
+      "name": "Penha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82457-c0001-e006258-u.json",
+      "ibge": "4212502"
+    },
+    {
+      "id": "municipality-4212601",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82473",
+      "uf": "sc",
+      "name": "Peritiba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82473-c0001-e006258-u.json",
+      "ibge": "4212601"
+    },
+    {
+      "id": "municipality-4212700",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82490",
+      "uf": "sc",
+      "name": "Petrolândia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82490-c0001-e006258-u.json",
+      "ibge": "4212700"
+    },
+    {
+      "id": "municipality-4212809",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82511",
+      "uf": "sc",
+      "name": "Balneário Piçarras",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82511-c0001-e006258-u.json",
+      "ibge": "4212809"
+    },
+    {
+      "id": "municipality-4212908",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82538",
+      "uf": "sc",
+      "name": "Pinhalzinho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82538-c0001-e006258-u.json",
+      "ibge": "4212908"
+    },
+    {
+      "id": "municipality-4213005",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82554",
+      "uf": "sc",
+      "name": "Pinheiro Preto",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82554-c0001-e006258-u.json",
+      "ibge": "4213005"
+    },
+    {
+      "id": "municipality-4213104",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82570",
+      "uf": "sc",
+      "name": "Piratuba",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82570-c0001-e006258-u.json",
+      "ibge": "4213104"
+    },
+    {
+      "id": "municipality-4213153",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80543",
+      "uf": "sc",
+      "name": "Planalto Alegre",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80543-c0001-e006258-u.json",
+      "ibge": "4213153"
+    },
+    {
+      "id": "municipality-4213203",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82597",
+      "uf": "sc",
+      "name": "Pomerode",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82597-c0001-e006258-u.json",
+      "ibge": "4213203"
+    },
+    {
+      "id": "municipality-4213302",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82619",
+      "uf": "sc",
+      "name": "Ponte Alta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82619-c0001-e006258-u.json",
+      "ibge": "4213302"
+    },
+    {
+      "id": "municipality-4213351",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80926",
+      "uf": "sc",
+      "name": "Ponte Alta do Norte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80926-c0001-e006258-u.json",
+      "ibge": "4213351"
+    },
+    {
+      "id": "municipality-4213401",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82635",
+      "uf": "sc",
+      "name": "Ponte Serrada",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82635-c0001-e006258-u.json",
+      "ibge": "4213401"
+    },
+    {
+      "id": "municipality-4213500",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82651",
+      "uf": "sc",
+      "name": "Porto Belo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82651-c0001-e006258-u.json",
+      "ibge": "4213500"
+    },
+    {
+      "id": "municipality-4213609",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82678",
+      "uf": "sc",
+      "name": "Porto União",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82678-c0001-e006258-u.json",
+      "ibge": "4213609"
+    },
+    {
+      "id": "municipality-4213708",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82694",
+      "uf": "sc",
+      "name": "Pouso Redondo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82694-c0001-e006258-u.json",
+      "ibge": "4213708"
+    },
+    {
+      "id": "municipality-4213906",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82732",
+      "uf": "sc",
+      "name": "Presidente Castello Branco",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82732-c0001-e006258-u.json",
+      "ibge": "4213906"
+    },
+    {
+      "id": "municipality-4214003",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82759",
+      "uf": "sc",
+      "name": "Presidente Getúlio",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82759-c0001-e006258-u.json",
+      "ibge": "4214003"
+    },
+    {
+      "id": "municipality-4214102",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82775",
+      "uf": "sc",
+      "name": "Presidente Nereu",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82775-c0001-e006258-u.json",
+      "ibge": "4214102"
+    },
+    {
+      "id": "municipality-4214151",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81647",
+      "uf": "sc",
+      "name": "Princesa",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81647-c0001-e006258-u.json",
+      "ibge": "4214151"
+    },
+    {
+      "id": "municipality-4214201",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82791",
+      "uf": "sc",
+      "name": "Quilombo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82791-c0001-e006258-u.json",
+      "ibge": "4214201"
+    },
+    {
+      "id": "municipality-4214300",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82813",
+      "uf": "sc",
+      "name": "Rancho Queimado",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82813-c0001-e006258-u.json",
+      "ibge": "4214300"
+    },
+    {
+      "id": "municipality-4214409",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82830",
+      "uf": "sc",
+      "name": "Rio das Antas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82830-c0001-e006258-u.json",
+      "ibge": "4214409"
+    },
+    {
+      "id": "municipality-4214508",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82856",
+      "uf": "sc",
+      "name": "Rio do Campo",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82856-c0001-e006258-u.json",
+      "ibge": "4214508"
+    },
+    {
+      "id": "municipality-4214607",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82872",
+      "uf": "sc",
+      "name": "Rio do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82872-c0001-e006258-u.json",
+      "ibge": "4214607"
+    },
+    {
+      "id": "municipality-4214706",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82899",
+      "uf": "sc",
+      "name": "Rio dos Cedros",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82899-c0001-e006258-u.json",
+      "ibge": "4214706"
+    },
+    {
+      "id": "municipality-4214805",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82910",
+      "uf": "sc",
+      "name": "Rio do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82910-c0001-e006258-u.json",
+      "ibge": "4214805"
+    },
+    {
+      "id": "municipality-4215000",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82953",
+      "uf": "sc",
+      "name": "Rio Negrinho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82953-c0001-e006258-u.json",
+      "ibge": "4215000"
+    },
+    {
+      "id": "municipality-4215059",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80608",
+      "uf": "sc",
+      "name": "Rio Rufino",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80608-c0001-e006258-u.json",
+      "ibge": "4215059"
+    },
+    {
+      "id": "municipality-4215075",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80560",
+      "uf": "sc",
+      "name": "Riqueza",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80560-c0001-e006258-u.json",
+      "ibge": "4215075"
+    },
+    {
+      "id": "municipality-4215109",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82970",
+      "uf": "sc",
+      "name": "Rodeio",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82970-c0001-e006258-u.json",
+      "ibge": "4215109"
+    },
+    {
+      "id": "municipality-4215208",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "82996",
+      "uf": "sc",
+      "name": "Romelândia",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc82996-c0001-e006258-u.json",
+      "ibge": "4215208"
+    },
+    {
+      "id": "municipality-4215307",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83011",
+      "uf": "sc",
+      "name": "Salete",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83011-c0001-e006258-u.json",
+      "ibge": "4215307"
+    },
+    {
+      "id": "municipality-4215356",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81523",
+      "uf": "sc",
+      "name": "Saltinho",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81523-c0001-e006258-u.json",
+      "ibge": "4215356"
+    },
+    {
+      "id": "municipality-4215406",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83038",
+      "uf": "sc",
+      "name": "Salto Veloso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83038-c0001-e006258-u.json",
+      "ibge": "4215406"
+    },
+    {
+      "id": "municipality-4215505",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83054",
+      "uf": "sc",
+      "name": "Santa Cecília",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83054-c0001-e006258-u.json",
+      "ibge": "4215505"
+    },
+    {
+      "id": "municipality-4215554",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80721",
+      "uf": "sc",
+      "name": "Santa Helena",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80721-c0001-e006258-u.json",
+      "ibge": "4215554"
+    },
+    {
+      "id": "municipality-4215679",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80349",
+      "uf": "sc",
+      "name": "Santa Terezinha",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80349-c0001-e006258-u.json",
+      "ibge": "4215679"
+    },
+    {
+      "id": "municipality-4215687",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81507",
+      "uf": "sc",
+      "name": "Santa Terezinha do Progresso",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81507-c0001-e006258-u.json",
+      "ibge": "4215687"
+    },
+    {
+      "id": "municipality-4215695",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81205",
+      "uf": "sc",
+      "name": "Santiago do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81205-c0001-e006258-u.json",
+      "ibge": "4215695"
+    },
+    {
+      "id": "municipality-4215703",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83097",
+      "uf": "sc",
+      "name": "Santo Amaro da Imperatriz",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83097-c0001-e006258-u.json",
+      "ibge": "4215703"
+    },
+    {
+      "id": "municipality-4215752",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81485",
+      "uf": "sc",
+      "name": "São Bernardino",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81485-c0001-e006258-u.json",
+      "ibge": "4215752"
+    },
+    {
+      "id": "municipality-4215802",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83119",
+      "uf": "sc",
+      "name": "São Bento do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83119-c0001-e006258-u.json",
+      "ibge": "4215802"
+    },
+    {
+      "id": "municipality-4215901",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83135",
+      "uf": "sc",
+      "name": "São Bonifácio",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83135-c0001-e006258-u.json",
+      "ibge": "4215901"
+    },
+    {
+      "id": "municipality-4216008",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83151",
+      "uf": "sc",
+      "name": "São Carlos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83151-c0001-e006258-u.json",
+      "ibge": "4216008"
+    },
+    {
+      "id": "municipality-4216057",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80942",
+      "uf": "sc",
+      "name": "São Cristóvão do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80942-c0001-e006258-u.json",
+      "ibge": "4216057"
+    },
+    {
+      "id": "municipality-4216107",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83178",
+      "uf": "sc",
+      "name": "São Domingos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83178-c0001-e006258-u.json",
+      "ibge": "4216107"
+    },
+    {
+      "id": "municipality-4216206",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83194",
+      "uf": "sc",
+      "name": "São Francisco do Sul",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83194-c0001-e006258-u.json",
+      "ibge": "4216206"
+    },
+    {
+      "id": "municipality-4216255",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80640",
+      "uf": "sc",
+      "name": "São João do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80640-c0001-e006258-u.json",
+      "ibge": "4216255"
+    },
+    {
+      "id": "municipality-4216305",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83216",
+      "uf": "sc",
+      "name": "São João Batista",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83216-c0001-e006258-u.json",
+      "ibge": "4216305"
+    },
+    {
+      "id": "municipality-4216354",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81124",
+      "uf": "sc",
+      "name": "São João do Itaperiú",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81124-c0001-e006258-u.json",
+      "ibge": "4216354"
+    },
+    {
+      "id": "municipality-4216503",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83259",
+      "uf": "sc",
+      "name": "São Joaquim",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83259-c0001-e006258-u.json",
+      "ibge": "4216503"
+    },
+    {
+      "id": "municipality-4216602",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83275",
+      "uf": "sc",
+      "name": "São José",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83275-c0001-e006258-u.json",
+      "ibge": "4216602"
+    },
+    {
+      "id": "municipality-4216701",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83291",
+      "uf": "sc",
+      "name": "São José do Cedro",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83291-c0001-e006258-u.json",
+      "ibge": "4216701"
+    },
+    {
+      "id": "municipality-4216800",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83313",
+      "uf": "sc",
+      "name": "São José do Cerrito",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83313-c0001-e006258-u.json",
+      "ibge": "4216800"
+    },
+    {
+      "id": "municipality-4216909",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83330",
+      "uf": "sc",
+      "name": "São Lourenço do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83330-c0001-e006258-u.json",
+      "ibge": "4216909"
+    },
+    {
+      "id": "municipality-4217154",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80780",
+      "uf": "sc",
+      "name": "São Miguel da Boa Vista",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80780-c0001-e006258-u.json",
+      "ibge": "4217154"
+    },
+    {
+      "id": "municipality-4217204",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83399",
+      "uf": "sc",
+      "name": "São Miguel do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83399-c0001-e006258-u.json",
+      "ibge": "4217204"
+    },
+    {
+      "id": "municipality-4217253",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81183",
+      "uf": "sc",
+      "name": "São Pedro de Alcântara",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81183-c0001-e006258-u.json",
+      "ibge": "4217253"
+    },
+    {
+      "id": "municipality-4217303",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83410",
+      "uf": "sc",
+      "name": "Saudades",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83410-c0001-e006258-u.json",
+      "ibge": "4217303"
+    },
+    {
+      "id": "municipality-4217402",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83437",
+      "uf": "sc",
+      "name": "Schroeder",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83437-c0001-e006258-u.json",
+      "ibge": "4217402"
+    },
+    {
+      "id": "municipality-4217501",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83453",
+      "uf": "sc",
+      "name": "Seara",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83453-c0001-e006258-u.json",
+      "ibge": "4217501"
+    },
+    {
+      "id": "municipality-4217550",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80284",
+      "uf": "sc",
+      "name": "Serra Alta",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80284-c0001-e006258-u.json",
+      "ibge": "4217550"
+    },
+    {
+      "id": "municipality-4217758",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80446",
+      "uf": "sc",
+      "name": "Sul Brasil",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80446-c0001-e006258-u.json",
+      "ibge": "4217758"
+    },
+    {
+      "id": "municipality-4217808",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83518",
+      "uf": "sc",
+      "name": "Taió",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83518-c0001-e006258-u.json",
+      "ibge": "4217808"
+    },
+    {
+      "id": "municipality-4217907",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83534",
+      "uf": "sc",
+      "name": "Tangará",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83534-c0001-e006258-u.json",
+      "ibge": "4217907"
+    },
+    {
+      "id": "municipality-4217956",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81680",
+      "uf": "sc",
+      "name": "Tigrinhos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81680-c0001-e006258-u.json",
+      "ibge": "4217956"
+    },
+    {
+      "id": "municipality-4218004",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83550",
+      "uf": "sc",
+      "name": "Tijucas",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83550-c0001-e006258-u.json",
+      "ibge": "4218004"
+    },
+    {
+      "id": "municipality-4218202",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83577",
+      "uf": "sc",
+      "name": "Timbó",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83577-c0001-e006258-u.json",
+      "ibge": "4218202"
+    },
+    {
+      "id": "municipality-4218251",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80209",
+      "uf": "sc",
+      "name": "Timbó Grande",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80209-c0001-e006258-u.json",
+      "ibge": "4218251"
+    },
+    {
+      "id": "municipality-4218301",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83593",
+      "uf": "sc",
+      "name": "Três Barras",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83593-c0001-e006258-u.json",
+      "ibge": "4218301"
+    },
+    {
+      "id": "municipality-4218509",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83631",
+      "uf": "sc",
+      "name": "Treze Tílias",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83631-c0001-e006258-u.json",
+      "ibge": "4218509"
+    },
+    {
+      "id": "municipality-4218608",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83658",
+      "uf": "sc",
+      "name": "Trombudo Central",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83658-c0001-e006258-u.json",
+      "ibge": "4218608"
+    },
+    {
+      "id": "municipality-4218756",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83682",
+      "uf": "sc",
+      "name": "Tunápolis",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83682-c0001-e006258-u.json",
+      "ibge": "4218756"
+    },
+    {
+      "id": "municipality-4218855",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80144",
+      "uf": "sc",
+      "name": "União do Oeste",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80144-c0001-e006258-u.json",
+      "ibge": "4218855"
+    },
+    {
+      "id": "municipality-4218905",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83712",
+      "uf": "sc",
+      "name": "Urubici",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83712-c0001-e006258-u.json",
+      "ibge": "4218905"
+    },
+    {
+      "id": "municipality-4218954",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80160",
+      "uf": "sc",
+      "name": "Urupema",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80160-c0001-e006258-u.json",
+      "ibge": "4218954"
+    },
+    {
+      "id": "municipality-4219101",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83755",
+      "uf": "sc",
+      "name": "Vargeão",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83755-c0001-e006258-u.json",
+      "ibge": "4219101"
+    },
+    {
+      "id": "municipality-4219150",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80462",
+      "uf": "sc",
+      "name": "Vargem",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80462-c0001-e006258-u.json",
+      "ibge": "4219150"
+    },
+    {
+      "id": "municipality-4219176",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80969",
+      "uf": "sc",
+      "name": "Vargem Bonita",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80969-c0001-e006258-u.json",
+      "ibge": "4219176"
+    },
+    {
+      "id": "municipality-4219200",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83771",
+      "uf": "sc",
+      "name": "Vidal Ramos",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83771-c0001-e006258-u.json",
+      "ibge": "4219200"
+    },
+    {
+      "id": "municipality-4219309",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83798",
+      "uf": "sc",
+      "name": "Videira",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83798-c0001-e006258-u.json",
+      "ibge": "4219309"
+    },
+    {
+      "id": "municipality-4219358",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "80128",
+      "uf": "sc",
+      "name": "Vitor Meireles",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc80128-c0001-e006258-u.json",
+      "ibge": "4219358"
+    },
+    {
+      "id": "municipality-4219408",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83810",
+      "uf": "sc",
+      "name": "Witmarsum",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83810-c0001-e006258-u.json",
+      "ibge": "4219408"
+    },
+    {
+      "id": "municipality-4219507",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83836",
+      "uf": "sc",
+      "name": "Xanxerê",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83836-c0001-e006258-u.json",
+      "ibge": "4219507"
+    },
+    {
+      "id": "municipality-4219606",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83852",
+      "uf": "sc",
+      "name": "Xavantina",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83852-c0001-e006258-u.json",
+      "ibge": "4219606"
+    },
+    {
+      "id": "municipality-4219705",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "83879",
+      "uf": "sc",
+      "name": "Xaxim",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc83879-c0001-e006258-u.json",
+      "ibge": "4219705"
+    },
+    {
+      "id": "municipality-4219853",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "81825",
+      "uf": "sc",
+      "name": "Zortéa",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc81825-c0001-e006258-u.json",
+      "ibge": "4219853"
+    },
+    {
+      "id": "municipality-3106200",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "41238",
+      "uf": "mg",
+      "name": "Belo Horizonte",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/mg/mg41238-c0001-e006258-u.json",
+      "ibge": "3106200"
+    },
+    {
+      "id": "municipality-4314902",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "88013",
+      "uf": "rs",
+      "name": "Porto Alegre",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/rs/rs88013-c0001-e006258-u.json",
+      "ibge": "4314902"
+    },
+    {
+      "id": "municipality-2927408",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "38490",
+      "uf": "ba",
+      "name": "Salvador",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ba/ba38490-c0001-e006258-u.json",
+      "ibge": "2927408"
+    },
+    {
+      "id": "municipality-2304400",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "13897",
+      "uf": "ce",
+      "name": "Fortaleza",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/ce/ce13897-c0001-e006258-u.json",
+      "ibge": "2304400"
+    },
+    {
+      "id": "municipality-1302603",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "02550",
+      "uf": "am",
+      "name": "Manaus",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/am/am02550-c0001-e006258-u.json",
+      "ibge": "1302603"
+    },
+    {
+      "id": "municipality-5300108",
+      "kind": "municipality",
+      "election": "6258",
+      "office": "1",
+      "scope": "mu",
+      "area": "97012",
+      "uf": "df",
+      "name": "Brasília",
+      "candidates": [
+        "13",
+        "22"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/df/df97012-c0001-e006258-u.json",
+      "ibge": "5300108"
+    },
+    {
+      "id": "governor-ac",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "ac",
+      "uf": "ac",
+      "name": "Acre",
+      "candidates": [
+        "10",
+        "11"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/ac/ac-c0003-e006260-u.json"
+    },
+    {
+      "id": "governor-am",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "am",
+      "uf": "am",
+      "name": "Amazonas",
+      "candidates": [
+        "22",
+        "55"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/am/am-c0003-e006260-u.json"
+    },
+    {
+      "id": "governor-df",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "df",
+      "uf": "df",
+      "name": "Distrito Federal",
+      "candidates": [
+        "11",
+        "13"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/df/df-c0003-e006260-u.json"
+    },
+    {
+      "id": "governor-es",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "es",
+      "uf": "es",
+      "name": "Espírito Santo",
+      "candidates": [
+        "10",
+        "15"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/es/es-c0003-e006260-u.json"
+    },
+    {
+      "id": "governor-rn",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "rn",
+      "uf": "rn",
+      "name": "Rio Grande do Norte",
+      "candidates": [
+        "13",
+        "44"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/rn/rn-c0003-e006260-u.json"
+    },
+    {
+      "id": "governor-to",
+      "kind": "governor",
+      "election": "6260",
+      "office": "3",
+      "scope": "uf",
+      "area": "to",
+      "uf": "to",
+      "name": "Tocantins",
+      "candidates": [
+        "44",
+        "45"
+      ],
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/to/to-c0003-e006260-u.json"
+    }
+  ]
 }

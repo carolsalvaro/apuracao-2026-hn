@@ -46,15 +46,20 @@ try {
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     const president=page.locator('.sn-nav a[href="#sn-president"]');
     await president.click();assert.equal(await president.getAttribute('aria-current'),'location');
+    await page.waitForFunction(()=>document.querySelector('#sn-map-svg path'));
     await page.locator('#sn-city-select').selectOption({index:1});
-    assert((await page.locator('#sn-detail').textContent()).includes(await page.locator('#sn-city-select').inputValue()));
+    const selectedName=(await page.locator('#sn-city-select option:checked').textContent()).split(' · ')[0];
+    assert((await page.locator('#sn-detail').textContent()).includes(selectedName));
     await page.locator('#sn-update-results').click();
-    await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
-    assert.match(await page.locator('#sn-update-status').textContent(),/demonstração/);
+    await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled,{},{timeout:60000});
+    assert(!/demonstração|fictícios|simulação/i.test(await page.locator('body').innerText()));
+    assert.equal(await page.locator('#sn-br-svg path').count(),27);
+    assert.equal(await page.locator('#sn-map-svg path').count(),45);
+    assert.equal(await page.locator('#sn-gov-cards .sn-gov').count(),6);
     const images=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>i.getBoundingClientRect().width>0).map(i=>({loaded:i.complete&&i.naturalWidth>0,alt:i.alt})));
     await page.screenshot({path:`artifacts/preview/${width}.png`,fullPage:true,animations:'disabled'});
     assert.deepEqual(errors,[]);
-    results.push({width,transport:'TLS-verified Python responses replayed in Chromium',noindex:true,overflow:false,navigation:true,municipalSelection:true,demoWarning:true,images,errors,failed});
+    results.push({width,transport:'TLS-verified Python responses replayed in Chromium',noindex:true,overflow:false,navigation:true,municipalSelection:true,officialResultsUI:true,images,errors,failed});
     await context.close();
   }
   await writeFile('artifacts/preview/results.json',JSON.stringify(results,null,2));
