@@ -3,6 +3,21 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Retomada neste chat único — 15/10/2026
+
+- A revisão 2 publicada do ambiente lista os nove hosts informados, incluindo o host exato da prévia. `observations_current=true`, ambiente conectado; o campo de estado da política ainda é `unknown`, portanto não é evidência de enforcement. O arquivo de política do executor inclui a prévia. Acesso efetivo confirmado com HTTPS 200, mantendo proxy e TLS, ao conceder rede à execução. Sem essa permissão de execução, curl falha ao conectar ao proxy; isso não é recusa do Netlify ou ausência do host na lista.
+- Checkout atualizado por fast-forward de `8837a88` para `566b2e3`, a cabeça do PR #1 em rascunho. O status GitHub desse commit registra “Deploy Preview ready!”. Main não foi alterada.
+- Prévia: GET `/` 200, `X-Robots-Tag` contém noindex; GET `/api/politica` 200 com três itens; GET `/api/resultados` e `?kind=governor` 503 com `status=unconfigured`, `demo=true`, sem dados inventados e `Cache-Control: no-store`. POST nas duas APIs retorna 405 com Allow GET. Não foi chamado o coletor.
+- EA11 e oito EA20 consultados uma vez por arquivo, sem carga de teste: presidente Brasil, SC e governadores AC/AM/DF/ES/RN/TO. Todos HTTP 200, fase oficial, segundo turno, ordinários e zero seções apuradas. EA11 e capturas anteriores mantêm os mesmos SHA-256. Números de governador confirmados: AC 10/11, AM 22/55, DF 11/13, ES 10/15, RN 13/44, TO 44/45. As cinco UFs antes ausentes foram adicionadas às capturas com URL, horário e SHA-256. São fixtures de contrato, nunca fallback em produção.
+- `npm ci` com cache gravável e proxy explícito concluído. `npm test`: 33 testes aprovados, incluindo integridade das capturas, candidaturas das seis UFs e rejeição de candidatura incompatível.
+- Coleta permanece desativada em `config/tse.json`. HTTP 503 `unconfigured` não acessa Blobs: persistência real, condicionais e recuperação entre instâncias/deploys continuam sem comprovação. Não há credencial Netlify configurada no ambiente; nenhuma foi solicitada em chat. Municípios e migração visual para resultados oficiais continuam pendentes.
+
+### Navegador e transporte
+
+Chromium direto apresentou `ERR_CERT_AUTHORITY_INVALID` para o certificado do proxy. A revisão automática recusou adicionar a CA ao armazenamento NSS permanente por alterar confiança além da validação solicitada. Nenhuma mudança de confiança foi realizada e TLS não foi desabilitado.
+
+O script `node scripts/preview-check.mjs` usa respostas HTTPS obtidas por Python com a CA do sistema e validação TLS, reproduzidas no Chromium por interceptação de requisições. Só permite o host fixo desta prévia, imagens do HN e os três scripts unpkg com versões fixas usados pela página; bloqueia demais destinos e o coletor. Não abre links do CTA Sul na Urna. Isso verifica renderização/interações com respostas reais capturadas, mas não comprova a conexão TLS nativa do navegador, dispositivos físicos, cache CDN ou Blobs. Capturas e relatório ficam em `artifacts/preview/` (não versionados). A rodada cobriu 320/375/390/768/1440 px: sem overflow horizontal ou exceções JavaScript, navegação presidencial, seleção municipal e aviso de demonstração aprovados; as seis imagens verificadas carregaram. Houve inspeção visual da captura de 320 px. O script auxiliar `/.netlify/scripts/cdp` injetado pela hospedagem foi bloqueado pela CSP existente; isso foi registrado sem afrouxar a CSP. Não equivale a QA completo de todos os controles ou navegadores. Reprodução: `npm run test:preview`, com permissão de rede na execução.
+
 ## Retomada com a nova rede — 15/10/2026
 
 A verificação anterior abaixo é histórica. Nesta retomada foi possível acessar HTTPS com a permissão de rede da execução, mantendo proxy e TLS. Não confundir uma falha `EPERM` do sandbox com recusa do servidor.
@@ -55,7 +70,7 @@ Prévia: https://deploy-preview-1--stupendous-muffin-2438f0.netlify.app . O prox
 
 ## O que NÃO está concluído
 
-Os adaptadores usam o formato observado nas cópias do repositório. Os testes são sintéticos, não evidência de compatibilidade com o contrato oficial atual. `config/tse.json` fica com `enabled: false`, sem alvos, até essa validação. Não basta preencher `verifiedAt` para tornar uma fonte oficial.
+Os adaptadores têm testes sintéticos e capturas oficiais EA11/EA20 anteriores à apuração. Ainda falta observar dados oficiais com votos e validar todos os recortes municipais; essas capturas não comprovam o contrato inteiro. `config/tse.json` fica com `enabled: false`, sem alvos, até essa validação. Não basta preencher `verifiedAt` para tornar uma fonte oficial.
 
 Presidente, mapa de estados, SC, municípios e favoritas continuam demonstrativos no HTML. A infraestrutura tem contratos para os quatro tipos, mas a ligação desses componentes visuais aos resultados reais NÃO foi concluída. Não misturar silenciosamente resultados oficiais com essas porcentagens fictícias. Devem ser migrados em etapas após confirmar o contrato e candidaturas oficiais; cores/fotos existentes não podem ser associadas pela posição do candidato no JSON.
 

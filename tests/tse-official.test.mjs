@@ -1,10 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {discoverRunoffs} from '../netlify/lib/tse-discovery.mjs';
 import {parseResult} from '../netlify/lib/tse.mjs';
 import {payload,target,settings,now} from './tse-fixtures.mjs';
 const captured = name => JSON.parse(readFileSync(new URL(`./fixtures/tse-official-2026-10-15/${name}`,import.meta.url)));
+test('official captures retain their recorded source integrity',()=>{
+  for(const file of captured('provenance.json').files) {
+    const bytes=readFileSync(new URL(`./fixtures/tse-official-2026-10-15/${file.file}`,import.meta.url));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'),file.sha256,file.file);
+  }
+});
+test('all six discovered governor runoffs accept their official candidate identities',()=>{
+  const expected={ac:['10','11'],am:['22','55'],df:['11','13'],es:['10','15'],rn:['13','44'],to:['44','45']};
+  for(const t of discoverRunoffs(captured('ele-c.json')).filter(t=>t.kind==='governor')) {
+    const data=captured(new URL(t.url).pathname.split('/').pop());
+    const configured={...t,name:t.id,candidates:expected[t.uf]};
+    const result=parseResult(data,configured,settings,now);
+    assert.equal(result.phase,'awaiting');
+    assert.equal(result.validVotes,0);
+    assert.deepEqual(result.candidates.map(c=>c.number).sort(),expected[t.uf]);
+    const wrong=structuredClone(data);
+    wrong.carg[0].agr[0].par[0].cand[0].n='99';
+    assert.throws(()=>parseResult(wrong,configured,settings,now),/wrong_candidates/);
+  }
+});
 test('official EA11 discovers ordinary runoffs without including supplementary elections',()=>{
   const targets=discoverRunoffs(captured('ele-c.json'));
   assert.equal(targets.length,7);
