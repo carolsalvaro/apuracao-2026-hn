@@ -57,9 +57,13 @@ try {
   assert.equal(await page.locator('.sn-candidate .sn-score').last().textContent(),'60,0%');
   assert.equal(await page.locator('#sn-br-svg path').first().getAttribute('fill'),'#246db5');
   if(width===390){
+   let inProgressReads=0;const countRead=r=>{if(r.url().includes('/api/resultados?ids='))inProgressReads++;};page.on('response',countRead);
+   const nextMunicipal=page.waitForResponse(r=>r.url().includes('/api/resultados?ids='));
+   await page.clock.fastForward(61000);await nextMunicipal;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
+   assert(inProgressReads>=1,'municipalities in progress must poll after one minute');page.off('response',countRead);
    mode='totalized';await page.locator('#sn-update-results').click();await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
    assert.match(await page.locator('#sn-detail').textContent(),/acompanhamento automático encerrado/);
-   let municipalReads=0;page.on('request',r=>{if(r.url().includes('/api/resultados?ids='))municipalReads++;});
+   let municipalReads=0;page.on('response',r=>{if(r.url().includes('/api/resultados?ids='))municipalReads++;});
    const overview=page.waitForResponse(r=>r.url().includes('kind=overview'));
    await page.clock.fastForward(61000);await overview;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
    assert.equal(municipalReads,0,'completed municipalities must leave automatic polling');
