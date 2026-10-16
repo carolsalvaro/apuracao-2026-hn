@@ -5,7 +5,7 @@ const percent = x => typeof x === 'string' && /^\d+(?:[,.]\d+)?$/.test(x) && Num
 export const digest = x => createHash('sha256').update(JSON.stringify(x)).digest('hex');
 export function validateConfig(c) {
   if (!c.enabled) return false;
-  if (c.schema !== 'tse-agr-v1' || c.year !== 2026 || !['1','2'].includes(c.round) || !Number.isFinite(Date.parse(c.verifiedAt)) || !c.evidence?.length || c.evidence.some(url => { try { const u = new URL(url); return u.protocol !== 'https:' || !(u.hostname === 'tse.jus.br' || u.hostname.endsWith('.tse.jus.br')); } catch { return true; } }) || !Number.isInteger(c.intervalSeconds) || c.intervalSeconds < 300 || !Number.isInteger(c.staleSeconds) || c.staleSeconds < c.intervalSeconds || !c.targets?.length || c.targets.length > 6000) fail('unverified_configuration');
+  if (c.schema !== 'tse-agr-v1' || c.year !== 2026 || !['1','2'].includes(c.round) || !Number.isFinite(Date.parse(c.verifiedAt)) || !c.evidence?.length || c.evidence.some(url => { try { const u = new URL(url); return u.protocol !== 'https:' || !(u.hostname === 'tse.jus.br' || u.hostname.endsWith('.tse.jus.br')); } catch { return true; } }) || !Number.isInteger(c.intervalSeconds) || c.intervalSeconds < 60 || !Number.isInteger(c.staleSeconds) || c.staleSeconds < c.intervalSeconds || !c.targets?.length || c.targets.length > 6000) fail('unverified_configuration');
   const ids = new Set();
   const ufs=new Set('ac al ap am ba ce df es go ma mt ms mg pa pb pr pe pi rj rn rs ro rr sc sp se to'.split(' '));
   for (const t of c.targets) {
@@ -45,5 +45,5 @@ export function assertForward(previous, next) {
 export function view(record, c, now = Date.now()) {
   if (!record?.result) return {status:'missing',result:null,checkedAt:record?.checkedAt??null,error:record?.error??null};
   const age = Math.max(0,now-Date.parse(record.result.publishedAt));
-  return {status:record.error?'unavailable':age>c.staleSeconds*1000?'stale':'current',result:record.result,checkedAt:record.checkedAt,receivedAt:record.receivedAt,ageSeconds:Math.floor(age/1000),error:record.error??null};
+  return {status:record.error?'unavailable':record.result.kind==='municipality'&&record.result.phase==='totalized'?'totalized':age>c.staleSeconds*1000?'stale':'current',result:record.result,checkedAt:record.checkedAt,receivedAt:record.receivedAt,ageSeconds:Math.floor(age/1000),error:record.error??null};
 }

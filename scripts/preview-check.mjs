@@ -10,7 +10,7 @@ const run=promisify(execFile),cache=new Map();
 const verifiedResponse=url=>{
   if(!cache.has(url)) cache.set(url,run('python',['-c',`
 import urllib.request,urllib.error,json,base64,sys
-try: r=urllib.request.urlopen(sys.argv[1],timeout=25)
+try: r=urllib.request.urlopen(sys.argv[1],timeout=55)
 except urllib.error.HTTPError as e: r=e
 headers={k.lower():v for k,v in r.headers.items() if k.lower() not in ['content-length','content-encoding','transfer-encoding','connection']}
 print(json.dumps({'status':r.status,'headers':headers,'body':base64.b64encode(r.read()).decode()}))
@@ -39,7 +39,7 @@ try {
       if(samePreview||image||icons) return route.fulfill(await verifiedResponse(u.href));
       return ['data:','blob:'].includes(u.protocol)?route.continue():route.abort();
     });
-    const response=await page.goto(origin,{waitUntil:'networkidle'});
+    const response=await page.goto(origin,{waitUntil:'networkidle',timeout:90000});
     assert.equal(response.status(),200);
     assert.match((await response.allHeaders())['x-robots-tag'],/noindex/);
     assert.match(await page.locator('meta[name="robots"]').getAttribute('content'),/noindex/);

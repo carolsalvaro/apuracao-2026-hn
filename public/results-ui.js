@@ -1,4 +1,4 @@
-import {numbers,percentage as pct,acceptItem,candidate,votePercent,leaderColor,phaseText} from './result-view.js';
+import {numbers,percentage as pct,sectionPercent,acceptItem,candidate,votePercent,leaderColor,phaseText} from './result-view.js';
 const root=document.getElementById('snu-preview'),q=s=>root.querySelector(s);
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=n=>Number.isFinite(n)?n.toLocaleString('pt-BR'):'—';
@@ -12,15 +12,16 @@ function stamp(item) {
   if(!item?.result)return 'Não foi possível obter o resultado desta localidade.';
   const origin='Arquivo TSE: '+date(item.result.publishedAt)+' (Brasília).';
   const checked=item.checkedAt?' Consulta: '+date(item.checkedAt)+'.':'';
-  const status=item.source==='verified_snapshot'?' Último arquivo oficial verificado; atualização pendente.':item.status==='current'?'':item.status==='stale'?' Arquivo anterior; confira o horário.':' Consulta indisponível; último resultado válido mantido.';
+  if(item.result.kind==='municipality'&&item.result.phase==='totalized')return origin+checked+' Seções totalizadas; acompanhamento automático encerrado.';
+  const status=item.source==='verified_snapshot'?' Último arquivo oficial verificado; atualização pendente.':item.status==='totalized'?' Seções totalizadas; acompanhamento automático encerrado.':item.status==='current'?'':item.status==='stale'?' Arquivo anterior; confira o horário.':' Consulta indisponível; último resultado válido mantido.';
   return origin+checked+status;
 }
 function bars(item) {
-  return `<p class="sn-small">${phaseText(item)}</p><div class="sn-progress-label"><span>Seções totalizadas</span><strong>${pct(item?.result?.sections.percent)}</strong></div><div class="sn-track"><span style="width:${item?.result?.sections.percent??0}%"></span></div><div style="margin-top:20px">${numbers.map((n,i)=>`<div class="sn-local-result"><span>${i===0?'Lula':'Flávio Bolsonaro'}<small>${fmt(candidate(item,n)?.votes)} votos</small></span><strong>${votePercent(item,n)}</strong></div>`).join('')}</div><p class="sn-help">${escape(stamp(item))}</p>`;
+  return `<p class="sn-small">${phaseText(item)}</p><div class="sn-progress-label"><span>Seções totalizadas</span><strong>${escape(sectionPercent(item))}</strong></div><div class="sn-track"><span style="width:${item?.result?.sections.percent??0}%"></span></div><div style="margin-top:20px">${numbers.map((n,i)=>`<div class="sn-local-result"><span>${i===0?'Lula':'Flávio Bolsonaro'}<small>${fmt(candidate(item,n)?.votes)} votos</small></span><strong>${votePercent(item,n)}</strong></div>`).join('')}</div><p class="sn-help">${escape(stamp(item))}</p>`;
 }
 function national() {
   const item=items.get('president-br');
-  q('.sn-national-top span').textContent=item?.result?pct(item.result.sections.percent)+' das seções totalizadas':'Dados indisponíveis';
+  q('.sn-national-top span').textContent=item?.result?sectionPercent(item)+' das seções totalizadas':'Dados indisponíveis';
   q('.sn-status').textContent=phaseText(item);
   [...root.querySelectorAll('.sn-candidate')].forEach((el,i)=>{
     el.querySelector('small').textContent=fmt(candidate(item,numbers[i])?.votes)+' votos';
@@ -35,7 +36,7 @@ function national() {
   label.textContent='Fonte: TSE · '+phaseText(item);time.textContent=stamp(item);q('.sn-nat-foot').append(label,time);
   const sc=items.get('state-sc');
   q('#sn-sc p').textContent=phaseText(sc)+' · '+stamp(sc);
-  [...q('#sn-sc').querySelectorAll('strong')].forEach((el,i)=>el.textContent=i===0?pct(sc?.result?.sections.percent):votePercent(sc,numbers[i-1]));
+  [...q('#sn-sc').querySelectorAll('strong')].forEach((el,i)=>el.textContent=i===0?sectionPercent(sc):votePercent(sc,numbers[i-1]));
 }
 function cityDetail() {
   const d=catalogue.southCities.find(c=>c.id===selected),item=cityItem(d.id);
@@ -97,7 +98,7 @@ function renderFavs() {
   q('#sn-fav-more').hidden=rows.length<limit;
   q('#sn-fav-cards').innerHTML=rows.map(d=>{
     const item=cityItem(d.id);
-    return `<article class="sn-fav-card"><div class="sn-fav-top"><div><h3>${escape(d.name)}</h3><span class="sn-small">${d.uf} · Presidente</span></div><button class="sn-star" data-fav="${d.id}" aria-pressed="${favorites.has(d.id)}" aria-label="${favorites.has(d.id)?'Desfavoritar':'Favoritar'} ${escape(d.name)}">${favorites.has(d.id)?'★':'☆'}</button></div><div class="sn-progress-label"><span>${phaseText(item)}</span><strong>${pct(item?.result?.sections.percent)}</strong></div><div class="sn-track"><span style="width:${item?.result?.sections.percent??0}%"></span></div><div class="sn-local-result"><span>Lula</span><strong>${votePercent(item,'13')}</strong></div><div class="sn-local-result"><span>Flávio Bolsonaro</span><strong>${votePercent(item,'22')}</strong></div><p class="sn-help">${escape(stamp(item))}</p></article>`;
+    return `<article class="sn-fav-card"><div class="sn-fav-top"><div><h3>${escape(d.name)}</h3><span class="sn-small">${d.uf} · Presidente</span></div><button class="sn-star" data-fav="${d.id}" aria-pressed="${favorites.has(d.id)}" aria-label="${favorites.has(d.id)?'Desfavoritar':'Favoritar'} ${escape(d.name)}">${favorites.has(d.id)?'★':'☆'}</button></div><div class="sn-progress-label"><span>${phaseText(item)}</span><strong>${escape(sectionPercent(item))}</strong></div><div class="sn-track"><span style="width:${item?.result?.sections.percent??0}%"></span></div><div class="sn-local-result"><span>Lula</span><strong>${votePercent(item,'13')}</strong></div><div class="sn-local-result"><span>Flávio Bolsonaro</span><strong>${votePercent(item,'22')}</strong></div><p class="sn-help">${escape(stamp(item))}</p></article>`;
   }).join('')||'<div class="sn-empty">Nenhuma cidade nesta seleção. Desative “Só favoritas” para escolher cidades.</div>';
   root.querySelectorAll('[data-fav]').forEach(b=>b.onclick=()=>{
     const id=b.dataset.fav,adding=!favorites.has(id);adding?favorites.add(id):favorites.delete(id);
@@ -110,14 +111,14 @@ function governors() {
   const records=[...items.values()].filter(i=>i.kind==='governor'&&i.result);
   q('#sn-gov-cards').innerHTML=records.map(item=>{
     const d=item.result;
-    return `<article class="sn-gov"><div class="sn-gov-top"><h3>${escape(d.name)}</h3><span class="sn-uf">${d.uf.toUpperCase()}</span></div>${d.candidates.map(c=>`<div class="sn-local-result"><span>${escape(c.name)}<small>${escape(c.party)} · ${fmt(c.votes)} votos</small></span><strong>${d.phase==='awaiting'?'—':pct(c.percent)}</strong></div>`).join('')}<div class="sn-progress-label"><span>${phaseText(item)}</span><strong>${pct(d.sections.percent)}</strong></div><div class="sn-track"><span style="width:${d.sections.percent}%"></span></div><p class="sn-gov-status">${escape(stamp(item))}</p></article>`;
+    return `<article class="sn-gov"><div class="sn-gov-top"><h3>${escape(d.name)}</h3><span class="sn-uf">${d.uf.toUpperCase()}</span></div>${d.candidates.map(c=>`<div class="sn-local-result"><span>${escape(c.name)}<small>${escape(c.party)} · ${fmt(c.votes)} votos</small></span><strong>${d.phase==='awaiting'?'—':pct(c.percent)}</strong></div>`).join('')}<div class="sn-progress-label"><span>${phaseText(item)}</span><strong>${escape(sectionPercent(item))}</strong></div><div class="sn-track"><span style="width:${d.sections.percent}%"></span></div><p class="sn-gov-status">${escape(stamp(item))}</p></article>`;
   }).join('')||'<p class="sn-help">Resultados de governadores indisponíveis. Tentaremos novamente.</p>';
 }
 function render(){national();cityDetail();southMap();brazilMap();renderFavs();governors();}
 let debounce;
 function requestRefresh(){clearTimeout(debounce);debounce=setTimeout(()=>refresh(true),250);}
 async function load(query) {
-  const response=await fetch('/api/resultados?'+query,{signal:AbortSignal.timeout(45000)});
+  const response=await fetch('/api/resultados?'+query,{signal:AbortSignal.timeout(55000)});
   if(!response.ok)throw Error('unavailable');
   const data=await response.json();if(data.demo||!Array.isArray(data.items))throw Error('invalid_response');
   for(const item of data.items) {
@@ -131,8 +132,8 @@ async function load(query) {
 async function refresh(includeMunicipal=false) {
   if(busy){pending=true;return;}if(document.hidden||!catalogue)return;
   busy=true;q('#sn-update-results').disabled=true;q('#sn-update-status').textContent='Consultando resultados oficiais…';
-  const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])].sort();
-  const queries=['kind=overview'],updateMunicipal=includeMunicipal||Date.now()-lastMunicipalCheck>=300000;
+  const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])].filter(id=>cityItem(id)?.result?.phase!=='totalized').sort();
+  const queries=['kind=overview'],updateMunicipal=includeMunicipal||Date.now()-lastMunicipalCheck>=60000;
   if(updateMunicipal)for(let i=0;i<municipalityIds.length;i+=50)queries.push('ids='+municipalityIds.slice(i,i+50).map(id=>'municipality-'+id).join(','));
   const results=await Promise.allSettled(queries.map(async query=>{const response=await load(query);render();return response;}));
   const failed=results.some(r=>r.status==='rejected'),partial=results.some(r=>r.status==='fulfilled'&&r.value.status!=='current');

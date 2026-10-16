@@ -32,6 +32,7 @@ A função consulta a categoria Política (ID 254) do WordPress do HN e usa cach
 
 ## Resultados e atualização na branch de integração
 - Presidente, 27 estados, SC, 303 municípios do catálogo, mapas, favoritas e seis governadores usam resultados oficiais do TSE pela API central. Zero seções significa “Aguardando apuração”; ausência de dados significa indisponível. Não há porcentagens fictícias como fallback.
+- Municípios em andamento são consultados pela página a cada minuto. Ao atingir 100% das seções oficialmente validado, param as consultas automáticas à origem e o resultado final é preservado. Isso não garante entrega instantânea: origem/rede/cache podem acrescentar atraso.
 - A página informa data/hora da origem e da consulta. Cópia inicial oficial datada é identificada como atualização pendente; não é apresentada como apuração ao vivo.
 - A API usa fila, limite global de coleta e Netlify Blobs para preservar o último resultado válido. Os visitantes leem a API local; não consultam o TSE diretamente. A atualização central limitada também funciona na prévia, onde agendamentos Netlify não executam automaticamente.
 - Notícias continuam via Netlify Function. Favoritas ficam no localStorage do navegador; não são sincronizadas entre aparelhos nem enviadas no compartilhamento.

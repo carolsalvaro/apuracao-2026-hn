@@ -3,7 +3,7 @@ import datetime,json,pathlib,urllib.request,urllib.error
 BASE='https://deploy-preview-1--stupendous-muffin-2438f0.netlify.app'
 report={'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checks':[],'warnings':[]}
 def read(path):
-    try:r=urllib.request.urlopen(BASE+path,timeout=45)
+    try:r=urllib.request.urlopen(BASE+path,timeout=55)
     except urllib.error.HTTPError as e:r=e
     return r.status,dict(r.headers.items()),r.read()
 status,headers,body=read('/')

@@ -20,9 +20,10 @@ export function createResultsHandler({config,getStore,now=()=>Date.now(),refresh
         try {if(store)record=await store.get(`${revision}/results/${t.id}`,{type:'json'});} catch {storageError=true;}
         const seeded=!record && !!seedRecords[t.id];
         record??=seedRecords[t.id];
-        return {id:t.id,kind:t.kind,source:seeded?'verified_snapshot':'durable_cache',...view(record,config,now()),...(seeded?{status:'stale'}:{})};
+        const completed=t.kind==='municipality'&&record?.result?.phase==='totalized';
+        return {id:t.id,kind:t.kind,source:seeded?'verified_snapshot':'durable_cache',...view(record,config,now()),...(seeded?{status:completed?'totalized':'stale'}:{})};
       }));
-      const unavailable=items.some(i=>i.status!=='current');
+      const unavailable=items.some(i=>!['current','totalized'].includes(i.status));
       if(storageError && items.every(i=>!i.result)) throw Error('storage_unavailable');
       if(cached!=='1'){
         headers['Cache-Control']='public, max-age=10';

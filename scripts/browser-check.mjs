@@ -15,7 +15,7 @@ const server=createServer(async(req,res)=>{
   if(url.pathname==='/api/resultados') {
     if(mode==='offline'){res.writeHead(503,{'content-type':'application/json'});res.end('{}');return;}
     const response=await handler(new Request(url)),body=await response.json();
-    if(mode==='counting')for(const item of body.items){if(!item.result)continue;item.status='current';item.source='durable_cache';const r=item.result;r.phase='counting';r.sections={total:100,counted:50,percent:50};r.validVotes=100;r.publishedAt='2026-10-25T18:00:00-03:00';r.candidates.forEach(c=>{c.votes=c.number==='13'?40:60;c.percent=c.votes;});}
+    if(['counting','totalized'].includes(mode))for(const item of body.items){if(!item.result)continue;item.status='current';item.source='durable_cache';const r=item.result;r.phase=mode==='totalized'?'totalized':'counting';r.sections={total:100,counted:mode==='totalized'?100:50,percent:mode==='totalized'?100:50};r.validVotes=100;r.publishedAt=mode==='totalized'?'2026-10-25T18:01:00-03:00':'2026-10-25T18:00:00-03:00';r.candidates.forEach(c=>{c.votes=c.number==='13'?40:60;c.percent=c.votes;});}
     res.writeHead(response.status,{'content-type':'application/json'});res.end(JSON.stringify(body));return;
   }
   if(url.pathname==='/api/politica'){res.writeHead(200,{'content-type':'application/json'});res.end('{"items":[]}');return;}
@@ -31,6 +31,7 @@ await mkdir('artifacts/browser',{recursive:true});const results=[];
 try {
  for(const width of [320,375,390,768,1440]){
   mode='awaiting';const context=await browser.newContext({viewport:{width,height:900},isMobile:width<768,hasTouch:width<768,reducedMotion:'reduce'}),page=await context.newPage(),errors=[];
+  if(width===390)await page.clock.install();
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',r=>new URL(r.request().url()).origin===origin?r.continue():r.abort());
   await page.goto(origin,{waitUntil:'networkidle'});
@@ -55,6 +56,14 @@ try {
   assert.equal(await page.locator('.sn-candidate .sn-score').first().textContent(),'40,0%');
   assert.equal(await page.locator('.sn-candidate .sn-score').last().textContent(),'60,0%');
   assert.equal(await page.locator('#sn-br-svg path').first().getAttribute('fill'),'#246db5');
+  if(width===390){
+   mode='totalized';await page.locator('#sn-update-results').click();await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
+   assert.match(await page.locator('#sn-detail').textContent(),/acompanhamento automático encerrado/);
+   let municipalReads=0;page.on('request',r=>{if(r.url().includes('/api/resultados?ids='))municipalReads++;});
+   const overview=page.waitForResponse(r=>r.url().includes('kind=overview'));
+   await page.clock.fastForward(61000);await overview;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
+   assert.equal(municipalReads,0,'completed municipalities must leave automatic polling');
+  }
   mode='offline';await page.locator('#sn-update-results').click();await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
   assert.equal(await page.locator('.sn-candidate .sn-score').first().textContent(),'40,0%');
   await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('indisponível'));

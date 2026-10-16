@@ -1,8 +1,8 @@
 import {validateConfig,parseResult,assertForward,digest} from './tse.mjs';
 const conditional = entry => entry ? {onlyIfMatch:entry.etag} : {onlyIfNew:true};
-export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),priorityIds=null,seedRecords={},batchSize=4}) {
+export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),priorityIds=null,seedRecords={},batchSize=4,concurrency=1,startBudgetMs=12000,maxStartsPerSecond=0,delay=ms=>new Promise(resolve=>setTimeout(resolve,ms))}) {
   if (!validateConfig(config)) return {status:'disabled',checked:0};
-  if(!Number.isInteger(batchSize)||batchSize<1||batchSize>16)throw Error('invalid_batch');
+  if(!Number.isInteger(batchSize)||batchSize<1||batchSize>400||!Number.isInteger(concurrency)||concurrency<1||concurrency>4||!Number.isInteger(startBudgetMs)||startBudgetMs<1||startBudgetMs>30000||!Number.isInteger(maxStartsPerSecond)||maxStartsPerSecond<0||maxStartsPerSecond>20)throw Error('invalid_batch');
   const revision=digest(config), prefix=`${revision}/`;
   // Register demand before the global lease check. Concurrent state/map requests
   // therefore join the same rotating queue instead of starving behind president.
@@ -32,15 +32,28 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
   const critical=targets.map((t,i)=>['president-br','state-sc'].includes(t.id)?i:-1).filter(i=>i>=0);
   const order=[...critical,...Array.from({length:targets.length},(_,i)=>(cursor+i)%targets.length).filter(i=>!critical.includes(i))];
   let nextCursor=cursor;
-  let checked=0, failures=0, visited=0;
+  let checked=0,failures=0,visited=0,reserved=0,nextStart=0,gate=Promise.resolve();
+  const pace=()=>{
+    if(!maxStartsPerSecond)return Promise.resolve();
+    gate=gate.then(async()=>{
+      const wait=Math.max(0,nextStart-Date.now());if(wait)await delay(wait);
+      nextStart=Date.now()+1000/maxStartsPerSecond;
+    });return gate;
+  };
   // Rotate across configured targets; a single invocation never floods the origin.
-  for (;visited<targets.length && checked<batchSize;visited++) {
-    if(Date.now()-started>12000)break;
-    const index=order[visited],t=targets[index],key=`${prefix}results/${t.id}`;
+  const worker=async()=>{for (;;) {
+    if(visited>=targets.length||reserved>=batchSize||Date.now()-started>=startBudgetMs)return;
+    const index=order[visited++],t=targets[index],key=`${prefix}results/${t.id}`;
     if(!critical.includes(index))nextCursor=(index+1)%targets.length;
     if(demanded&&!demanded.has(t.id)&&!critical.includes(index))continue;
     const entry=await store.getWithMetadata(key,{type:'json'}),oldRecord=entry?.data??seedRecords[t.id];
+    // Stop only municipalities whose validated official sections reached 100%.
+    if(t.kind==='municipality'&&oldRecord?.result?.phase==='totalized')continue;
     if (oldRecord?.nextAttemptAt>now()) continue;
+    if(reserved>=batchSize)return;
+    reserved++;await pace();
+    if(Date.now()-started>=startBudgetMs)return;
+    checked++;
     const checkedAt=new Date(now()).toISOString();
     let record, retryAfterMs=0;
     try {
@@ -77,8 +90,9 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
     }
     const saved=await store.setJSON(key,record,conditional(entry));
     if (!saved.modified) throw new Error('concurrent_write');
-    checked++;
-  }
+  }};
+  const outcomes=await Promise.allSettled(Array.from({length:concurrency},worker));
+  const rejected=outcomes.find(o=>o.status==='rejected');if(rejected)throw rejected.reason;
   await store.setJSON(`${prefix}cursor`,nextCursor);
   return {status:failures?'partial':'ok',checked,failures};
 }

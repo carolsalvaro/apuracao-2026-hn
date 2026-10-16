@@ -9,7 +9,7 @@
     "https://resultados.tse.jus.br/oficial/comum/config/ele-c.json",
     "https://resultados.tse.jus.br/oficial/ele2026/6258/config/mun-e006258-cm.json"
   ],
-  "intervalSeconds": 300,
+  "intervalSeconds": 60,
   "staleSeconds": 900,
   "targets": [
     {

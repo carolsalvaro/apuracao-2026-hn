@@ -3,6 +3,16 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Atualização por minuto e encerramento municipal — estado atual
+
+Esta seção substitui as frequências/limites das etapas históricas abaixo. A usuária informou 760 créditos e pico de quase 5.000 simultâneos por aproximadamente duas horas após as 17h de 25/10.
+
+- Configuração e navegador ajustados de cinco para **um minuto** nos municípios em andamento. Parada automática após 100% das seções validado, com último resultado preservado, sem nova consulta TSE nem polling municipal na página. 99,999% não é arredondado para final; presidente/governadores continuam a política normal.
+- Coleta compartilhada com até quatro fontes simultâneas, ritmo máximo de 20 inícios/segundo, lote máximo 400 (universo atual 337), orçamento de início de 30s na API e 18s no agendado, timeout de 8s e lease global de 60s. ETag/304, backoff, rotação e prioridade presidente/SC preservados. Não equivale a uma consulta TSE por visitante. Em lentidão, o ciclo pode exigir rodadas adicionais; não prometer entrega instantânea ou em até 60s.
+- Intervalo alterado na configuração; por ser parte da revisão, os registros ficam no novo prefixo. O bootstrap mantém os mesmos resultados oficiais e horários, com a nova revisão. Ainda não existem votos reais neste ensaio de prévia. Não usar esse procedimento durante votação para descartar dados recentes; mudanças operacionais futuras exigem migração revisada.
+- Modelo de duas horas: 264 créditos de requisições + 153 de transferência gzip estimada = 417 parciais. 760 é o saldo informado, não autorização de gastos ou compra. Exclui compute, notícias/arquivos extras, novos acessos/recargas, uso fora do pico e outros projetos. Compressão real confirmada em amostras da prévia. O ganho de cessar municípios finalizados não foi usado para reduzir a projeção. Detalhes em OPERACAO.md.
+- 52 testes locais passaram. Os novos casos verificam: 337 fontes simuladas numa rodada, máximo quatro simultâneas, espaçamento de partidas, limite de duração em origem lenta, 99,999% vs 100%, parada por registro durável/bootstrap e status final sem falso atraso. Teste de navegador avança o relógio e verifica ausência de novas leituras municipais após totalização. Nenhum ensaio de carga no TSE.
+
 ## Preparação operacional — revisão mais recente
 
 Público informado: quase 5.000 simultâneos no primeiro turno. Ver [OPERAÇÃO](OPERACAO.md) para dimensionamento, comandos, cache, monitoramento, falhas, rollback e condições de liberação. As descrições históricas abaixo sobre cache por deploy e agendado com quatro alvos foram substituídas nesta revisão.

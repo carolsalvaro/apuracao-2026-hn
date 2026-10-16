@@ -1,5 +1,6 @@
 export const numbers=['13','22'];
 export const percentage=n=>Number.isFinite(n)?n.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%':'—';
+export const sectionPercent=item=>item?.result?.phase!=='totalized'&&item?.result?.sections.percent>99.9?'<100%':percentage(item?.result?.sections.percent);
 export function acceptItem(item) {
   const r=item?.result;
   if(!r)return false;
