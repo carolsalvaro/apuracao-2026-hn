@@ -50,7 +50,7 @@ test('read-through refresh shares its lease between concurrent readers and enfor
   await handler(new Request('https://test/api/resultados?kind=president'));assert.equal(calls,1);
 });
 test('a request blocked by the shared lease still queues its locality for the next collection',async()=>{
-  const second={...target,id:'state-sc',kind:'state',scope:'uf',area:'sc',uf:'sc',name:'SC',url:target.url.replace('/br/','/sc/').replace('/br-c','/sc-c')};
+  const second={...target,id:'state-sp',kind:'state',scope:'uf',area:'sp',uf:'sp',name:'SP',url:target.url.replace('/br/','/sp/').replace('/br-c','/sp-c')};
   const c={...settings,targets:[target,second]},store=new MemoryStore();let clock=now;const seen=[];
   const run=ids=>collect({config:c,store,priorityIds:ids,now:()=>clock,fetcher:async url=>{const t=url===target.url?target:second;seen.push(t.id);return Response.json(payload(t));}});
   await run([target.id]);assert.deepEqual(seen,[target.id]);

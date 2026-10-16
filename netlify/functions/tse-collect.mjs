@@ -1,10 +1,13 @@
 import settings from '../../config/tse.json' with {type:'json'};
 import {collect} from '../lib/collector.mjs';
 import {resultStore} from '../lib/store.mjs';
+import {digest} from '../lib/tse.mjs';
+import bootstrap from '../data/tse-bootstrap.json' with {type:'json'};
 export default async () => {
   if (!settings.enabled) return new Response('TSE disabled: official configuration not verified');
   try {
-    const outcome=await collect({store:resultStore(),config:settings});
+    const seedRecords=bootstrap.revision===digest(settings)?bootstrap.records:{};
+    const outcome=await collect({store:resultStore(),config:settings,seedRecords,batchSize:16});
     console.log(JSON.stringify({event:'tse_collection',...outcome}));
     return Response.json(outcome);
   } catch {

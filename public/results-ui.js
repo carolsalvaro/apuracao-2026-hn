@@ -131,7 +131,7 @@ async function load(query) {
 async function refresh() {
   if(busy){pending=true;return;}if(document.hidden||!catalogue)return;
   busy=true;q('#sn-update-results').disabled=true;q('#sn-update-status').textContent='Consultando resultados oficiais…';
-  const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])];
+  const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])].sort();
   const queries=['kind=president','kind=state','kind=governor'];
   for(let i=0;i<municipalityIds.length;i+=50)queries.push('ids='+municipalityIds.slice(i,i+50).map(id=>'municipality-'+id).join(','));
   const results=await Promise.allSettled(queries.map(async query=>{const response=await load(query);render();return response;}));

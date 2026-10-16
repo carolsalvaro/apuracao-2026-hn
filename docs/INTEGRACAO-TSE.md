@@ -3,6 +3,16 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Preparação operacional — revisão mais recente
+
+Público informado: quase 5.000 simultâneos no primeiro turno. Ver [OPERAÇÃO](OPERACAO.md) para dimensionamento, comandos, cache, monitoramento, falhas, rollback e condições de liberação. As descrições históricas abaixo sobre cache por deploy e agendado com quatro alvos foram substituídas nesta revisão.
+
+- Agendado e API usam limite máximo de 16 fontes/minuto e a mesma lease. Presidente/SC são priorizados, respeitando intervalo/backoff, para não esperar a passagem dos municípios.
+- ETag/Last-Modified habilitados; 304 preserva corpo/recebimento, atualiza tentativa e não inventa votos. A fila de demanda não é regravada por cada leitor enquanto ainda está válida. Seleções equivalentes têm IDs ordenados para compartilhar cache CDN.
+- Namespace da prévia estável entre versões do PR, isolado da produção e com revisão da configuração nas chaves. Verificação real de continuidade entre versões está em andamento; não confundir teste local com essa evidência.
+- 44 testes locais aprovados, incluindo 90 minutos acelerados para 337 alvos, interrupção da origem, recuperação e totalização. Não houve carga contra TSE. Carga local: dois cenários de 5.000 requisições, concorrência 100, zero erros; p95 de 35/29 ms nesta máquina, origem simulada consultada zero/uma vez e uma gravação de demanda por cenário. Esses números não comprovam 5.000 usuários simultâneos na Netlify.
+- Chromium local nas cinco larguras passou. Arquivos atuais EA11, presidente e SC foram reconsultados com 200/fase oficial, sem seções apuradas. A API pública do site não fornece dados do plano contratado; a capacidade Netlify ainda não está aprovada.
+
 ## Integração visual oficial — estado atual (15/10/2026)
 
 Esta seção substitui as descrições históricas de integração desativada e componentes demonstrativos abaixo. Pedido da usuária: integrar e retirar os avisos de demonstração, mantendo main, noindex e produção preservados.

@@ -1,6 +1,7 @@
 import {getStore} from '@netlify/blobs';
-// Site-wide store: retained across function instances/deploys. Preview writes are isolated.
+// This PR's staging namespace survives preview deploys, while remaining separate
+// from production. Configuration revisions isolate incompatible election data.
+export const storeName=context=>context==='production'?'hn-tse-production':'hn-tse-preview-integracao-tse-pr-1';
 export function resultStore() {
-  const scope=process.env.CONTEXT==='production'?'production':`preview-${process.env.DEPLOY_ID??'local'}`;
-  return getStore({name:`hn-tse-${scope}`,consistency:'strong'});
+  return getStore({name:storeName(process.env.CONTEXT),consistency:'strong'});
 }

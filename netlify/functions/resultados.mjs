@@ -10,5 +10,15 @@ const seedRecords=bootstrap.revision===digest(settings)?bootstrap.records:{};
 // a 12-second start budget (one last 8-second request may still be finishing).
 // Only the requested configured localities are eligible; arbitrary URLs are rejected.
 export default createResultsHandler({config:settings,getStore:resultStore,seedRecords,
-  refresh:({store,ids})=>collect({store,config:settings,priorityIds:ids,seedRecords,batchSize:16})});
+  refresh:async({store,ids})=>{
+    const started=Date.now();
+    try{
+      const outcome=await collect({store,config:settings,priorityIds:ids,seedRecords,batchSize:16});
+      if(outcome.checked)console.log(JSON.stringify({event:'tse_read_refresh',...outcome,durationMs:Date.now()-started}));
+      return outcome;
+    }catch(error){
+      console.error(JSON.stringify({event:'tse_read_refresh',status:'storage_or_config_failure',durationMs:Date.now()-started}));
+      throw error;
+    }
+  }});
 export const config={path:'/api/resultados'};

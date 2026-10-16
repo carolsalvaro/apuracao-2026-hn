@@ -12,8 +12,10 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
     for(let attempt=0;attempt<3;attempt++){
       const entry=await store.getWithMetadata(`${prefix}demand`,{type:'json'});
       const demand=Object.fromEntries(Object.entries(entry?.data??{}).filter(([id,until])=>valid.has(id)&&until>now()));
-      for(const id of priorityIds)if(valid.has(id))demand[id]=now()+600000;
+      let changed=Object.keys(demand).length!==Object.keys(entry?.data??{}).length;
+      for(const id of priorityIds)if(valid.has(id)&&!(demand[id]>now()+300000)){demand[id]=now()+600000;changed=true;}
       demanded=new Set(Object.keys(demand));
+      if(!changed)break;
       if((await store.setJSON(`${prefix}demand`,demand,conditional(entry))).modified)break;
     }
   }
@@ -25,18 +27,31 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
   // Reload after acquiring the lease so demand registered by other readers is included.
   if(priorityIds)demanded=new Set(Object.entries(await store.get(`${prefix}demand`,{type:'json'})??{}).filter(([,until])=>until>now()).map(([id])=>id));
   const targets=config.targets,started=Date.now();
+  // National president and SC must not wait a full municipal sweep. They still
+  // respect the same lease, batch budget, backoff and per-target interval.
+  const critical=targets.map((t,i)=>['president-br','state-sc'].includes(t.id)?i:-1).filter(i=>i>=0);
+  const order=[...critical,...Array.from({length:targets.length},(_,i)=>(cursor+i)%targets.length).filter(i=>!critical.includes(i))];
+  let nextCursor=cursor;
   let checked=0, failures=0, visited=0;
   // Rotate across configured targets; a single invocation never floods the origin.
   for (;visited<targets.length && checked<batchSize;visited++) {
     if(Date.now()-started>12000)break;
-    const t=targets[(cursor+visited)%targets.length],key=`${prefix}results/${t.id}`;
-    if(demanded&&!demanded.has(t.id))continue;
+    const index=order[visited],t=targets[index],key=`${prefix}results/${t.id}`;
+    if(!critical.includes(index))nextCursor=(index+1)%targets.length;
+    if(demanded&&!demanded.has(t.id)&&!critical.includes(index))continue;
     const entry=await store.getWithMetadata(key,{type:'json'}),oldRecord=entry?.data??seedRecords[t.id];
     if (oldRecord?.nextAttemptAt>now()) continue;
     const checkedAt=new Date(now()).toISOString();
     let record, retryAfterMs=0;
     try {
-      const res=await fetcher(t.url,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(8000),redirect:'error'});
+      const headers={Accept:'application/json'};
+      if(oldRecord?.etag)headers['If-None-Match']=oldRecord.etag;
+      else if(oldRecord?.lastModified)headers['If-Modified-Since']=oldRecord.lastModified;
+      const res=await fetcher(t.url,{headers,signal:AbortSignal.timeout(8000),redirect:'error'});
+      if(res.status===304){
+        if(!oldRecord?.result)throw Error('invalid_not_modified');
+        record={...oldRecord,checkedAt,failures:0,error:null,nextAttemptAt:now()+config.intervalSeconds*1000};
+      }else{
       if (!res.ok) {
         const retry=res.headers.get('Retry-After');
         if (retry) retryAfterMs=/^\d+$/.test(retry)?Number(retry)*1000:Math.max(0,Date.parse(retry)-now());
@@ -50,7 +65,10 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
       const text=Buffer.concat(chunks).toString('utf8');
       const result=parseResult(JSON.parse(text),t,config,now());
       assertForward(oldRecord?.result,result);
-      record={result,checkedAt,receivedAt:new Date(now()).toISOString(),failures:0,error:null,nextAttemptAt:now()+config.intervalSeconds*1000};
+      const etag=res.headers.get('ETag'),lastModified=res.headers.get('Last-Modified');
+      record={result,checkedAt,receivedAt:new Date(now()).toISOString(),failures:0,error:null,nextAttemptAt:now()+config.intervalSeconds*1000,
+        ...(etag&&etag.length<500?{etag}:{}),...(lastModified&&lastModified.length<500?{lastModified}:{})};
+      }
     } catch (error) {
       failures++;
       const count=(oldRecord?.failures??0)+1;
@@ -61,6 +79,6 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
     if (!saved.modified) throw new Error('concurrent_write');
     checked++;
   }
-  await store.setJSON(`${prefix}cursor`,(cursor+visited)%targets.length);
+  await store.setJSON(`${prefix}cursor`,nextCursor);
   return {status:failures?'partial':'ok',checked,failures};
 }

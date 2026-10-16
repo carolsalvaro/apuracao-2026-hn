@@ -1,5 +1,7 @@
 # Pendências antes de divulgar
 
+Estado e evidências atuais: [integração](docs/INTEGRACAO-TSE.md). Procedimentos e liberação: [operação](docs/OPERACAO.md). Público de referência informado: quase 5.000 simultâneos. Os itens abaixo não são automaticamente resolvidos por testes locais.
+
 - [ ] Validar documentação e arquivos oficiais atuais do TSE, eleições, turnos, cargos e localidades.
 - [ ] Integrar presidente nacional, todas as UFs, SC e municípios; substituir dados demonstrativos integralmente.
 - [ ] Confirmar os 45 municípios e regiões AMREC/AMESC/AMUREL; completar busca de municípios do Brasil (hoje é uma amostra).
