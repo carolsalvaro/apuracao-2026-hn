@@ -51,3 +51,9 @@ test('a slow mocked origin respects the time budget instead of launching the ent
   const outcome=await collect({store,config,now:()=>now,batchSize:400,concurrency:4,startBudgetMs:10,fetcher:async()=>{calls++;await new Promise(r=>setTimeout(r,25));return Response.json(payload());}});
   assert(calls<=4);assert.equal(outcome.checked,calls);
 });
+test('healthy sources are eligible in the next minute even if the preceding round took time to complete',async()=>{
+  const targets=[{...target,id:'round-1'},{...target,id:'round-2'}],config={...settings,intervalSeconds:60,targets},store=new MemoryStore();let clock=now,calls=0;
+  const fetcher=async()=>{calls++;clock+=10000;return Response.json(payload());};
+  await collect({store,config,now:()=>clock,fetcher});assert.equal(calls,2);
+  clock=now+60000;await collect({store,config,now:()=>clock,fetcher});assert.equal(calls,4);
+});

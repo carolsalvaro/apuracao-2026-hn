@@ -21,7 +21,8 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
   }
   const old=await store.getWithMetadata(`${prefix}lease`,{type:'json'});
   if (old?.data.until > now()) return {status:'busy',checked:0};
-  const lease=await store.setJSON(`${prefix}lease`,{until:now()+60000},conditional(old));
+  const roundStartedAt=now();
+  const lease=await store.setJSON(`${prefix}lease`,{until:roundStartedAt+60000},conditional(old));
   if (!lease.modified) return {status:'busy',checked:0};
   const cursor=await store.get(`${prefix}cursor`,{type:'json'})??0;
   // Reload after acquiring the lease so demand registered by other readers is included.
@@ -63,7 +64,7 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
       const res=await fetcher(t.url,{headers,signal:AbortSignal.timeout(8000),redirect:'error'});
       if(res.status===304){
         if(!oldRecord?.result)throw Error('invalid_not_modified');
-        record={...oldRecord,checkedAt,failures:0,error:null,nextAttemptAt:now()+config.intervalSeconds*1000};
+        record={...oldRecord,checkedAt,failures:0,error:null,nextAttemptAt:roundStartedAt+config.intervalSeconds*1000};
       }else{
       if (!res.ok) {
         const retry=res.headers.get('Retry-After');
@@ -79,7 +80,7 @@ export async function collect({store,config,fetcher=fetch,now=()=>Date.now(),pri
       const result=parseResult(JSON.parse(text),t,config,now());
       assertForward(oldRecord?.result,result);
       const etag=res.headers.get('ETag'),lastModified=res.headers.get('Last-Modified');
-      record={result,checkedAt,receivedAt:new Date(now()).toISOString(),failures:0,error:null,nextAttemptAt:now()+config.intervalSeconds*1000,
+      record={result,checkedAt,receivedAt:new Date(now()).toISOString(),failures:0,error:null,nextAttemptAt:roundStartedAt+config.intervalSeconds*1000,
         ...(etag&&etag.length<500?{etag}:{}),...(lastModified&&lastModified.length<500?{lastModified}:{})};
       }
     } catch (error) {
