@@ -40,6 +40,19 @@ test('municipality batch validation rejects arbitrary targets and limits collect
     response=await handler(new Request('https://test/api/resultados?'+query));assert.equal(response.status,400);}
   assert.equal(seen.length,1);
 });
+test('a single shared overview includes all national/state/governor results without exposing a municipal bulk response',async()=>{
+  const handler=createResultsHandler({config,getStore:()=>new MemoryStore(),seedRecords:bootstrap.records});
+  const response=await handler(new Request('https://test/api/resultados?kind=overview'));const body=await response.json();
+  assert.equal(response.status,200);assert.equal(body.items.length,34);
+  assert.equal(body.items.filter(i=>i.kind==='president').length,1);assert.equal(body.items.filter(i=>i.kind==='state').length,27);assert.equal(body.items.filter(i=>i.kind==='governor').length,6);
+  assert(!body.items.some(i=>i.kind==='municipality'));
+});
+test('an operational cached-only read cannot trigger refresh or return a CDN-cached observation',async()=>{
+  let calls=0;const handler=createResultsHandler({config,getStore:()=>new MemoryStore(),seedRecords:bootstrap.records,refresh:async()=>{calls++;}});
+  const response=await handler(new Request('https://test/api/resultados?kind=president&cached=1'));
+  assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');assert.equal(calls,0);
+  assert.equal((await handler(new Request('https://test/api/resultados?kind=president&cached=0'))).status,400);
+});
 test('read-through refresh shares its lease between concurrent readers and enforces per-target interval',async()=>{
   const store=new MemoryStore();let calls=0;
   const seed={result:parseResult(payload(),target,settings,now),checkedAt:new Date(now).toISOString(),nextAttemptAt:0};

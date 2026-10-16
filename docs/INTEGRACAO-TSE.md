@@ -9,9 +9,10 @@ Público informado: quase 5.000 simultâneos no primeiro turno. Ver [OPERAÇÃO]
 
 - Agendado e API usam limite máximo de 16 fontes/minuto e a mesma lease. Presidente/SC são priorizados, respeitando intervalo/backoff, para não esperar a passagem dos municípios.
 - ETag/Last-Modified habilitados; 304 preserva corpo/recebimento, atualiza tentativa e não inventa votos. A fila de demanda não é regravada por cada leitor enquanto ainda está válida. Seleções equivalentes têm IDs ordenados para compartilhar cache CDN.
+- Consultas gerais unificadas em overview a cada minuto; municípios a cada cinco minutos e em interações, reduzindo a estimativa padrão de requisições periódicas de 20 mil para cerca de 7 mil/minuto com 5 mil visitantes constantes. O modo operacional cached=1 lê sem disparar coleta.
 - Namespace da prévia estável entre versões do PR, isolado da produção e com revisão da configuração nas chaves. Verificação real de continuidade entre versões está em andamento; não confundir teste local com essa evidência.
-- 44 testes locais aprovados, incluindo 90 minutos acelerados para 337 alvos, interrupção da origem, recuperação e totalização. Não houve carga contra TSE. Carga local: dois cenários de 5.000 requisições, concorrência 100, zero erros; p95 de 35/29 ms nesta máquina, origem simulada consultada zero/uma vez e uma gravação de demanda por cenário. Esses números não comprovam 5.000 usuários simultâneos na Netlify.
-- Chromium local nas cinco larguras passou. Arquivos atuais EA11, presidente e SC foram reconsultados com 200/fase oficial, sem seções apuradas. A API pública do site não fornece dados do plano contratado; a capacidade Netlify ainda não está aprovada.
+- 46 testes locais aprovados, incluindo 90 minutos acelerados para 337 alvos, interrupção da origem, recuperação e totalização. Não houve carga contra TSE. Carga local: dois cenários de 5.000 requisições, concorrência 100, zero erros; p95 de 35/29 ms nesta máquina, origem simulada consultada zero/uma vez e uma gravação de demanda por cenário. Esses números não comprovam 5.000 usuários simultâneos na Netlify.
+- Chromium local nas cinco larguras passou. Arquivos atuais EA11, presidente e SC foram reconsultados com 200/fase oficial, sem seções apuradas. Usuária informou Personal. Taxas oficiais e estimativa de consumo estão em OPERACAO.md; saldo/recarga não são acessíveis pela API pública, e a capacidade Netlify ainda não está aprovada.
 
 ## Integração visual oficial — estado atual (15/10/2026)
 

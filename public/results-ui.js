@@ -4,7 +4,7 @@ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const fmt=n=>Number.isFinite(n)?n.toLocaleString('pt-BR'):'—';
 const date=s=>new Date(s).toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'});
 const items=new Map();let catalogue;
-let region='Todas',mode='progress',selected='4204608',active='42',only=false,limit=6,busy=false,pending=false;
+let region='Todas',mode='progress',selected='4204608',active='42',only=false,limit=6,busy=false,pending=false,lastMunicipalCheck=0;
 let favorites=new Set();
 try{favorites=new Set(JSON.parse(localStorage.getItem('snu-demo-favorites')||'[]').filter(x=>/^\d{7}$/.test(x)));}catch{}
 const cityItem=id=>items.get('municipality-'+id);
@@ -115,7 +115,7 @@ function governors() {
 }
 function render(){national();cityDetail();southMap();brazilMap();renderFavs();governors();}
 let debounce;
-function requestRefresh(){clearTimeout(debounce);debounce=setTimeout(refresh,250);}
+function requestRefresh(){clearTimeout(debounce);debounce=setTimeout(()=>refresh(true),250);}
 async function load(query) {
   const response=await fetch('/api/resultados?'+query,{signal:AbortSignal.timeout(45000)});
   if(!response.ok)throw Error('unavailable');
@@ -128,20 +128,21 @@ async function load(query) {
   }
   return data;
 }
-async function refresh() {
+async function refresh(includeMunicipal=false) {
   if(busy){pending=true;return;}if(document.hidden||!catalogue)return;
   busy=true;q('#sn-update-results').disabled=true;q('#sn-update-status').textContent='Consultando resultados oficiais…';
   const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])].sort();
-  const queries=['kind=president','kind=state','kind=governor'];
-  for(let i=0;i<municipalityIds.length;i+=50)queries.push('ids='+municipalityIds.slice(i,i+50).map(id=>'municipality-'+id).join(','));
+  const queries=['kind=overview'],updateMunicipal=includeMunicipal||Date.now()-lastMunicipalCheck>=300000;
+  if(updateMunicipal)for(let i=0;i<municipalityIds.length;i+=50)queries.push('ids='+municipalityIds.slice(i,i+50).map(id=>'municipality-'+id).join(','));
   const results=await Promise.allSettled(queries.map(async query=>{const response=await load(query);render();return response;}));
   const failed=results.some(r=>r.status==='rejected'),partial=results.some(r=>r.status==='fulfilled'&&r.value.status!=='current');
+  if(updateMunicipal&&results.slice(1).every(r=>r.status==='fulfilled'))lastMunicipalCheck=Date.now();
   if(failed)for(const [id,item] of items)items.set(id,{...item,status:'unavailable'});
   render();q('#sn-update-status').textContent=failed?'Consulta indisponível ou parcial. Últimos resultados oficiais mantidos; confira os horários.':partial?'Arquivos oficiais carregados. Alguns dados são anteriores; confira o horário em cada quadro.':'Consulta concluída. Fonte: TSE.';
   busy=false;q('#sn-update-results').disabled=false;
   if(pending){pending=false;requestRefresh();}
 }
-q('#sn-update-results').onclick=refresh;
+q('#sn-update-results').onclick=()=>refresh(true);
 try {
   const response=await fetch('/localities.json');if(!response.ok)throw Error('catalogue');catalogue=await response.json();
   q('#sn-br-state').innerHTML=catalogue.states.slice().sort((a,b)=>a.name.localeCompare(b.name,'pt-BR')).map(d=>`<option value="${d.id}">${escape(d.name)} · ${d.uf}</option>`).join('');
