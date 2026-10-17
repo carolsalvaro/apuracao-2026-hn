@@ -1,5 +1,7 @@
 # Pendências antes de divulgar
 
+Estado e evidências atuais: [integração](docs/INTEGRACAO-TSE.md). Procedimentos e liberação: [operação](docs/OPERACAO.md). Público de referência informado: quase 5.000 simultâneos. Os itens abaixo não são automaticamente resolvidos por testes locais.
+
 - [ ] Validar documentação e arquivos oficiais atuais do TSE, eleições, turnos, cargos e localidades.
 - [ ] Integrar presidente nacional, todas as UFs, SC e municípios; substituir dados demonstrativos integralmente.
 - [ ] Confirmar os 45 municípios e regiões AMREC/AMESC/AMUREL; completar busca de municípios do Brasil (hoje é uma amostra).
@@ -13,7 +15,7 @@
 - [ ] Testar endpoint /api/politica implantado e tratamento de foto ausente/falha.
 - [ ] Testar carga no nosso ambiente e cache sem gerar carga indevida ao TSE.
 - [ ] Configurar domínio, HTTPS e compartilhamento com URL final; metadados de prévia social.
-- [ ] Configurar GA4 do HN com consentimento aplicável e validar PV/clicks sem duplicação por hash, atualização ou animação.
+- [ ] GA4 `G-VZYMP84YWY` instalado com Consent Mode sem cookies (armazenamento negado). Confirmar recebimento no painel, revisar consentimento aplicável e desativar pageviews por alterações de histórico na medição otimizada do fluxo, caso habilitados. Validar relatórios e cliques antes da divulgação.
 - [ ] Preparar monitoramento, alertas, responsável de plantão, rollback e mensagem de indisponibilidade.
 - [ ] Realizar ensaio ponta a ponta e aproveitar teste oficial do TSE se disponível e confirmado.
 - [ ] Somente após remover simulações e concluir validação, retirar noindex do HTML e do netlify.toml e autorizar divulgação pública.
