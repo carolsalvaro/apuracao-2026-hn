@@ -30,6 +30,20 @@ O modelo exclui corpos de notícias, módulos/catálogo, outros arquivos, recarg
 
 Conforme a [documentação de recarga](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/configure-auto-recharge/), falta de créditos pode pausar os projetos da equipe. Confirmar política de gastos antes de produção. Não executar carga de 5.000 pessoas na hospedagem sem combinar limites; nunca executar carga contra o TSE.
 
+### Saldo revisado: 542 créditos
+
+Saldo informado posteriormente: 542, compartilhado com outros projetos conforme relato da responsável (consumo por projeto ainda não verificado). `estimate-capacity.mjs` agora inclui os cinco arquivos locais publicados, consultas iniciais e cenários de novas aberturas, mantendo 5.000 simultâneos por duas horas. Compressão é estimada localmente, sem teste de carga externo.
+
+| Aberturas no período | Subtotal em créditos | Margem de 542 | Margem de 1.542 |
+| --- | ---: | ---: | ---: |
+| 5.000 | 430 | 112 | 1.112 |
+| 10.000 | 538 | 4 | 1.004 |
+| 20.000 | 754 | -212 | 788 |
+
+São cenários, não previsão de audiência ou teto de gasto. Pressupõem download completo dos arquivos locais a cada abertura (cache de navegador pode reduzir) e não descontam municípios finalizados. Ainda excluem corpos de notícias, processamento/armazenamento, atualizações manuais, período fora do pico, outros projetos e mudanças de tamanho com votos. Fotos/notícias de terceiros não são banda da Netlify deste projeto. As taxas oficiais de requisições/banda foram reconfirmadas na documentação. 542 não oferece reserva confortável; 1.542 melhora a margem somente se o saldo continuar disponível. Não autoriza compra, recarga automática ou mudança de plano.
+
+Próximo dado necessário: data de renovação e consumo recente por projeto no painel. Próxima verificação técnica: planejar ensaio progressivo na prévia, com duração, volume e limite de custo definidos, sem carga no TSE. Não executar 5.000 acessos contra a hospedagem apenas para demonstrar capacidade; os testes locais existentes não comprovam capacidade Netlify.
+
 ## Verificação técnica reproduzível
 
 - `npm test`: contratos, falhas e recuperação; o ensaio de 90 minutos é acelerado/local, sem rede TSE.

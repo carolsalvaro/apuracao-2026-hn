@@ -17,4 +17,14 @@ const scenario=key=>{
  const bytes=visitors*(sizes.html[key]+hours*(60*sizes.overview[key]+60*sizes.municipal[key]));
  return {gb:Math.round(bytes/1e9*100)/100,bandwidthCredits:Math.ceil(bytes/1e9*20)};
 };
-console.log(JSON.stringify({assumptions:{visitors,hours,overviewReadsPerHour:60,municipalReadsPerHour:60,newsReadsPerHour:12,oneInitialHTMLPerVisitor:true,municipalIds:ids.length,requestCreditsPer10000:2,bandwidthCreditsPerGB:20,personalMonthlyCredits:1000,availableCredits:760,pricingSource:'https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/'},requests:requestCount,requestCredits:requestCount/10000*2,payloadBytes:sizes,rawTransfer:scenario('raw'),hypotheticalGzipTransfer:scenario('gzip'),excludes:['news bodies','JS/catalogue/assets','reloads and audience turnover','compute and storage','existing account usage and other projects'],limitation:'Illustrative two-hour sustained peak after 17:00 on 25/10, with all municipalities still counting, not actual usage or an invoice. Gzip sizes are local estimates, not Netlify billing observations.'},null,2));
+const assets=['index.html','analytics.js','result-view.js','results-ui.js','localities.json'].map(path=>{const body=readFileSync(new URL('../public/'+path,import.meta.url));return {path,raw:body.length,gzip:gzipSync(body).length};});
+const scenarios=[1,2,4].map(openingsPerConcurrentVisitor=>{
+ const pageOpenings=visitors*openingsPerConcurrentVisitor;
+ // Maintain 5,000 concurrent visitors for two hours; replacement visitors do
+ // not multiply total polling time. Every opening gets an extra initial poll.
+ const requests=requestCount+pageOpenings*(assets.length+3);
+ const bytes=pageOpenings*(assets.reduce((sum,a)=>sum+a.gzip,0)+sizes.overview.gzip+sizes.municipal.gzip)+visitors*hours*60*(sizes.overview.gzip+sizes.municipal.gzip);
+ const partialCredits=Math.ceil(requests/10000*2+bytes/1e9*20);
+ return {pageOpenings,concurrentVisitors:visitors,requests,gzipGB:Number((bytes/1e9).toFixed(2)),partialCredits,remainingFrom542:542-partialCredits,remainingFrom1542:1542-partialCredits};
+});
+console.log(JSON.stringify({localAssets:assets,turnoverScenarios:scenarios,assumptions:{visitors,hours,overviewReadsPerHour:60,municipalReadsPerHour:60,newsReadsPerHour:12,oneInitialHTMLPerVisitor:true,municipalIds:ids.length,requestCreditsPer10000:2,bandwidthCreditsPerGB:20,personalMonthlyCredits:1000,availableCredits:542,pricingSource:'https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/how-credits-work/'},requests:requestCount,requestCredits:requestCount/10000*2,payloadBytes:sizes,rawTransfer:scenario('raw'),hypotheticalGzipTransfer:scenario('gzip'),excludes:['news bodies','assets excluded from legacy baseline; included in turnoverScenarios','turnover beyond explicit scenarios and manual refreshes','compute and storage','existing account usage and other projects'],limitation:'Illustrative two-hour sustained peak after 17:00 on 25/10, with all municipalities still counting, not actual usage or an invoice. Gzip sizes are local estimates, not Netlify billing observations.'},null,2));
