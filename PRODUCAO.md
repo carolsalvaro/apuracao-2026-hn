@@ -15,7 +15,7 @@ Estado e evidências atuais: [integração](docs/INTEGRACAO-TSE.md). Procediment
 - [ ] Testar endpoint /api/politica implantado e tratamento de foto ausente/falha.
 - [ ] Testar carga no nosso ambiente e cache sem gerar carga indevida ao TSE.
 - [ ] Configurar domínio, HTTPS e compartilhamento com URL final; metadados de prévia social.
-- [ ] Configurar GA4 do HN com consentimento aplicável e validar PV/clicks sem duplicação por hash, atualização ou animação.
+- [ ] GA4 `G-VZYMP84YWY` instalado com Consent Mode sem cookies (armazenamento negado). Confirmar recebimento no painel, revisar consentimento aplicável e desativar pageviews por alterações de histórico na medição otimizada do fluxo, caso habilitados. Validar relatórios e cliques antes da divulgação.
 - [ ] Preparar monitoramento, alertas, responsável de plantão, rollback e mensagem de indisponibilidade.
 - [ ] Realizar ensaio ponta a ponta e aproveitar teste oficial do TSE se disponível e confirmado.
 - [ ] Somente após remover simulações e concluir validação, retirar noindex do HTML e do netlify.toml e autorizar divulgação pública.

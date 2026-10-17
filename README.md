@@ -36,7 +36,7 @@ A função consulta a categoria Política (ID 254) do WordPress do HN e usa cach
 - A página informa data/hora da origem e da consulta. Cópia inicial oficial datada é identificada como atualização pendente; não é apresentada como apuração ao vivo.
 - A API usa fila, limite global de coleta e Netlify Blobs para preservar o último resultado válido. Os visitantes leem a API local; não consultam o TSE diretamente. A atualização central limitada também funciona na prévia, onde agendamentos Netlify não executam automaticamente.
 - Notícias continuam via Netlify Function. Favoritas ficam no localStorage do navegador; não são sincronizadas entre aparelhos nem enviadas no compartilhamento.
-- Analytics/GA4 não está configurado. Atualizar, rolar e animar não contam novos pageviews.
+- GA4 vinculado ao ID confirmado `G-VZYMP84YWY`, inclusive na prévia (`site_environment=preview`). Uma chamada explícita de page_view por abertura; atualização, rolagem e animação não chamam Analytics. Consent Mode inicia com armazenamento analítico e publicidade negados: somente medição sem cookies, sujeita às limitações de relatórios/modelagem do Google. Não há banner nem concessão implícita de consentimento. Recebimento na propriedade e opções de medição otimizada devem ser conferidos no GA4 antes da divulgação.
 - A cobertura e a capacidade ainda estão em validação. Manter noindex e não publicar em produção sem concluir o checklist.
 
 ## Testes e desenvolvimento

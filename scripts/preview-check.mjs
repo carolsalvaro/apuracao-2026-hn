@@ -29,6 +29,8 @@ try {
     page.on('requestfailed',r=>failed.push({url:r.url(),error:r.failure()?.errorText}));
     await page.route('**/*',async route=>{
       const u=new URL(route.request().url());
+      // Do not send QA traffic to Google; validate initialization separately.
+      if(u.hostname==='www.googletagmanager.com') return route.fulfill({status:200,contentType:'text/javascript',body:''});
       const samePreview=u.origin===origin && !u.pathname.includes('tse-collect');
       const image=route.request().resourceType()==='image' && u.hostname==='hnnoticias.com.br';
       const icons=[

@@ -20,7 +20,7 @@ const server=createServer(async(req,res)=>{
   }
   if(url.pathname==='/api/politica'){res.writeHead(200,{'content-type':'application/json'});res.end('{"items":[]}');return;}
   const path=url.pathname==='/'?'index.html':url.pathname.slice(1);
-  if(!['index.html','localities.json','results-ui.js','result-view.js'].includes(path)){res.writeHead(404);res.end();return;}
+  if(!['index.html','localities.json','results-ui.js','result-view.js','analytics.js'].includes(path)){res.writeHead(404);res.end();return;}
   res.writeHead(200,{'content-type':path.endsWith('.js')?'text/javascript':path.endsWith('.json')?'application/json':'text/html'});res.end(await readFile(new URL('../public/'+path,import.meta.url)));
  }catch(e){res.writeHead(500);res.end(String(e));}
 });
@@ -73,9 +73,10 @@ try {
   await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('indisponível'));
   assert.match(await page.locator('#sn-update-status').textContent(),/indisponível/);
   assert.match(await page.locator('.sn-nat-foot').textContent(),/último resultado válido mantido/i);
+  assert.equal(await page.evaluate(()=>window.dataLayer.filter(v=>v[0]==='event'&&v[1]==='page_view').length),1,'polling, navigation and animations must not send additional pageviews');
   mode='awaiting';await page.reload({waitUntil:'networkidle'});await page.waitForFunction(()=>document.querySelector('#sn-gov-cards .sn-gov'));
   await page.screenshot({path:`artifacts/browser/${width}.png`,fullPage:true,animations:'disabled'});
-  assert.deepEqual(errors,[]);results.push({width,officialAwaiting:true,identityOrdering:true,failurePreservesLastValid:true,mapSelection:true,favorites:true,noOverflow:true,pageErrors:errors});await context.close();
+  const ga=await page.evaluate(()=>window.dataLayer.map(v=>Array.from(v)));assert.equal(ga.filter(v=>v[0]==='event'&&v[1]==='page_view').length,1);assert.equal(ga.find(v=>v[0]==='config')[1],'G-VZYMP84YWY');assert.equal(ga.find(v=>v[0]==='config')[2].send_page_view,false);assert.equal(ga.find(v=>v[0]==='consent')[2].analytics_storage,'denied');assert.deepEqual(errors,[]);results.push({width,officialAwaiting:true,identityOrdering:true,failurePreservesLastValid:true,mapSelection:true,favorites:true,noOverflow:true,pageErrors:errors});await context.close();
  }
  await writeFile('artifacts/browser/results.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));
 }finally{await browser.close();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
