@@ -3,7 +3,7 @@ At most 14,000 requests, 80 MB of compressed downloads (plus in-flight data),
 40 sequential curl workers, an 8s request timeout, and three bounded stages.
 Keeps inherited proxy and TLS trust; never invokes a collector or TSE directly.
 """
-import argparse,concurrent.futures,datetime,json,math,pathlib,subprocess,threading,time
+import argparse,concurrent.futures,datetime,json,math,pathlib,subprocess,threading,time,tempfile
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 BASE='https://deploy-preview-1--stupendous-muffin-2438f0.netlify.app'
 cat=json.loads((ROOT/'public/localities.json').read_text())
@@ -19,8 +19,9 @@ def fail(message):
         if message not in errors:errors.append(message)
         stop.set()
 def worker(urls):
-    config='\n'.join('url = '+json.dumps(BASE+path)+'\noutput = "/dev/null"' for path in urls)+'\n'
-    cmd=['curl','--http2','--compressed','--silent','--show-error','--fail','--fail-early','--rate','275/m','--max-time','8','--config','-','--write-out','%{http_code}|%{time_total}|%{size_download}|%{http_version}|%{url_effective}|%header{server}|%header{x-nf-request-id}|%header{cache-status}\n']
+    body=tempfile.NamedTemporaryFile(prefix='hn-preview-response-',delete=False);body_path=pathlib.Path(body.name);body.close()
+    config='\n'.join('url = '+json.dumps(BASE+path)+'\noutput = '+json.dumps(str(body_path)) for path in urls)+'\n'
+    cmd=['curl','--http2','--compressed','--silent','--show-error','--fail-with-body','--fail-early','--rate','275/m','--max-time','8','--config','-','--write-out','%{http_code}|%{time_total}|%{size_download}|%{http_version}|%{url_effective}|%header{server}|%header{x-nf-request-id}|%header{cache-status}\n']
     latencies=[]
     # Reading stdout during execution avoids pipe backpressure affecting rates.
     with subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,text=True) as proc:
@@ -38,7 +39,7 @@ def worker(urls):
                     stats['cacheHits']+=int('hit' in cache);stats['staleResponses']+=int('fwd=stale' in cache)
                     limit=stats['wireBytes']>PLAN['maxWireBytes']
                 if code!=200:
-                    with lock:stats['failureResponses'].append({'status':code,'url':url,'server':server,'requestId':request_id})
+                    with lock:stats['failureResponses'].append({'status':code,'url':url,'server':server,'requestId':request_id,'bodyPreview':body_path.read_bytes()[:8192].decode('utf-8',errors='replace')})
                     fail('http_'+str(code))
                 if limit:fail('byte_limit')
                 latencies.append(ms)
@@ -48,6 +49,7 @@ def worker(urls):
             if not stop.is_set() and len(latencies)!=len(urls):fail('incomplete_worker')
         finally:
             with lock:processes.discard(proc)
+            body_path.unlink(missing_ok=True)
     return latencies
 # Capture first-key costs explicitly; warmup is not counted in stage percentiles.
 warmups=worker(paths)

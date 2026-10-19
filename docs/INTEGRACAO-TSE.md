@@ -3,6 +3,16 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Evidências recebidas da responsável e diagnóstico pequeno — 19/10/2026
+
+Log da função fornecido pela responsável, 15h56–16h18 de Brasília: 174 execuções, 11 rodadas, 854 verificações de fontes, status ok e zero falhas nessas rodadas. Sem marcadores ERROR/403/429/timeout/armazenamento no arquivo. Durações 86–5.491ms e memória observada até 165 MB. Isso confirma execuções observadas, não todos os acessos, margem de memória contratada ou capacidade do evento.
+
+A imagem de Web security mostra WAF desativado e nenhuma regra ativa de firewall/rate limiting. Total blocked “---” não é zero comprovado e o escopo da imagem não prova ausência de proteção da plataforma/proxy.
+
+Diagnóstico limitado posterior: 40 leituras de /analytics.js e 40 de /api/resultados?kind=overview, com até 40 simultâneas, todas HTTP 200; 403 não reproduzido. Metadados e respostas locais em artifacts/operations/403-diagnostic/report.json. Não foi repetida a carga maior. A origem da recusa anterior continua indeterminada e o cenário de 5.000 não foi aprovado.
+
+Cliente de ensaio agora usa fail-with-body e retém até 8 KB do corpo de erro, URL, servidor e ID, interrompendo na primeira falha. Comportamento de 403 validado com servidor local controlado, sem Netlify/TSE. Texto para análise do fornecedor preparado em CHAMADO-NETLIFY-403.md; não foi enviado a terceiros. Não solicitar desligamento de segurança como solução presumida.
+
 ## Saldo reforçado e diagnóstico de capacidade — 19/10/2026
 
 A responsável confirmou compra de 2.000 créditos e saldo de **2.485**. Esse é o saldo informado, não uma consulta autenticada de faturamento. Estimador atualizado; registros anteriores de 485/1.985 abaixo são histórico.

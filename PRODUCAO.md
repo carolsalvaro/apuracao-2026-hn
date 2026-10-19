@@ -19,7 +19,7 @@ Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Aind
 
 ## Ainda necessário antes de divulgar
 
-- [ ] Esclarecer a resposta 403 recebida no ensaio HTTP/2 antes de repetir a etapa maior; ainda sem atribuição de origem (Netlify ou infraestrutura de teste). As consultas individuais posteriores retornaram 200. Ensaio representativo de 5.000 ainda não aprovado.
+- [ ] Esclarecer a resposta 403 recebida no ensaio HTTP/2 antes de repetir a etapa maior; ainda sem atribuição de origem (Netlify ou infraestrutura de teste). Diagnóstico posterior com 80 consultas (até 40 simultâneas) retornou 200 em todas; log fornecido pela responsável não registra a recusa. Ensaio representativo de 5.000 ainda não aprovado. Texto para suporte em docs/CHAMADO-NETLIFY-403.md, não enviado.
 - [ ] Confirmar saldo comprado/disponível e renovação, uso dos demais projetos e política de recarga; não há autorização para compra automática. Compra de 2.000 confirmada pela responsável; saldo informado em 19/10: 2.485. Confirmar renovação e uso de outros projetos; cenários e limites do ensaio em docs/OPERACAO.md.
 - [ ] Confirmar recebimento real no GA4 e opções de pageview por histórico da medição otimizada; conferir limites de medição sem cookies e consentimento aplicável.
 - [ ] Revisão no Android/iOS físico, compartilhamento e classificação editorial dos 45 municípios AMREC/AMESC/AMUREL.
