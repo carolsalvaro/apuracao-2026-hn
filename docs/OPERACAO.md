@@ -44,6 +44,14 @@ São cenários, não previsão de audiência ou teto de gasto. Pressupõem downl
 
 Próximo dado necessário: data de renovação e consumo recente por projeto no painel. Próxima verificação técnica: planejar ensaio progressivo na prévia, com duração, volume e limite de custo definidos, sem carga no TSE. Não executar 5.000 acessos contra a hospedagem apenas para demonstrar capacidade; os testes locais existentes não comprovam capacidade Netlify.
 
+### Saldo confirmado em 19/10: 485 créditos
+
+A responsável informou **485 disponíveis**, sem compra dos 1.500 adicionais. A simulação atual compara 485 com 1.985 somente como hipótese após compra; nenhum pagamento ou recarga foi configurado. Os subtotais de 430/538/754 para 5/10/20 mil aberturas deixam, respectivamente, 55/-53/-269 dos 485, antes de compute/armazenamento e demais exclusões. Não usar o saldo atual como margem suficiente para o evento.
+
+`scripts/load-preview.py` apresenta o plano por padrão; `--run` executa somente na URL fixa do PR. Cenário: APIs de resultados e notícias, três seleções municipais fixas, progressão de volume correspondente a 500/2.500/5.000 visitantes consultando 2,2 vezes por minuto. Até 14.000 partidas, 80 trabalhadores, 80 MB observados antes de novas partidas, timeout individual 8s, parada em erro, latência acima de 5s ou fila saturada. Requisições já em voo podem acrescentar transferência ao limiar. Esses limites não são teto de faturamento de compute. Não inclui rajada inicial de HTML/imagens, seleções arbitrárias, dois horários/regiões ou duas horas de resistência.
+
+A primeira rodada usou conexões novas e foi interrompida por saturação do gerador: 1.259 respostas válidas, zero falhas de API, 2,03 MB, 1.224 hits de cache. O patamar de 5.000 não foi sustentado. O transporte passou a reutilizar conexões HTTP/1.1 pelo mesmo proxy, mantendo CA/SNI; uma tentativa inicial desse transporte foi interrompida por latência acima de 5s em uma leitura sem hit de cache (resposta válida). Preservados relatórios locais dessas tentativas; não descartar essas limitações ao interpretar eventual rodada posterior. Origem/rede/coleta em leitura fria podem acrescentar atraso. Não são provas de capacidade máxima ou fatura.
+
 ## Verificação técnica reproduzível
 
 - `npm test`: contratos, falhas e recuperação; o ensaio de 90 minutos é acelerado/local, sem rede TSE.

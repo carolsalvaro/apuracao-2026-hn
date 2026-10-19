@@ -3,6 +3,12 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Saldo e ensaio limitado — 19/10/2026
+
+Saldo confirmado pela responsável: 485, sem compra adicional. Estimador atualizado com comparação hipotética a 1.985 (485 + 1.500); não há compra ou acesso autenticado ao faturamento.
+
+Ensaio de polling da prévia preparado em scripts/load-preview.py, com execução explícita --run, host fixo, limites de partidas/transferência/concorrência, parada em falha/lentidão e dados de teste fora do conteúdo público. Primeira rodada: 1.259 respostas válidas, zero erros de API, 2,03 MB, interrompida por saturação do gerador ao subir o volume. Transporte persistente pelo proxy manteve TLS verificado; duas preparações posteriores foram interrompidas em leitura fria acima de 5s antes das etapas de volume. Não houve ensaio completo de 5.000 visitantes; não interpretar interrupção do gerador como limite comprovado da Netlify nem ocultar a latência fria. Procedimentos, limiares e limitações registrados em OPERACAO.md. Sem alteração funcional, domínio, main ou produção nesta rodada.
+
 ## Revisão para liberação — 19/10/2026
 
 Domínio final confirmado: `apuracao.hnnoticias.com.br`. Nenhum DNS ou deploy de produção alterado. Checklist atual consolidado em PRODUCAO.md; seções abaixo são histórico e podem registrar versões anteriores.

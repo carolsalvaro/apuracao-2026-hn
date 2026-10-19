@@ -20,7 +20,7 @@ Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Aind
 ## Ainda necessário antes de divulgar
 
 - [ ] Ensaio de capacidade representativo na hospedagem, com duração, diversidade de seleções municipais e teto de gasto definidos. Não substituir por teste de 5.000 requisições locais.
-- [ ] Confirmar saldo comprado/disponível e renovação, uso dos demais projetos e política de recarga; não há autorização para compra automática. A estimativa com 542 consta em docs/OPERACAO.md.
+- [ ] Confirmar saldo comprado/disponível e renovação, uso dos demais projetos e política de recarga; não há autorização para compra automática. Saldo confirmado em 19/10: 485, sem compra adicional; cenários e limites do ensaio em docs/OPERACAO.md.
 - [ ] Confirmar recebimento real no GA4 e opções de pageview por histórico da medição otimizada; conferir limites de medição sem cookies e consentimento aplicável.
 - [ ] Revisão no Android/iOS físico, compartilhamento e classificação editorial dos 45 municípios AMREC/AMESC/AMUREL.
 - [ ] Definir responsável pelo plantão e canal de alerta. Scripts/logs disponíveis não equivalem a monitor externo com notificações.
