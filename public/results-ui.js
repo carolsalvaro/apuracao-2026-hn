@@ -131,7 +131,7 @@ async function load(query) {
 }
 async function refresh(includeMunicipal=false) {
   if(busy){pending=true;return;}if(document.hidden||!catalogue)return;
-  busy=true;q('#sn-update-results').disabled=true;q('#sn-update-status').textContent='Consultando resultados oficiais…';
+  busy=true;try {q('#sn-update-results').disabled=true;q('#sn-update-status').textContent='Consultando resultados oficiais…';
   const municipalityIds=[...new Set([selected,...favoriteRows().map(c=>c.id),...catalogue.southCities.filter(c=>region==='Todas'||c.region===region).map(c=>c.id)])].filter(id=>cityItem(id)?.result?.phase!=='totalized').sort();
   const queries=['kind=overview'],updateMunicipal=includeMunicipal||Date.now()-lastMunicipalCheck>=60000;
   if(updateMunicipal)for(let i=0;i<municipalityIds.length;i+=50)queries.push('ids='+municipalityIds.slice(i,i+50).map(id=>'municipality-'+id).join(','));
@@ -140,12 +140,16 @@ async function refresh(includeMunicipal=false) {
   if(updateMunicipal&&results.slice(1).every(r=>r.status==='fulfilled'))lastMunicipalCheck=Date.now();
   if(failed)for(const [id,item] of items)items.set(id,{...item,status:'unavailable'});
   render();q('#sn-update-status').textContent=failed?'Consulta indisponível ou parcial. Últimos resultados oficiais mantidos; confira os horários.':partial?'Arquivos oficiais carregados. Alguns dados são anteriores; confira o horário em cada quadro.':'Consulta concluída. Fonte: TSE.';
-  busy=false;q('#sn-update-results').disabled=false;
+  }catch {q('#sn-update-status').textContent='Não foi possível atualizar os resultados. Nova tentativa automática em instantes.';}
+  finally{busy=false;q('#sn-update-results').disabled=false;}
   if(pending){pending=false;requestRefresh();}
 }
-q('#sn-update-results').onclick=()=>refresh(true);
+q('#sn-update-results').onclick=()=>catalogue?refresh(true):initialize();
+let initializing=false,initialRetry;
+async function initialize(){
+if(initializing||document.hidden)return;clearTimeout(initialRetry);initializing=true;
 try {
-  const response=await fetch('/localities.json');if(!response.ok)throw Error('catalogue');catalogue=await response.json();
+  const response=await fetch('/localities.json',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('catalogue');catalogue=await response.json();
   q('#sn-br-state').innerHTML=catalogue.states.slice().sort((a,b)=>a.name.localeCompare(b.name,'pt-BR')).map(d=>`<option value="${d.id}">${escape(d.name)} · ${d.uf}</option>`).join('');
   q('#sn-br-state').onchange=e=>{active=e.target.value;stateDetail();requestRefresh();};
   q('#sn-city-select').onchange=e=>{selected=e.target.value;cityDetail();southMap();requestRefresh();};
@@ -154,5 +158,12 @@ try {
   q('#sn-fav-search').oninput=()=>{limit=6;renderFavs();requestRefresh();};q('#sn-fav-region').onchange=()=>{limit=6;renderFavs();requestRefresh();};
   q('#sn-only-favs').onclick=e=>{only=!only;e.target.setAttribute('aria-pressed',only);limit=6;renderFavs();requestRefresh();};q('#sn-fav-more').onclick=()=>{limit+=12;renderFavs();requestRefresh();};
   render();new ResizeObserver(southMap).observe(q('#sn-map-svg').parentElement);new ResizeObserver(brazilMap).observe(q('#sn-br-svg').parentElement);
-  await refresh();setInterval(refresh,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
-}catch {q('#sn-update-status').textContent='Não foi possível carregar os resultados. Tente novamente em instantes.';}
+  await refresh();
+}catch {catalogue=null;q('#sn-update-status').textContent='Não foi possível carregar os resultados. Nova tentativa automática em 15 segundos.';initialRetry=setTimeout(initialize,15000);}
+finally{initializing=false;}
+}
+// Keep retrying independently of the first request: a temporary outage must not
+// disable automatic updates until the visitor reloads the document.
+setInterval(()=>{if(catalogue)refresh();},60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(catalogue)refresh();else initialize();}});
+await initialize();

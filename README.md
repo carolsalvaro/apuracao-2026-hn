@@ -1,6 +1,8 @@
 # Apuração 2026 — HN Notícias + Vertical FM
 
 **PRÉVIA EM VALIDAÇÃO. Integração oficial disponível na branch feat/integracao-tse; ainda não liberar para cobertura eleitoral.**
+Endereço final informado: **apuracao.hnnoticias.com.br**, ainda sem vínculo de domínio ou publicação de produção neste trabalho.
+
 Layout exportado em 15/10/2026. Mantém fotos, mapas, patrocinadores, favoritos, navegação fixa, compartilhamento, bonequinhos e últimas notícias com imagens.
 
 ## Importar no GitHub

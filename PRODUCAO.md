@@ -1,27 +1,31 @@
-# Pendências antes de divulgar
+# Liberação da apuração — revisão de 19/10/2026
 
-Estado e evidências atuais: [integração](docs/INTEGRACAO-TSE.md). Procedimentos e liberação: [operação](docs/OPERACAO.md). Público de referência informado: quase 5.000 simultâneos. Os itens abaixo não são automaticamente resolvidos por testes locais.
+Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Ainda não foi vinculado/configurado neste trabalho. Versão somente na branch `feat/integracao-tse`, PR #1 em rascunho. Sem merge, DNS, deploy de produção ou acesso ao Sul na Urna. Noindex permanece até autorização separada.
 
-- [ ] Validar documentação e arquivos oficiais atuais do TSE, eleições, turnos, cargos e localidades.
-- [ ] Integrar presidente nacional, todas as UFs, SC e municípios; substituir dados demonstrativos integralmente.
-- [ ] Confirmar os 45 municípios e regiões AMREC/AMESC/AMUREL; completar busca de municípios do Brasil (hoje é uma amostra).
-- [ ] Tornar a lista de disputas de governador atualizável conforme configuração oficial.
-- [ ] Implementar coleta central, cache compartilhado, armazenamento durável do último dado válido, retentativas limitadas e observabilidade.
-- [ ] Definir com base no tráfego esperado a capacidade/limites/plano de Netlify e orçamento. Cache CDN não é armazenamento persistente.
-- [ ] Separar atualização dos dados da animação e indicar quando não há novos dados.
-- [ ] Testar rede lenta, timeouts, 404/429/5xx, JSON malformado, eleição errada, dados antigos, atualização parcial, zero votos e apuração finalizada.
-- [ ] Verificar consistência com TSE e resultados em percentuais/votos/totalização sem inventar valores.
-- [ ] Testar 320/375/390/768/1440px em navegadores reais, Android/iOS, cliques, favoritos, teclado, reduzido movimento e layout das imagens.
-- [ ] Testar endpoint /api/politica implantado e tratamento de foto ausente/falha.
-- [ ] Testar carga no nosso ambiente e cache sem gerar carga indevida ao TSE.
-- [ ] Configurar domínio, HTTPS e compartilhamento com URL final; metadados de prévia social.
-- [ ] GA4 `G-VZYMP84YWY` instalado com Consent Mode sem cookies (armazenamento negado). Confirmar recebimento no painel, revisar consentimento aplicável e desativar pageviews por alterações de histórico na medição otimizada do fluxo, caso habilitados. Validar relatórios e cliques antes da divulgação.
-- [ ] Preparar monitoramento, alertas, responsável de plantão, rollback e mensagem de indisponibilidade.
-- [ ] Realizar ensaio ponta a ponta e aproveitar teste oficial do TSE se disponível e confirmado.
-- [ ] Somente após remover simulações e concluir validação, retirar noindex do HTML e do netlify.toml e autorizar divulgação pública.
+## Implementado e verificado
 
-## Próxima tarefa sugerida ao Codex
-Leia AGENTS.md, README.md e PRODUCAO.md. Inspecione o projeto sem alterar o layout. Execute os testes existentes. Proponha e implemente em etapas a integração oficial com TSE para Netlify, com cache e último resultado válido, estados de erro claros e testes relevantes. Comece verificando os dados e o ambiente; registre os pontos ainda não comprovados. Não trate a prévia como pronta nem publique dados simulados como reais.
+- [x] Presidente, 27 UFs, SC, 303 cidades do catálogo e seis governadores ligados à API central, sem resultados fictícios. Cobertura da busca é de 303 cidades, não todos os municípios brasileiros.
+- [x] Coleta limitada, lease, cache durável, validação de eleição/localidade/candidatura, retentativas e último resultado válido. Simulados locais cobrem falha/recuperação, regressão, zero e totalização.
+- [x] Municípios em andamento consultados pela página a cada minuto; parada em 100% validado, sem arredondar 99,999% para final.
+- [x] Inicialização com timeout e nova tentativa automática após falha; atualização não fica permanentemente bloqueada se ocorrer erro de renderização.
+- [x] Chromium local em 320/375/390/768/1440px: navegação, favoritas, mapas, votos, ausência de overflow/erros JS. Teste inclui falha inicial do catálogo e recuperação sem recarregar a página, além de retomada após erro da API.
+- [x] GA4 confirmado `G-VZYMP84YWY`, evento explícito único por documento, Consent Mode sem cookies/publicidade. Recebimento nos relatórios ainda não confirmado.
 
-## Verificação deste pacote
-Adaptação de função e testes locais com respostas simuladas. Implantação no projeto Netlify do usuário, navegador real e carga ainda não realizados. A hospedagem anterior continua independente.
+## Conferência oficial e ambiente de prévia em 19/10
+
+- EA11 reconferido: disputas ordinárias esperadas. EA12 mantém o mesmo SHA-256 da validação de 303 códigos municipais. Presidente, SC, Criciúma, Tubarão e seis governadores retornaram 200 e passaram no parser com identidades esperadas. Todos aguardam apuração. Não foram reconsultados os 337 EA20 nesta rodada.
+- Página/API/notícias da prévia passaram no smoke check, com cache durável e sem avisos de saúde. Datas de origem antigas e zero seções antes da eleição são distintas de consulta falha.
+- Ensaio real limitado de 91 requisições (uma inicial + três ondas de 30), máximo 30 simultâneas: zero erros, cerca de 1,91 MB lidos e cache Edge confirmado. p95 das ondas: 476/148/347 ms através do proxy deste ambiente. **Não comprova 5.000 visitantes simultâneos, carga prolongada, localidades diversas nem limite do plano.**
+
+## Ainda necessário antes de divulgar
+
+- [ ] Ensaio de capacidade representativo na hospedagem, com duração, diversidade de seleções municipais e teto de gasto definidos. Não substituir por teste de 5.000 requisições locais.
+- [ ] Confirmar saldo comprado/disponível e renovação, uso dos demais projetos e política de recarga; não há autorização para compra automática. A estimativa com 542 consta em docs/OPERACAO.md.
+- [ ] Confirmar recebimento real no GA4 e opções de pageview por histórico da medição otimizada; conferir limites de medição sem cookies e consentimento aplicável.
+- [ ] Revisão no Android/iOS físico, compartilhamento e classificação editorial dos 45 municípios AMREC/AMESC/AMUREL.
+- [ ] Definir responsável pelo plantão e canal de alerta. Scripts/logs disponíveis não equivalem a monitor externo com notificações.
+- [ ] Autorizar produção/merge e vínculo de apuracao.hnnoticias.com.br; verificar domínio/HTTPS, URLs de compartilhamento, metadados e coleta agendada real após a publicação. Não prometer validar agendamento em deploy-preview: Netlify o executa na produção.
+- [ ] Conferência final TSE, dados com votos ou simulado oficial se disponível; não existe nova data de simulado confirmada neste trabalho.
+- [ ] Remover noindex somente na liberação pública autorizada. Manter referência de rollback e preservar Blobs.
+
+Operação e recuperação: [docs/OPERACAO.md](docs/OPERACAO.md). Evidências e histórico: [docs/INTEGRACAO-TSE.md](docs/INTEGRACAO-TSE.md).

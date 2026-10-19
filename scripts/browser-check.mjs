@@ -8,7 +8,7 @@ import bootstrap from '../netlify/data/tse-bootstrap.json' with {type:'json'};
 import {createResultsHandler} from '../netlify/lib/results-api.mjs';
 import {MemoryStore} from '../tests/tse-fixtures.mjs';
 const handler=createResultsHandler({config,getStore:()=>new MemoryStore(),seedRecords:bootstrap.records});
-let mode='awaiting';
+let mode='awaiting',catalogueFailures=0;
 const server=createServer(async(req,res)=>{
  try {
   const url=new URL(req.url,'http://localhost');
@@ -19,6 +19,7 @@ const server=createServer(async(req,res)=>{
     res.writeHead(response.status,{'content-type':'application/json'});res.end(JSON.stringify(body));return;
   }
   if(url.pathname==='/api/politica'){res.writeHead(200,{'content-type':'application/json'});res.end('{"items":[]}');return;}
+  if(url.pathname==='/localities.json'&&catalogueFailures>0){catalogueFailures--;res.writeHead(503);res.end();return;}
   const path=url.pathname==='/'?'index.html':url.pathname.slice(1);
   if(!['index.html','localities.json','results-ui.js','result-view.js','analytics.js'].includes(path)){res.writeHead(404);res.end();return;}
   res.writeHead(200,{'content-type':path.endsWith('.js')?'text/javascript':path.endsWith('.json')?'application/json':'text/html'});res.end(await readFile(new URL('../public/'+path,import.meta.url)));
@@ -34,7 +35,9 @@ try {
   if(width===390)await page.clock.install();
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',r=>new URL(r.request().url()).origin===origin?r.continue():r.abort());
+  if(width===390)catalogueFailures=1;
   await page.goto(origin,{waitUntil:'networkidle'});
+  if(width===390){await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('15 segundos'));await page.clock.fastForward(16000);}
   await page.waitForFunction(()=>document.querySelector('#sn-gov-cards .sn-gov'));
   assert.equal(await page.locator('#sn-map-svg path').count(),45);
   assert.equal(await page.locator('#sn-br-svg path').count(),27);
@@ -68,11 +71,22 @@ try {
    await page.clock.fastForward(61000);await overview;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
    assert.equal(municipalReads,0,'completed municipalities must leave automatic polling');
   }
+  if(width===390){
+   await page.evaluate(()=>{window.savedGeoPath=d3.geoPath;d3.geoPath=()=>{throw Error('local rendering fault');};});
+   await page.locator('#sn-update-results').click();
+   await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
+   assert.match(await page.locator('#sn-update-status').textContent(),/Nova tentativa automática/);
+   await page.evaluate(()=>{d3.geoPath=window.savedGeoPath;delete window.savedGeoPath;});
+   const recoveredRender=page.waitForResponse(r=>r.url().includes('kind=overview')&&r.status()===200);
+   await page.clock.fastForward(61000);await recoveredRender;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
+   assert(!await page.locator('#sn-update-status').textContent().then(t=>t.includes('Não foi possível')));
+  }
   mode='offline';await page.locator('#sn-update-results').click();await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
   assert.equal(await page.locator('.sn-candidate .sn-score').first().textContent(),'40,0%');
   await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('indisponível'));
   assert.match(await page.locator('#sn-update-status').textContent(),/indisponível/);
   assert.match(await page.locator('.sn-nat-foot').textContent(),/último resultado válido mantido/i);
+  if(width===390){mode='counting';const recovered=page.waitForResponse(r=>r.url().includes('kind=overview')&&r.status()===200);await page.clock.fastForward(61000);await recovered;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);assert(!await page.locator('#sn-update-status').textContent().then(t=>t.includes('indisponível')));}
   assert.equal(await page.evaluate(()=>window.dataLayer.filter(v=>v[0]==='event'&&v[1]==='page_view').length),1,'polling, navigation and animations must not send additional pageviews');
   mode='awaiting';await page.reload({waitUntil:'networkidle'});await page.waitForFunction(()=>document.querySelector('#sn-gov-cards .sn-gov'));
   await page.screenshot({path:`artifacts/browser/${width}.png`,fullPage:true,animations:'disabled'});

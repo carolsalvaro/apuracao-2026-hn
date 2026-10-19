@@ -3,6 +3,16 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Revisão para liberação — 19/10/2026
+
+Domínio final confirmado: `apuracao.hnnoticias.com.br`. Nenhum DNS ou deploy de produção alterado. Checklist atual consolidado em PRODUCAO.md; seções abaixo são histórico e podem registrar versões anteriores.
+
+- Inicialização recebeu timeout de 10s e retentativa automática em 15s; botão Atualizar e retorno à aba também permitem recuperar o carregamento. O relógio de consultas periódicas é instalado independentemente da primeira chamada. Flag de atualização é liberada por finally mesmo em falha de renderização.
+- Teste Chromium ampliado para falha inicial do catálogo seguida de recuperação sem reload e retomada automática após erro da API. Layout preservado; metadados de descrição/compartilhamento preparados sem URL canônica inventada ou retirada do noindex.
+- EA11, EA12 e dez EA20 reconsultados: 12 respostas 200. Disputas/candidaturas esperadas; hash do mapa oficial de municípios inalterado. Todos os EA20 consultados ainda aguardam apuração. Arquivos de evidência em artifacts/operations/official-validation.json (local/ignorado no Git). Não alterada a revisão do cache nem o bootstrap.
+- Smoke da prévia sem avisos. Novo check-preview-burst.py limita o ensaio a 91 leituras, 30 simultâneas e 60s de início; interrompe novas ondas após falha/latência elevada. Rodada: 91 respostas válidas, zero erros, 1,91 MB, 8,7s, hits do Edge. Não é prova de capacidade de 5.000 visitantes nem orçamento final.
+- Pendências concretas: ensaio representativo de capacidade, saldo real/renovação, painel GA4, dispositivos físicos, revisão editorial, plantão/alertas e autorização de publicação/domínio. Agendamento de produção só pode ser validado após publicação autorizada. Não declarar a cobertura pronta enquanto essas condições estiverem abertas.
+
 ## Atualização por minuto e encerramento municipal — estado atual
 
 Esta seção substitui as frequências/limites das etapas históricas abaixo. A usuária informou 760 créditos e pico de quase 5.000 simultâneos por aproximadamente duas horas após as 17h de 25/10.
