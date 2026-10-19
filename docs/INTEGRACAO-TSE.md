@@ -3,6 +3,18 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Saldo reforçado e diagnóstico de capacidade — 19/10/2026
+
+A responsável confirmou compra de 2.000 créditos e saldo de **2.485**. Esse é o saldo informado, não uma consulta autenticada de faturamento. Estimador atualizado; registros anteriores de 485/1.985 abaixo são histórico.
+
+A API foi ajustada para CDN `s-maxage=30, stale-while-revalidate=15`, sem alterar browser max-age=10, timestamps, votos ou leitura operacional no-store. O objetivo é servir a cópia existente enquanto a CDN revalida. Pode acrescentar até 15s de idade da cópia; primeiro acesso sem cópia ainda pode esperar. Teste de contrato cobre os cabeçalhos e a leitura operacional. Fonte técnica: https://docs.netlify.com/build/caching/caching-overview/.
+
+A comparação individual mediu overview com revalidação em 5.373ms, overview seguinte em 482ms e leitura sem coleta em 347ms. Gerador HTTP/1.1 persistente recebeu 2.061 respostas válidas, mas saturou sua fila. Gerador HTTP/2 foi corrigido para tolerar ausência do cabeçalho de cache e distribuir partidas uniformemente, sem rajadas de lotes.
+
+Rodada HTTP/2 ritmada: 183/916 consultas completadas nos dois primeiros patamares, com p95 de 265/242ms. Ao iniciar o patamar de 5.000, uma resposta 403 interrompeu o ensaio. No total: 1.137 respostas, sendo 1.136 HTTP 200 e uma 403; 1,62 MB comprimidos, 1.101 hits. Os 12.833 pedidos previstos para a etapa maior não foram executados por completo. **Ensaio não aprovado; capacidade de 5.000 ainda pendente.** Ainda não identificado se 403 veio da Netlify ou infraestrutura do teste; não atribuir causa sem evidência. Consultas individuais posteriores a catálogo/resultados/notícias voltaram 200. Não repetir carga maior até esclarecer o bloqueio. Script agora registra URL, servidor e ID da requisição em futuras recusas, sem credenciais.
+
+Relatórios locais em artifacts/operations; scripts e limites em OPERACAO.md. Sem main, DNS, produção ou acesso ao Sul na Urna. Sem compra/recarga configurada pelo agente.
+
 ## Saldo e ensaio limitado — 19/10/2026
 
 Saldo confirmado pela responsável: 485, sem compra adicional. Estimador atualizado com comparação hipotética a 1.985 (485 + 1.500); não há compra ou acesso autenticado ao faturamento.
