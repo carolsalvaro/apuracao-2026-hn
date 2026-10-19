@@ -70,3 +70,13 @@ test('a request blocked by the shared lease still queues its locality for the ne
   assert.equal((await run([second.id])).status,'busy');
   clock+=60000;await run([target.id]);assert.deepEqual(seen,[target.id,second.id]);
 });
+
+test('public API permits short background CDN revalidation while operational reads remain uncached',async()=>{
+  const handler=createResultsHandler({config,getStore:()=>new MemoryStore(),seedRecords:bootstrap.records});
+  const publicRead=await handler(new Request('https://test/api/resultados?kind=overview'));
+  assert.equal(publicRead.headers.get('Cache-Control'),'public, max-age=10');
+  assert.equal(publicRead.headers.get('Netlify-CDN-Cache-Control'),'public, s-maxage=30, stale-while-revalidate=15');
+  const operationalRead=await handler(new Request('https://test/api/resultados?kind=overview&cached=1'));
+  assert.equal(operationalRead.headers.get('Cache-Control'),'no-store');
+  assert.equal(operationalRead.headers.get('Netlify-CDN-Cache-Control'),null);
+});

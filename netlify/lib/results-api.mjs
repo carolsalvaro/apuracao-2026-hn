@@ -27,7 +27,7 @@ export function createResultsHandler({config,getStore,now=()=>Date.now(),refresh
       if(storageError && items.every(i=>!i.result)) throw Error('storage_unavailable');
       if(cached!=='1'){
         headers['Cache-Control']='public, max-age=10';
-        headers['Netlify-CDN-Cache-Control']='public, s-maxage=30';
+        headers['Netlify-CDN-Cache-Control']='public, s-maxage=30, stale-while-revalidate=15';
       }
       return respond({status:unavailable||storageError||refreshError?'partial':'current',demo:false,storage:storageError?'unavailable':'ready',generatedAt:new Date(now()).toISOString(),items});
     } catch { return respond({status:'unavailable',items:[],message:'Resultados temporariamente indisponíveis.'},503); }
