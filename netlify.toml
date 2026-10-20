@@ -1,4 +1,5 @@
 [build]
+  command = "node scripts/prepare-social.mjs"
   publish = "public"
   functions = "netlify/functions"
 

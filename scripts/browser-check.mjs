@@ -107,7 +107,6 @@ try {
   mode='offline';await page.locator('#sn-update-results').click();await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);
   assert.equal(await page.locator('.sn-candidate .sn-score').first().textContent(),'40,0%');
   await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('indisponível'));
-  assert.match(await page.locator('#sn-update-status').textContent(),/indisponível/);
   assert.match(await page.locator('.sn-nat-foot').textContent(),/último resultado válido mantido/i);
   if(width===390){mode='counting';const recovered=page.waitForResponse(r=>r.url().includes('kind=overview')&&r.status()===200);await page.clock.fastForward(61000);await recovered;await page.waitForFunction(()=>!document.querySelector('#sn-update-results').disabled);assert(!await page.locator('#sn-update-status').textContent().then(t=>t.includes('indisponível')));}
   assert.equal(await page.evaluate(()=>window.dataLayer.filter(v=>v[0]==='event'&&v[1]==='page_view').length),1,'polling, navigation and animations must not send additional pageviews');
@@ -150,14 +149,16 @@ try {
   else {await newsPage.locator('#sn-whatsapp-link').focus();await newsPage.keyboard.press('Enter');}
   const popup=await opened;await popup.waitForURL('https://wa.me/**',{waitUntil:'domcontentloaded'});
   assert.equal(await popup.title(),'Local sharing destination');
-  assert.equal(new URL(popup.url()).searchParams.get('text'),'Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+origin+'/');
+  assert.equal(new URL(popup.url()).searchParams.get('text'),'Acompanhe a apuração do 2º turno para presidente em 2026 com o HN Notícias e a Vertical FM. '+origin+'/');
   await popup.close();
  }
  const whatsapp=new URL(await newsPage.locator('#sn-whatsapp-link').getAttribute('href'));
  assert.equal(whatsapp.origin,'https://wa.me');
- assert.equal(whatsapp.searchParams.get('text'),'Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+origin+'/');
+ assert.equal(whatsapp.searchParams.get('text'),'Acompanhe a apuração do 2º turno para presidente em 2026 com o HN Notícias e a Vertical FM. '+origin+'/');
  await newsPage.locator('#sn-share-button').click();
  assert.equal(await newsPage.evaluate(()=>window.sharedData.url),origin+'/');
+ assert.match(await newsPage.evaluate(()=>window.sharedData.title),/2º turno de 2026/);
+ assert.match(await newsPage.evaluate(()=>window.sharedData.text),/2º turno para presidente/);
  await newsPage.evaluate(()=>{Object.defineProperty(navigator,'share',{configurable:true,value:undefined});Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.copiedLink=text;}}});});
  await newsPage.locator('#sn-copy-link').click();
  assert.equal(await newsPage.evaluate(()=>window.copiedLink),origin+'/');

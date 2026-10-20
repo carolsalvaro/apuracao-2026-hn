@@ -3,6 +3,12 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Cartão de compartilhamento do segundo turno — 20/10/2026
+
+Título, Open Graph e mensagem dos dois compartilhadores agora identificam o 2º turno para presidente em 2026. Cartão JPEG local 1200×630 usa as duas marcas existentes, sem números eleitorais, scripts externos ou imagens remotas. Gerador local em `scripts/generate-share-card.mjs`; arte revisada visualmente. Imagem e metadados estão no HTML inicial para crawlers que não executam JavaScript. O build `scripts/prepare-social.mjs` escolhe URL absoluta da própria prévia via DEPLOY_PRIME_URL ou o domínio final acordado quando CONTEXT=production; isso apenas prepara arquivos, não vincula domínio nem publica produção. Noindex preservado. Testes cobrem metadados, JPEG, URL por ambiente, texto compartilhado e popup. A exibição imediata do cartão no WhatsApp depende também do cache e das configurações do aplicativo e não é garantida pelos testes locais.
+
+Cadência mantida: navegador visível consulta resultados a cada 60s e notícias a cada 300s. Municípios exatamente totalizados saem da consulta automática; cache e publicação da origem podem acrescentar atraso. Nenhum ajuste para 30s foi feito.
+
 ## Faixa de compartilhamento pelo WhatsApp — 20/10/2026
 
 Correção após relato de toque sem ação: o runtime legado do widget interceptava todos os links externos com `preventDefault` e encaminhava ao host, inexistente quando o site está aberto diretamente. Agora essa interceptação não ocorre na página independente, preservando a navegação normal do navegador. O teste anterior verificava apenas href/mensagem e não detectava a falha; substituído por abertura efetiva de popup via toque no ícone e Enter, com destino atendido localmente, sem contato com WhatsApp/envio. A conferência da prévia inclui o mesmo toque com popup local.

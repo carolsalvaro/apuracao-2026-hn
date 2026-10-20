@@ -16,7 +16,7 @@ Layout exportado em 15/10/2026. Mantém fotos, mapas, patrocinadores, favoritos,
 ## Importar no Netlify
 Importe o repositório pelo fluxo de integração Git. A configuração está em `netlify.toml`:
 - Base directory: vazia (raiz).
-- Build command: vazio (sem compilação).
+- Build command: `node scripts/prepare-social.mjs` (ajusta a URL absoluta da imagem de compartilhamento ao ambiente).
 - Publish directory: `public`.
 - Functions directory: `netlify/functions`.
 - Node: 22.

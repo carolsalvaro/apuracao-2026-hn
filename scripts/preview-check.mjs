@@ -48,6 +48,12 @@ try {
     assert.equal(response.status(),200);
     assert.match((await response.allHeaders())['x-robots-tag'],/noindex/);
     assert.match(await page.locator('meta[name="robots"]').getAttribute('content'),/noindex/);
+    assert.match(await page.title(),/Presidente: apuração do 2º turno de 2026/);
+    const shareImage=await page.locator('meta[property="og:image"]').getAttribute('content');
+    assert.equal(shareImage,origin+'/compartilhar-2-turno-2026.jpg');
+    const jpeg=await verifiedResponse(shareImage);
+    assert.equal(jpeg.status,200);assert.match(jpeg.headers['content-type'],/image\/jpeg/);
+    assert.equal(jpeg.body.readUInt16BE(0),0xffd8);
     // The real Netlify-injected drawer must not cover the page when its iframe
     // is refused by our CSP. Unlike source-only QA, this checks post-build HTML.
     const drawer=page.locator('body > div[data-netlify-site-id][data-netlify-deploy-id]');
