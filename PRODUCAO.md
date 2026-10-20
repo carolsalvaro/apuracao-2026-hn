@@ -1,6 +1,10 @@
-# Liberação da apuração — revisão de 19/10/2026
+# Liberação da apuração — revisão de 20/10/2026
 
 Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Ainda não foi vinculado/configurado neste trabalho. Versão somente na branch `feat/integracao-tse`, PR #1 em rascunho. Sem merge, DNS, deploy de produção ou acesso ao Sul na Urna. Noindex permanece até autorização separada.
+
+## Autorização de testes remotos
+
+Netlify Support respondeu que testes de carga/benchmark exigem permissão escrita prévia. Pedido pendente; nenhum novo ensaio remoto pode ser executado até aprovação e revisão do escopo. Os três scripts remotos têm trava comum em `config/netlify-load-authorization.json`, inicialmente `approved=false`. Não preencher aprovação com base apenas na autorização da proprietária ou na compra de créditos. Revisão de código e testes locais podem continuar.
 
 ## Implementado e verificado
 
@@ -9,6 +13,7 @@ Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Aind
 - [x] Municípios em andamento consultados pela página a cada minuto; parada em 100% validado, sem arredondar 99,999% para final.
 - [x] Inicialização com timeout e nova tentativa automática após falha; atualização não fica permanentemente bloqueada se ocorrer erro de renderização.
 - [x] Chromium local em 320/375/390/768/1440px: navegação, favoritas, mapas, votos, ausência de overflow/erros JS. Teste inclui falha inicial do catálogo e recuperação sem recarregar a página, além de retomada após erro da API.
+- [x] Notícias retomam consulta ao retornar à aba; servidor local validou falha mantendo chamadas e recuperação, e compartilhamento com alternativas de cópia e sem query/hash.
 - [x] GA4 confirmado `G-VZYMP84YWY`, evento explícito único por documento, Consent Mode sem cookies/publicidade. Recebimento nos relatórios ainda não confirmado.
 
 ## Conferência oficial e ambiente de prévia em 19/10
@@ -19,7 +24,7 @@ Domínio final informado pela responsável: **apuracao.hnnoticias.com.br**. Aind
 
 ## Ainda necessário antes de divulgar
 
-- [ ] Esclarecer a resposta 403 recebida no ensaio HTTP/2 antes de repetir a etapa maior; ainda sem atribuição de origem (Netlify ou infraestrutura de teste). Diagnóstico posterior com 80 consultas (até 40 simultâneas) retornou 200 em todas; log fornecido pela responsável não registra a recusa. Ensaio representativo de 5.000 ainda não aprovado. Texto para suporte em docs/CHAMADO-NETLIFY-403.md, não enviado.
+- [ ] Obter autorização escrita prévia e revisar seus limites; esclarecer a resposta 403 recebida no ensaio HTTP/2 antes de repetir a etapa maior; ainda sem atribuição de origem (Netlify ou infraestrutura de teste). Diagnóstico posterior com 80 consultas (até 40 simultâneas) retornou 200 em todas; log fornecido pela responsável não registra a recusa. Ensaio representativo de 5.000 ainda não aprovado. A responsável enviou o esclarecimento ao suporte; a origem segue sem confirmação. Aguardando autorização escrita para qualquer novo ensaio remoto.
 - [ ] Confirmar saldo comprado/disponível e renovação, uso dos demais projetos e política de recarga; não há autorização para compra automática. Compra de 2.000 confirmada pela responsável; saldo informado em 19/10: 2.485. Confirmar renovação e uso de outros projetos; cenários e limites do ensaio em docs/OPERACAO.md.
 - [ ] Confirmar recebimento real no GA4 e opções de pageview por histórico da medição otimizada; conferir limites de medição sem cookies e consentimento aplicável.
 - [ ] Revisão no Android/iOS físico, compartilhamento e classificação editorial dos 45 municípios AMREC/AMESC/AMUREL.

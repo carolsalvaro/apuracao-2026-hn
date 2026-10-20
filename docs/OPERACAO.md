@@ -2,6 +2,14 @@
 
 Estado: prévia do PR #1, sem autorização de produção. Este documento não autoriza merge, alteração de DNS, retirada de noindex ou deploy de produção.
 
+## Restrição atual: permissão escrita da Netlify pendente
+
+Resposta do suporte fornecida pela responsável em 20/10: testes de carga/benchmark na Netlify exigem autorização escrita prévia. O esclarecimento foi enviado pela responsável e há um pedido de autorização; aprovação ainda não foi recebida. As rodadas remotas descritas abaixo ocorreram antes de conhecermos essa exigência e não autorizam sua repetição.
+
+Três clientes remotos (`load-preview.py`, `load-preview-http2.py`, `check-preview-burst.py`) imprimem plano por padrão; executar com --run exige registro aprovado, referência da autorização e validade futura em `config/netlify-load-authorization.json`. O registro atual bloqueia todos antes de iniciar rede. Alterá-lo somente após revisar a resposta real e os limites aprovados; a existência de saldo ou autorização da proprietária não substitui a autorização do provedor. Exemplos históricos com --run abaixo ficam suspensos.
+
+Testes locais de contrato, navegador e carga com origem simulada continuam permitidos. Não mudar as proteções da conta para tentar resolver uma recusa de causa ainda indeterminada. Visitas normais e checagens funcionais pontuais não são um benchmark; não converter essas checagens em carga repetida.
+
 ## Estado mais recente — 19/10/2026
 
 A responsável confirmou compra de **2.000 créditos** e saldo atual de **2.485**. Os saldos de 760/542/485 e a hipótese de compra de 1.500 abaixo são histórico. Estimador atualizado para 2.485, sem contratação ou recarga feita pelo agente. Cenários parciais de 430/538/754 deixam 2.055/1.947/1.731, antes das exclusões e uso dos demais projetos. Aumento de saldo não aumenta automaticamente concorrência ou garante disponibilidade.

@@ -43,6 +43,8 @@ A função consulta a categoria Política (ID 254) do WordPress do HN e usa cach
 
 ## Testes e desenvolvimento
 Requer Node >=22.12. Execute `npm ci`, `npm test` e `npm run test:browser`.
+Testes de carga/benchmark na Netlify estão suspensos até autorização escrita do provedor. Os scripts remotos têm trava; o pedido está pendente. Testes locais usam origem simulada.
+
 Para simular as funções localmente, use Netlify CLI (`netlify dev`) se já disponível. Abrir o HTML pelo explorador de arquivos serve apenas para ver o layout e não executa a função de notícias.
 Testes incluídos são unitários/de contrato, não substituem testes reais em navegador, de carga nem o primeiro deploy no Netlify.
 

@@ -2,8 +2,14 @@
 No arbitrary targets, cache-busting URLs, direct TSE traffic or production calls.
 At most 91 requests, 30 concurrent, 8 MB read, and 60 seconds of new starts.
 """
+import argparse
+from netlify_load_authorization import require_netlify_approval
 import concurrent.futures,datetime,json,pathlib,threading,time,urllib.request
 URL='https://deploy-preview-1--stupendous-muffin-2438f0.netlify.app/api/resultados?kind=overview'
+parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--run',action='store_true')
+if not parser.parse_args().run:
+    print(json.dumps({'maxRequests':91,'maxConcurrent':30,'maxBytes':8000000,'requiresWrittenNetlifyApproval':True}));raise SystemExit(0)
+require_netlify_approval()
 lock=threading.Lock();used=0;started=time.monotonic();stop=threading.Event()
 def read(_):
     global used

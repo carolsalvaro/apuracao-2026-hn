@@ -12,6 +12,8 @@ paths=['/api/resultados?kind=overview',mu([c['id'] for c in cat['southCities']]+
 PLAN={'stages':[{'visitors':500,'seconds':10,'workers':4},{'visitors':2500,'seconds':10,'workers':20},{'visitors':5000,'seconds':70,'workers':40}],'readsPerVisitorPerMinute':2.2,'ratePerWorker':'275/m','maxRequests':14000,'maxWireBytes':80000000,'timeoutSeconds':8,'criteria':'all HTTP 200, stage p95 <2s, final throughput >=95% of target; stop on first transport/status error, resource or time limit','scope':'API polling on three municipal selections, not complete browsers, initial HTML burst, two-hour endurance or all municipal cache keys'}
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--run',action='store_true')
 if not parser.parse_args().run:print(json.dumps(PLAN,indent=2));raise SystemExit(0)
+from netlify_load_authorization import require_netlify_approval
+require_netlify_approval()
 stop=threading.Event();lock=threading.Lock();stats={'completed':0,'wireBytes':0,'httpVersions':{},'httpStatuses':{},'cacheHits':0,'staleResponses':0,'failureResponses':[]};errors=[];stages=[];sequence=0
 processes=set()
 def fail(message):

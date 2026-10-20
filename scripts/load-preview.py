@@ -13,6 +13,8 @@ PLAN={'stages':[{'visitors':500,'seconds':10},{'visitors':2500,'seconds':10},{'v
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--run',action='store_true')
 if not parser.parse_args().run:
     print(json.dumps(PLAN,indent=2));raise SystemExit(0)
+from netlify_load_authorization import require_netlify_approval
+require_netlify_approval()
 proxy=urllib.parse.urlsplit(urllib.request.getproxies().get('https',''))
 if proxy.scheme!='http' or not proxy.hostname or proxy.username:raise SystemExit('Managed HTTPS proxy configuration unavailable for persistent test transport')
 transport=threading.local();tls=ssl.create_default_context()

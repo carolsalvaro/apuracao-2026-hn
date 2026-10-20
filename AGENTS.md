@@ -26,3 +26,6 @@ Priorizar testes significativos de falha, recuperação, integração, celulares
 
 ## Estado técnico
 HTML monolítico com CSS acumulado: cuidado com ordem/especificidade; houve bugs anteriores de espaçamento, cor do primeiro menu e borda/padding apenas no segundo candidato. Refatorar e testar antes de adicionar novas sobrescritas. CSP no HTML limita origens de imagens/conexões; revisar conscientemente ao integrar Analytics ou APIs.
+
+## Autorização Netlify para testes de carga
+Netlify Support informou em 20/10/2026 que testes remotos de carga/benchmark exigem permissão escrita prévia. Pedido pendente: não executar carga, bursts ou benchmarks na Netlify. Scripts remotos têm trava em config/netlify-load-authorization.json; não marcar approved=true com base apenas no saldo, na autorização da proprietária ou para contornar a trava. Revisar resposta escrita e limites antes de habilitar. Testes locais com origem simulada e revisão de código podem continuar.

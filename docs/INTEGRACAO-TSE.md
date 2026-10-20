@@ -3,6 +3,14 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Continuidade enquanto se aguarda o suporte — 20/10/2026
+
+A responsável encaminhou a resposta da Netlify: permissão escrita prévia é obrigatória para carga/benchmark. Pedido de autorização pendente; scripts remotos passam a imprimir plano por padrão e a bloquear --run antes da rede enquanto não houver aprovação escrita revisada, referência e validade registradas. O arquivo atual mantém approved=false. Não houve nova rodada de carga remota nesta etapa.
+
+Notícias agora consultam novamente a API ao voltar a uma aba visível, mantendo a pausa em segundo plano e o intervalo normal de cinco minutos. A alteração preserva fotos/layout, texto de falha e últimas chamadas quando a API falha. A página não dispara pageview adicional por esse retorno ou pela atualização.
+
+Testes de contrato passaram. Chromium local passou nas cinco larguras e nos cenários adicionais: notícias ao retornar à aba, manutenção das chamadas em falha, pausa em segundo plano, remoção de imagem com falha, compartilhamento nativo, cópia por clipboard e campo manual, cancelamento sem cópia e URL sem query/hash. Isso não é validação em Android/iOS físico nem confirmação de recebimento no painel GA4. Validações desta etapa são locais, com servidor simulado e bloqueio de tráfego externo no Chromium. Nenhuma simulação é incluída no conteúdo publicado. Main, domínio final, produção e noindex preservados.
+
 ## Evidências recebidas da responsável e diagnóstico pequeno — 19/10/2026
 
 Log da função fornecido pela responsável, 15h56–16h18 de Brasília: 174 execuções, 11 rodadas, 854 verificações de fontes, status ok e zero falhas nessas rodadas. Sem marcadores ERROR/403/429/timeout/armazenamento no arquivo. Durações 86–5.491ms e memória observada até 165 MB. Isso confirma execuções observadas, não todos os acessos, margem de memória contratada ou capacidade do evento.
