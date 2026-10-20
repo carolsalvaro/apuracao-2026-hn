@@ -1,0 +1,2128 @@
+{
+  "source": "https://resultados.tse.jus.br/oficial/ele2026/6258/config/mun-e006258-cm.json",
+  "capturedAt": "2026-10-15T20:18:22.812Z",
+  "sha256": "e4a2f2d45bac325f486e1866973fd65ae86744896d0f19e791b0bbb58d86e839",
+  "municipalities": [
+    {
+      "ibge": "4204608",
+      "tse": "80896",
+      "uf": "sc",
+      "name": "Criciúma",
+      "officialName": "CRICIÚMA"
+    },
+    {
+      "ibge": "3550308",
+      "tse": "71072",
+      "uf": "sp",
+      "name": "São Paulo",
+      "officialName": "SÃO PAULO"
+    },
+    {
+      "ibge": "4205407",
+      "tse": "81051",
+      "uf": "sc",
+      "name": "Florianópolis",
+      "officialName": "FLORIANÓPOLIS"
+    },
+    {
+      "ibge": "4218707",
+      "tse": "83674",
+      "uf": "sc",
+      "name": "Tubarão",
+      "officialName": "TUBARÃO"
+    },
+    {
+      "ibge": "3304557",
+      "tse": "60011",
+      "uf": "rj",
+      "name": "Rio de Janeiro",
+      "officialName": "RIO DE JANEIRO"
+    },
+    {
+      "ibge": "4201406",
+      "tse": "80276",
+      "uf": "sc",
+      "name": "Araranguá",
+      "officialName": "ARARANGUÁ"
+    },
+    {
+      "ibge": "4207007",
+      "tse": "81370",
+      "uf": "sc",
+      "name": "Içara",
+      "officialName": "IÇARA"
+    },
+    {
+      "ibge": "4209409",
+      "tse": "81850",
+      "uf": "sc",
+      "name": "Laguna",
+      "officialName": "LAGUNA"
+    },
+    {
+      "ibge": "4205456",
+      "tse": "81060",
+      "uf": "sc",
+      "name": "Forquilhinha",
+      "officialName": "FORQUILHINHA"
+    },
+    {
+      "ibge": "4201505",
+      "tse": "80292",
+      "uf": "sc",
+      "name": "Armazém",
+      "officialName": "ARMAZÉM"
+    },
+    {
+      "ibge": "4201950",
+      "tse": "81728",
+      "uf": "sc",
+      "name": "Balneário Arroio do Silva",
+      "officialName": "BALNEÁRIO ARROIO DO SILVA"
+    },
+    {
+      "ibge": "4202073",
+      "tse": "81744",
+      "uf": "sc",
+      "name": "Balneário Gaivota",
+      "officialName": "BALNEÁRIO GAIVOTA"
+    },
+    {
+      "ibge": "4202800",
+      "tse": "80535",
+      "uf": "sc",
+      "name": "Braço do Norte",
+      "officialName": "BRAÇO DO NORTE"
+    },
+    {
+      "ibge": "4203956",
+      "tse": "81027",
+      "uf": "sc",
+      "name": "Capivari de Baixo",
+      "officialName": "CAPIVARI DE BAIXO"
+    },
+    {
+      "ibge": "4204251",
+      "tse": "80306",
+      "uf": "sc",
+      "name": "Cocal do Sul",
+      "officialName": "COCAL DO SUL"
+    },
+    {
+      "ibge": "4205191",
+      "tse": "81167",
+      "uf": "sc",
+      "name": "Ermo",
+      "officialName": "ERMO"
+    },
+    {
+      "ibge": "4206108",
+      "tse": "81191",
+      "uf": "sc",
+      "name": "Grão-Pará",
+      "officialName": "GRÃO-PARÁ"
+    },
+    {
+      "ibge": "4206207",
+      "tse": "81213",
+      "uf": "sc",
+      "name": "Gravatal",
+      "officialName": "GRAVATAL"
+    },
+    {
+      "ibge": "4207205",
+      "tse": "81418",
+      "uf": "sc",
+      "name": "Imaruí",
+      "officialName": "IMARUÍ"
+    },
+    {
+      "ibge": "4207304",
+      "tse": "81434",
+      "uf": "sc",
+      "name": "Imbituba",
+      "officialName": "IMBITUBA"
+    },
+    {
+      "ibge": "4208708",
+      "tse": "81710",
+      "uf": "sc",
+      "name": "Jacinto Machado",
+      "officialName": "JACINTO MACHADO"
+    },
+    {
+      "ibge": "4208807",
+      "tse": "81736",
+      "uf": "sc",
+      "name": "Jaguaruna",
+      "officialName": "JAGUARUNA"
+    },
+    {
+      "ibge": "4209607",
+      "tse": "81892",
+      "uf": "sc",
+      "name": "Lauro Müller",
+      "officialName": "LAURO MÜLLER"
+    },
+    {
+      "ibge": "4210407",
+      "tse": "83917",
+      "uf": "sc",
+      "name": "Maracajá",
+      "officialName": "MARACAJÁ"
+    },
+    {
+      "ibge": "4210803",
+      "tse": "82112",
+      "uf": "sc",
+      "name": "Meleiro",
+      "officialName": "MELEIRO"
+    },
+    {
+      "ibge": "4211207",
+      "tse": "82198",
+      "uf": "sc",
+      "name": "Morro da Fumaça",
+      "officialName": "MORRO DA FUMAÇA"
+    },
+    {
+      "ibge": "4211256",
+      "tse": "81086",
+      "uf": "sc",
+      "name": "Morro Grande",
+      "officialName": "MORRO GRANDE"
+    },
+    {
+      "ibge": "4211603",
+      "tse": "82279",
+      "uf": "sc",
+      "name": "Nova Veneza",
+      "officialName": "NOVA VENEZA"
+    },
+    {
+      "ibge": "4211702",
+      "tse": "82295",
+      "uf": "sc",
+      "name": "Orleans",
+      "officialName": "ORLEANS"
+    },
+    {
+      "ibge": "4212254",
+      "tse": "80403",
+      "uf": "sc",
+      "name": "Passo de Torres",
+      "officialName": "PASSO DE TORRES"
+    },
+    {
+      "ibge": "4212403",
+      "tse": "82430",
+      "uf": "sc",
+      "name": "Pedras Grandes",
+      "officialName": "PEDRAS GRANDES"
+    },
+    {
+      "ibge": "4212650",
+      "tse": "83925",
+      "uf": "sc",
+      "name": "Pescaria Brava",
+      "officialName": "PESCARIA BRAVA"
+    },
+    {
+      "ibge": "4213807",
+      "tse": "82716",
+      "uf": "sc",
+      "name": "Praia Grande",
+      "officialName": "PRAIA GRANDE"
+    },
+    {
+      "ibge": "4214904",
+      "tse": "82937",
+      "uf": "sc",
+      "name": "Rio Fortuna",
+      "officialName": "RIO FORTUNA"
+    },
+    {
+      "ibge": "4215455",
+      "tse": "81000",
+      "uf": "sc",
+      "name": "Sangão",
+      "officialName": "SANGÃO"
+    },
+    {
+      "ibge": "4215604",
+      "tse": "83070",
+      "uf": "sc",
+      "name": "Santa Rosa de Lima",
+      "officialName": "SANTA ROSA DE LIMA"
+    },
+    {
+      "ibge": "4215653",
+      "tse": "80241",
+      "uf": "sc",
+      "name": "Santa Rosa do Sul",
+      "officialName": "SANTA ROSA DO SUL"
+    },
+    {
+      "ibge": "4216404",
+      "tse": "83232",
+      "uf": "sc",
+      "name": "São João do Sul",
+      "officialName": "SÃO JOÃO DO SUL"
+    },
+    {
+      "ibge": "4217006",
+      "tse": "83356",
+      "uf": "sc",
+      "name": "São Ludgero",
+      "officialName": "SÃO LUDGERO"
+    },
+    {
+      "ibge": "4217105",
+      "tse": "83372",
+      "uf": "sc",
+      "name": "São Martinho",
+      "officialName": "SÃO MARTINHO"
+    },
+    {
+      "ibge": "4217600",
+      "tse": "83470",
+      "uf": "sc",
+      "name": "Siderópolis",
+      "officialName": "SIDERÓPOLIS"
+    },
+    {
+      "ibge": "4217709",
+      "tse": "83496",
+      "uf": "sc",
+      "name": "Sombrio",
+      "officialName": "SOMBRIO"
+    },
+    {
+      "ibge": "4218103",
+      "tse": "83933",
+      "uf": "sc",
+      "name": "Timbé do Sul",
+      "officialName": "TIMBÉ DO SUL"
+    },
+    {
+      "ibge": "4218350",
+      "tse": "81345",
+      "uf": "sc",
+      "name": "Treviso",
+      "officialName": "TREVISO"
+    },
+    {
+      "ibge": "4218400",
+      "tse": "83615",
+      "uf": "sc",
+      "name": "Treze de Maio",
+      "officialName": "TREZE DE MAIO"
+    },
+    {
+      "ibge": "4218806",
+      "tse": "83690",
+      "uf": "sc",
+      "name": "Turvo",
+      "officialName": "TURVO"
+    },
+    {
+      "ibge": "4219002",
+      "tse": "83739",
+      "uf": "sc",
+      "name": "Urussanga",
+      "officialName": "URUSSANGA"
+    },
+    {
+      "ibge": "4220000",
+      "tse": "83909",
+      "uf": "sc",
+      "name": "Balneário Rincão",
+      "officialName": "BALNEÁRIO RINCÃO"
+    },
+    {
+      "ibge": "4200051",
+      "tse": "80225",
+      "uf": "sc",
+      "name": "Abdon Batista",
+      "officialName": "ABDON BATISTA"
+    },
+    {
+      "ibge": "4200101",
+      "tse": "80012",
+      "uf": "sc",
+      "name": "Abelardo Luz",
+      "officialName": "ABELARDO LUZ"
+    },
+    {
+      "ibge": "4200200",
+      "tse": "80039",
+      "uf": "sc",
+      "name": "Agrolândia",
+      "officialName": "AGROLÂNDIA"
+    },
+    {
+      "ibge": "4200309",
+      "tse": "80055",
+      "uf": "sc",
+      "name": "Agronômica",
+      "officialName": "AGRONÔMICA"
+    },
+    {
+      "ibge": "4200408",
+      "tse": "80071",
+      "uf": "sc",
+      "name": "Água Doce",
+      "officialName": "ÁGUA DOCE"
+    },
+    {
+      "ibge": "4200507",
+      "tse": "80098",
+      "uf": "sc",
+      "name": "Águas de Chapecó",
+      "officialName": "ÁGUAS DE CHAPECÓ"
+    },
+    {
+      "ibge": "4200556",
+      "tse": "80500",
+      "uf": "sc",
+      "name": "Águas Frias",
+      "officialName": "ÁGUAS FRIAS"
+    },
+    {
+      "ibge": "4200606",
+      "tse": "80110",
+      "uf": "sc",
+      "name": "Águas Mornas",
+      "officialName": "ÁGUAS MORNAS"
+    },
+    {
+      "ibge": "4200705",
+      "tse": "80136",
+      "uf": "sc",
+      "name": "Alfredo Wagner",
+      "officialName": "ALFREDO WAGNER"
+    },
+    {
+      "ibge": "4200754",
+      "tse": "81302",
+      "uf": "sc",
+      "name": "Alto Bela Vista",
+      "officialName": "ALTO BELA VISTA"
+    },
+    {
+      "ibge": "4200804",
+      "tse": "80152",
+      "uf": "sc",
+      "name": "Anchieta",
+      "officialName": "ANCHIETA"
+    },
+    {
+      "ibge": "4200903",
+      "tse": "80179",
+      "uf": "sc",
+      "name": "Angelina",
+      "officialName": "ANGELINA"
+    },
+    {
+      "ibge": "4201000",
+      "tse": "80195",
+      "uf": "sc",
+      "name": "Anita Garibaldi",
+      "officialName": "ANITA GARIBALDI"
+    },
+    {
+      "ibge": "4201109",
+      "tse": "80217",
+      "uf": "sc",
+      "name": "Anitápolis",
+      "officialName": "ANITÁPOLIS"
+    },
+    {
+      "ibge": "4201208",
+      "tse": "80233",
+      "uf": "sc",
+      "name": "Antônio Carlos",
+      "officialName": "ANTÔNIO CARLOS"
+    },
+    {
+      "ibge": "4201257",
+      "tse": "80063",
+      "uf": "sc",
+      "name": "Apiúna",
+      "officialName": "APIÚNA"
+    },
+    {
+      "ibge": "4201273",
+      "tse": "80489",
+      "uf": "sc",
+      "name": "Arabutã",
+      "officialName": "ARABUTÃ"
+    },
+    {
+      "ibge": "4201307",
+      "tse": "80250",
+      "uf": "sc",
+      "name": "Araquari",
+      "officialName": "ARAQUARI"
+    },
+    {
+      "ibge": "4201604",
+      "tse": "80314",
+      "uf": "sc",
+      "name": "Arroio Trinta",
+      "officialName": "ARROIO TRINTA"
+    },
+    {
+      "ibge": "4201653",
+      "tse": "80802",
+      "uf": "sc",
+      "name": "Arvoredo",
+      "officialName": "ARVOREDO"
+    },
+    {
+      "ibge": "4201703",
+      "tse": "80330",
+      "uf": "sc",
+      "name": "Ascurra",
+      "officialName": "ASCURRA"
+    },
+    {
+      "ibge": "4201802",
+      "tse": "80357",
+      "uf": "sc",
+      "name": "Atalanta",
+      "officialName": "ATALANTA"
+    },
+    {
+      "ibge": "4201901",
+      "tse": "80373",
+      "uf": "sc",
+      "name": "Aurora",
+      "officialName": "AURORA"
+    },
+    {
+      "ibge": "4202008",
+      "tse": "80390",
+      "uf": "sc",
+      "name": "Balneário Camboriú",
+      "officialName": "BALNEÁRIO CAMBORIÚ"
+    },
+    {
+      "ibge": "4202057",
+      "tse": "80683",
+      "uf": "sc",
+      "name": "Balneário Barra do Sul",
+      "officialName": "BALNEÁRIO BARRA DO SUL"
+    },
+    {
+      "ibge": "4202081",
+      "tse": "81582",
+      "uf": "sc",
+      "name": "Bandeirante",
+      "officialName": "BANDEIRANTE"
+    },
+    {
+      "ibge": "4202099",
+      "tse": "81760",
+      "uf": "sc",
+      "name": "Barra Bonita",
+      "officialName": "BARRA BONITA"
+    },
+    {
+      "ibge": "4202107",
+      "tse": "80411",
+      "uf": "sc",
+      "name": "Barra Velha",
+      "officialName": "BARRA VELHA"
+    },
+    {
+      "ibge": "4202131",
+      "tse": "81221",
+      "uf": "sc",
+      "name": "Bela Vista do Toldo",
+      "officialName": "BELA VISTA DO TOLDO"
+    },
+    {
+      "ibge": "4202156",
+      "tse": "80748",
+      "uf": "sc",
+      "name": "Belmonte",
+      "officialName": "BELMONTE"
+    },
+    {
+      "ibge": "4202206",
+      "tse": "80438",
+      "uf": "sc",
+      "name": "Benedito Novo",
+      "officialName": "BENEDITO NOVO"
+    },
+    {
+      "ibge": "4202305",
+      "tse": "80454",
+      "uf": "sc",
+      "name": "Biguaçu",
+      "officialName": "BIGUAÇU"
+    },
+    {
+      "ibge": "4202404",
+      "tse": "80470",
+      "uf": "sc",
+      "name": "Blumenau",
+      "officialName": "BLUMENAU"
+    },
+    {
+      "ibge": "4202438",
+      "tse": "81280",
+      "uf": "sc",
+      "name": "Bocaina do Sul",
+      "officialName": "BOCAINA DO SUL"
+    },
+    {
+      "ibge": "4202453",
+      "tse": "80985",
+      "uf": "sc",
+      "name": "Bombinhas",
+      "officialName": "BOMBINHAS"
+    },
+    {
+      "ibge": "4202503",
+      "tse": "83895",
+      "uf": "sc",
+      "name": "Bom Jardim da Serra",
+      "officialName": "BOM JARDIM DA SERRA"
+    },
+    {
+      "ibge": "4202537",
+      "tse": "81388",
+      "uf": "sc",
+      "name": "Bom Jesus",
+      "officialName": "BOM JESUS"
+    },
+    {
+      "ibge": "4202578",
+      "tse": "81469",
+      "uf": "sc",
+      "name": "Bom Jesus do Oeste",
+      "officialName": "BOM JESUS DO OESTE"
+    },
+    {
+      "ibge": "4202602",
+      "tse": "80497",
+      "uf": "sc",
+      "name": "Bom Retiro",
+      "officialName": "BOM RETIRO"
+    },
+    {
+      "ibge": "4202701",
+      "tse": "80519",
+      "uf": "sc",
+      "name": "Botuverá",
+      "officialName": "BOTUVERÁ"
+    },
+    {
+      "ibge": "4202859",
+      "tse": "80420",
+      "uf": "sc",
+      "name": "Braço do Trombudo",
+      "officialName": "BRAÇO DO TROMBUDO"
+    },
+    {
+      "ibge": "4202875",
+      "tse": "81787",
+      "uf": "sc",
+      "name": "Brunópolis",
+      "officialName": "BRUNÓPOLIS"
+    },
+    {
+      "ibge": "4202909",
+      "tse": "80551",
+      "uf": "sc",
+      "name": "Brusque",
+      "officialName": "BRUSQUE"
+    },
+    {
+      "ibge": "4203006",
+      "tse": "80578",
+      "uf": "sc",
+      "name": "Caçador",
+      "officialName": "CAÇADOR"
+    },
+    {
+      "ibge": "4203105",
+      "tse": "80594",
+      "uf": "sc",
+      "name": "Caibi",
+      "officialName": "CAIBI"
+    },
+    {
+      "ibge": "4203154",
+      "tse": "80667",
+      "uf": "sc",
+      "name": "Calmon",
+      "officialName": "CALMON"
+    },
+    {
+      "ibge": "4203204",
+      "tse": "80616",
+      "uf": "sc",
+      "name": "Camboriú",
+      "officialName": "CAMBORIÚ"
+    },
+    {
+      "ibge": "4203253",
+      "tse": "81248",
+      "uf": "sc",
+      "name": "Capão Alto",
+      "officialName": "CAPÃO ALTO"
+    },
+    {
+      "ibge": "4203303",
+      "tse": "80632",
+      "uf": "sc",
+      "name": "Campo Alegre",
+      "officialName": "CAMPO ALEGRE"
+    },
+    {
+      "ibge": "4203402",
+      "tse": "80659",
+      "uf": "sc",
+      "name": "Campo Belo do Sul",
+      "officialName": "CAMPO BELO DO SUL"
+    },
+    {
+      "ibge": "4203501",
+      "tse": "80675",
+      "uf": "sc",
+      "name": "Campo Erê",
+      "officialName": "CAMPO ERÊ"
+    },
+    {
+      "ibge": "4203600",
+      "tse": "80691",
+      "uf": "sc",
+      "name": "Campos Novos",
+      "officialName": "CAMPOS NOVOS"
+    },
+    {
+      "ibge": "4203709",
+      "tse": "80713",
+      "uf": "sc",
+      "name": "Canelinha",
+      "officialName": "CANELINHA"
+    },
+    {
+      "ibge": "4203808",
+      "tse": "80730",
+      "uf": "sc",
+      "name": "Canoinhas",
+      "officialName": "CANOINHAS"
+    },
+    {
+      "ibge": "4203907",
+      "tse": "80756",
+      "uf": "sc",
+      "name": "Capinzal",
+      "officialName": "CAPINZAL"
+    },
+    {
+      "ibge": "4204004",
+      "tse": "80772",
+      "uf": "sc",
+      "name": "Catanduvas",
+      "officialName": "CATANDUVAS"
+    },
+    {
+      "ibge": "4204103",
+      "tse": "80799",
+      "uf": "sc",
+      "name": "Caxambu do Sul",
+      "officialName": "CAXAMBU DO SUL"
+    },
+    {
+      "ibge": "4204152",
+      "tse": "80268",
+      "uf": "sc",
+      "name": "Celso Ramos",
+      "officialName": "CELSO RAMOS"
+    },
+    {
+      "ibge": "4204178",
+      "tse": "80381",
+      "uf": "sc",
+      "name": "Cerro Negro",
+      "officialName": "CERRO NEGRO"
+    },
+    {
+      "ibge": "4204194",
+      "tse": "81701",
+      "uf": "sc",
+      "name": "Chapadão do Lageado",
+      "officialName": "CHAPADÃO DO LAGEADO"
+    },
+    {
+      "ibge": "4204202",
+      "tse": "80810",
+      "uf": "sc",
+      "name": "Chapecó",
+      "officialName": "CHAPECÓ"
+    },
+    {
+      "ibge": "4204301",
+      "tse": "80837",
+      "uf": "sc",
+      "name": "Concórdia",
+      "officialName": "CONCÓRDIA"
+    },
+    {
+      "ibge": "4204350",
+      "tse": "81043",
+      "uf": "sc",
+      "name": "Cordilheira Alta",
+      "officialName": "CORDILHEIRA ALTA"
+    },
+    {
+      "ibge": "4204400",
+      "tse": "80853",
+      "uf": "sc",
+      "name": "Coronel Freitas",
+      "officialName": "CORONEL FREITAS"
+    },
+    {
+      "ibge": "4204459",
+      "tse": "81108",
+      "uf": "sc",
+      "name": "Coronel Martins",
+      "officialName": "CORONEL MARTINS"
+    },
+    {
+      "ibge": "4204509",
+      "tse": "80870",
+      "uf": "sc",
+      "name": "Corupá",
+      "officialName": "CORUPÁ"
+    },
+    {
+      "ibge": "4204558",
+      "tse": "83950",
+      "uf": "sc",
+      "name": "Correia Pinto",
+      "officialName": "CORREIA PINTO"
+    },
+    {
+      "ibge": "4204707",
+      "tse": "80918",
+      "uf": "sc",
+      "name": "Cunha Porã",
+      "officialName": "CUNHA PORÃ"
+    },
+    {
+      "ibge": "4204756",
+      "tse": "81620",
+      "uf": "sc",
+      "name": "Cunhataí",
+      "officialName": "CUNHATAÍ"
+    },
+    {
+      "ibge": "4204806",
+      "tse": "80934",
+      "uf": "sc",
+      "name": "Curitibanos",
+      "officialName": "CURITIBANOS"
+    },
+    {
+      "ibge": "4204905",
+      "tse": "80950",
+      "uf": "sc",
+      "name": "Descanso",
+      "officialName": "DESCANSO"
+    },
+    {
+      "ibge": "4205001",
+      "tse": "80977",
+      "uf": "sc",
+      "name": "Dionísio Cerqueira",
+      "officialName": "DIONÍSIO CERQUEIRA"
+    },
+    {
+      "ibge": "4205100",
+      "tse": "80993",
+      "uf": "sc",
+      "name": "Dona Emma",
+      "officialName": "DONA EMMA"
+    },
+    {
+      "ibge": "4205159",
+      "tse": "80080",
+      "uf": "sc",
+      "name": "Doutor Pedrinho",
+      "officialName": "DOUTOR PEDRINHO"
+    },
+    {
+      "ibge": "4205175",
+      "tse": "81426",
+      "uf": "sc",
+      "name": "Entre Rios",
+      "officialName": "ENTRE RIOS"
+    },
+    {
+      "ibge": "4205209",
+      "tse": "81019",
+      "uf": "sc",
+      "name": "Erval Velho",
+      "officialName": "ERVAL VELHO"
+    },
+    {
+      "ibge": "4205308",
+      "tse": "81035",
+      "uf": "sc",
+      "name": "Faxinal dos Guedes",
+      "officialName": "FAXINAL DOS GUEDES"
+    },
+    {
+      "ibge": "4205357",
+      "tse": "81604",
+      "uf": "sc",
+      "name": "Flor do Sertão",
+      "officialName": "FLOR DO SERTÃO"
+    },
+    {
+      "ibge": "4205431",
+      "tse": "80888",
+      "uf": "sc",
+      "name": "Formosa do Sul",
+      "officialName": "FORMOSA DO SUL"
+    },
+    {
+      "ibge": "4205506",
+      "tse": "81078",
+      "uf": "sc",
+      "name": "Fraiburgo",
+      "officialName": "FRAIBURGO"
+    },
+    {
+      "ibge": "4205555",
+      "tse": "81329",
+      "uf": "sc",
+      "name": "Frei Rogério",
+      "officialName": "FREI ROGÉRIO"
+    },
+    {
+      "ibge": "4205605",
+      "tse": "81094",
+      "uf": "sc",
+      "name": "Galvão",
+      "officialName": "GALVÃO"
+    },
+    {
+      "ibge": "4205704",
+      "tse": "81132",
+      "uf": "sc",
+      "name": "Garopaba",
+      "officialName": "GAROPABA"
+    },
+    {
+      "ibge": "4205803",
+      "tse": "81159",
+      "uf": "sc",
+      "name": "Garuva",
+      "officialName": "GARUVA"
+    },
+    {
+      "ibge": "4205902",
+      "tse": "81175",
+      "uf": "sc",
+      "name": "Gaspar",
+      "officialName": "GASPAR"
+    },
+    {
+      "ibge": "4206009",
+      "tse": "81116",
+      "uf": "sc",
+      "name": "Governador Celso Ramos",
+      "officialName": "GOVERNADOR CELSO RAMOS"
+    },
+    {
+      "ibge": "4206306",
+      "tse": "81230",
+      "uf": "sc",
+      "name": "Guabiruba",
+      "officialName": "GUABIRUBA"
+    },
+    {
+      "ibge": "4206405",
+      "tse": "81256",
+      "uf": "sc",
+      "name": "Guaraciaba",
+      "officialName": "GUARACIABA"
+    },
+    {
+      "ibge": "4206504",
+      "tse": "81272",
+      "uf": "sc",
+      "name": "Guaramirim",
+      "officialName": "GUARAMIRIM"
+    },
+    {
+      "ibge": "4206603",
+      "tse": "81299",
+      "uf": "sc",
+      "name": "Guarujá do Sul",
+      "officialName": "GUARUJÁ DO SUL"
+    },
+    {
+      "ibge": "4206652",
+      "tse": "80527",
+      "uf": "sc",
+      "name": "Guatambú",
+      "officialName": "GUATAMBÚ"
+    },
+    {
+      "ibge": "4206702",
+      "tse": "81310",
+      "uf": "sc",
+      "name": "Herval d'Oeste",
+      "officialName": "HERVAL D'OESTE"
+    },
+    {
+      "ibge": "4206751",
+      "tse": "81400",
+      "uf": "sc",
+      "name": "Ibiam",
+      "officialName": "IBIAM"
+    },
+    {
+      "ibge": "4206801",
+      "tse": "81337",
+      "uf": "sc",
+      "name": "Ibicaré",
+      "officialName": "IBICARÉ"
+    },
+    {
+      "ibge": "4206900",
+      "tse": "81353",
+      "uf": "sc",
+      "name": "Ibirama",
+      "officialName": "IBIRAMA"
+    },
+    {
+      "ibge": "4207106",
+      "tse": "81396",
+      "uf": "sc",
+      "name": "Ilhota",
+      "officialName": "ILHOTA"
+    },
+    {
+      "ibge": "4207403",
+      "tse": "81450",
+      "uf": "sc",
+      "name": "Imbuia",
+      "officialName": "IMBUIA"
+    },
+    {
+      "ibge": "4207502",
+      "tse": "81477",
+      "uf": "sc",
+      "name": "Indaial",
+      "officialName": "INDAIAL"
+    },
+    {
+      "ibge": "4207577",
+      "tse": "81361",
+      "uf": "sc",
+      "name": "Iomerê",
+      "officialName": "IOMERÊ"
+    },
+    {
+      "ibge": "4207601",
+      "tse": "81493",
+      "uf": "sc",
+      "name": "Ipira",
+      "officialName": "IPIRA"
+    },
+    {
+      "ibge": "4207650",
+      "tse": "80020",
+      "uf": "sc",
+      "name": "Iporã do Oeste",
+      "officialName": "IPORÃ DO OESTE"
+    },
+    {
+      "ibge": "4207684",
+      "tse": "80829",
+      "uf": "sc",
+      "name": "Ipuaçu",
+      "officialName": "IPUAÇU"
+    },
+    {
+      "ibge": "4207700",
+      "tse": "81515",
+      "uf": "sc",
+      "name": "Ipumirim",
+      "officialName": "IPUMIRIM"
+    },
+    {
+      "ibge": "4207759",
+      "tse": "80187",
+      "uf": "sc",
+      "name": "Iraceminha",
+      "officialName": "IRACEMINHA"
+    },
+    {
+      "ibge": "4207809",
+      "tse": "81531",
+      "uf": "sc",
+      "name": "Irani",
+      "officialName": "IRANI"
+    },
+    {
+      "ibge": "4207858",
+      "tse": "80861",
+      "uf": "sc",
+      "name": "Irati",
+      "officialName": "IRATI"
+    },
+    {
+      "ibge": "4207908",
+      "tse": "81558",
+      "uf": "sc",
+      "name": "Irineópolis",
+      "officialName": "IRINEÓPOLIS"
+    },
+    {
+      "ibge": "4208005",
+      "tse": "81574",
+      "uf": "sc",
+      "name": "Itá",
+      "officialName": "ITÁ"
+    },
+    {
+      "ibge": "4208104",
+      "tse": "81590",
+      "uf": "sc",
+      "name": "Itaiópolis",
+      "officialName": "ITAIÓPOLIS"
+    },
+    {
+      "ibge": "4208203",
+      "tse": "81612",
+      "uf": "sc",
+      "name": "Itajaí",
+      "officialName": "ITAJAÍ"
+    },
+    {
+      "ibge": "4208302",
+      "tse": "81639",
+      "uf": "sc",
+      "name": "Itapema",
+      "officialName": "ITAPEMA"
+    },
+    {
+      "ibge": "4208401",
+      "tse": "81655",
+      "uf": "sc",
+      "name": "Itapiranga",
+      "officialName": "ITAPIRANGA"
+    },
+    {
+      "ibge": "4208450",
+      "tse": "81663",
+      "uf": "sc",
+      "name": "Itapoá",
+      "officialName": "ITAPOÁ"
+    },
+    {
+      "ibge": "4208500",
+      "tse": "81671",
+      "uf": "sc",
+      "name": "Ituporanga",
+      "officialName": "ITUPORANGA"
+    },
+    {
+      "ibge": "4208609",
+      "tse": "81698",
+      "uf": "sc",
+      "name": "Jaborá",
+      "officialName": "JABORÁ"
+    },
+    {
+      "ibge": "4208906",
+      "tse": "81752",
+      "uf": "sc",
+      "name": "Jaraguá do Sul",
+      "officialName": "JARAGUÁ DO SUL"
+    },
+    {
+      "ibge": "4208955",
+      "tse": "81140",
+      "uf": "sc",
+      "name": "Jardinópolis",
+      "officialName": "JARDINÓPOLIS"
+    },
+    {
+      "ibge": "4209003",
+      "tse": "81779",
+      "uf": "sc",
+      "name": "Joaçaba",
+      "officialName": "JOAÇABA"
+    },
+    {
+      "ibge": "4209102",
+      "tse": "81795",
+      "uf": "sc",
+      "name": "Joinville",
+      "officialName": "JOINVILLE"
+    },
+    {
+      "ibge": "4209151",
+      "tse": "80101",
+      "uf": "sc",
+      "name": "José Boiteux",
+      "officialName": "JOSÉ BOITEUX"
+    },
+    {
+      "ibge": "4209177",
+      "tse": "81540",
+      "uf": "sc",
+      "name": "Jupiá",
+      "officialName": "JUPIÁ"
+    },
+    {
+      "ibge": "4209201",
+      "tse": "81817",
+      "uf": "sc",
+      "name": "Lacerdópolis",
+      "officialName": "LACERDÓPOLIS"
+    },
+    {
+      "ibge": "4209300",
+      "tse": "81833",
+      "uf": "sc",
+      "name": "Lages",
+      "officialName": "LAGES"
+    },
+    {
+      "ibge": "4209458",
+      "tse": "80586",
+      "uf": "sc",
+      "name": "Lajeado Grande",
+      "officialName": "LAJEADO GRANDE"
+    },
+    {
+      "ibge": "4209508",
+      "tse": "81876",
+      "uf": "sc",
+      "name": "Laurentino",
+      "officialName": "LAURENTINO"
+    },
+    {
+      "ibge": "4209706",
+      "tse": "81914",
+      "uf": "sc",
+      "name": "Lebon Régis",
+      "officialName": "LEBON RÉGIS"
+    },
+    {
+      "ibge": "4209805",
+      "tse": "81930",
+      "uf": "sc",
+      "name": "Leoberto Leal",
+      "officialName": "LEOBERTO LEAL"
+    },
+    {
+      "ibge": "4209854",
+      "tse": "80047",
+      "uf": "sc",
+      "name": "Lindóia do Sul",
+      "officialName": "LINDÓIA DO SUL"
+    },
+    {
+      "ibge": "4209904",
+      "tse": "81957",
+      "uf": "sc",
+      "name": "Lontras",
+      "officialName": "LONTRAS"
+    },
+    {
+      "ibge": "4210001",
+      "tse": "81973",
+      "uf": "sc",
+      "name": "Luiz Alves",
+      "officialName": "LUIZ ALVES"
+    },
+    {
+      "ibge": "4210035",
+      "tse": "81809",
+      "uf": "sc",
+      "name": "Luzerna",
+      "officialName": "LUZERNA"
+    },
+    {
+      "ibge": "4210050",
+      "tse": "80900",
+      "uf": "sc",
+      "name": "Macieira",
+      "officialName": "MACIEIRA"
+    },
+    {
+      "ibge": "4210100",
+      "tse": "81990",
+      "uf": "sc",
+      "name": "Mafra",
+      "officialName": "MAFRA"
+    },
+    {
+      "ibge": "4210209",
+      "tse": "82015",
+      "uf": "sc",
+      "name": "Major Gercino",
+      "officialName": "MAJOR GERCINO"
+    },
+    {
+      "ibge": "4210308",
+      "tse": "82031",
+      "uf": "sc",
+      "name": "Major Vieira",
+      "officialName": "MAJOR VIEIRA"
+    },
+    {
+      "ibge": "4210506",
+      "tse": "82058",
+      "uf": "sc",
+      "name": "Maravilha",
+      "officialName": "MARAVILHA"
+    },
+    {
+      "ibge": "4210555",
+      "tse": "82066",
+      "uf": "sc",
+      "name": "Marema",
+      "officialName": "MAREMA"
+    },
+    {
+      "ibge": "4210605",
+      "tse": "82074",
+      "uf": "sc",
+      "name": "Massaranduba",
+      "officialName": "MASSARANDUBA"
+    },
+    {
+      "ibge": "4210704",
+      "tse": "82090",
+      "uf": "sc",
+      "name": "Matos Costa",
+      "officialName": "MATOS COSTA"
+    },
+    {
+      "ibge": "4210852",
+      "tse": "80365",
+      "uf": "sc",
+      "name": "Mirim Doce",
+      "officialName": "MIRIM DOCE"
+    },
+    {
+      "ibge": "4210902",
+      "tse": "82139",
+      "uf": "sc",
+      "name": "Modelo",
+      "officialName": "MODELO"
+    },
+    {
+      "ibge": "4211009",
+      "tse": "82155",
+      "uf": "sc",
+      "name": "Mondaí",
+      "officialName": "MONDAÍ"
+    },
+    {
+      "ibge": "4211058",
+      "tse": "80004",
+      "uf": "sc",
+      "name": "Monte Carlo",
+      "officialName": "MONTE CARLO"
+    },
+    {
+      "ibge": "4211108",
+      "tse": "82171",
+      "uf": "sc",
+      "name": "Monte Castelo",
+      "officialName": "MONTE CASTELO"
+    },
+    {
+      "ibge": "4211306",
+      "tse": "82210",
+      "uf": "sc",
+      "name": "Navegantes",
+      "officialName": "NAVEGANTES"
+    },
+    {
+      "ibge": "4211405",
+      "tse": "82236",
+      "uf": "sc",
+      "name": "Nova Erechim",
+      "officialName": "NOVA ERECHIM"
+    },
+    {
+      "ibge": "4211454",
+      "tse": "80322",
+      "uf": "sc",
+      "name": "Nova Itaberaba",
+      "officialName": "NOVA ITABERABA"
+    },
+    {
+      "ibge": "4211504",
+      "tse": "82252",
+      "uf": "sc",
+      "name": "Nova Trento",
+      "officialName": "NOVA TRENTO"
+    },
+    {
+      "ibge": "4211652",
+      "tse": "80764",
+      "uf": "sc",
+      "name": "Novo Horizonte",
+      "officialName": "NOVO HORIZONTE"
+    },
+    {
+      "ibge": "4211751",
+      "tse": "83976",
+      "uf": "sc",
+      "name": "Otacílio Costa",
+      "officialName": "OTACÍLIO COSTA"
+    },
+    {
+      "ibge": "4211801",
+      "tse": "82317",
+      "uf": "sc",
+      "name": "Ouro",
+      "officialName": "OURO"
+    },
+    {
+      "ibge": "4211850",
+      "tse": "80845",
+      "uf": "sc",
+      "name": "Ouro Verde",
+      "officialName": "OURO VERDE"
+    },
+    {
+      "ibge": "4211876",
+      "tse": "81442",
+      "uf": "sc",
+      "name": "Paial",
+      "officialName": "PAIAL"
+    },
+    {
+      "ibge": "4211892",
+      "tse": "81264",
+      "uf": "sc",
+      "name": "Painel",
+      "officialName": "PAINEL"
+    },
+    {
+      "ibge": "4211900",
+      "tse": "82333",
+      "uf": "sc",
+      "name": "Palhoça",
+      "officialName": "PALHOÇA"
+    },
+    {
+      "ibge": "4212007",
+      "tse": "82350",
+      "uf": "sc",
+      "name": "Palma Sola",
+      "officialName": "PALMA SOLA"
+    },
+    {
+      "ibge": "4212056",
+      "tse": "81566",
+      "uf": "sc",
+      "name": "Palmeira",
+      "officialName": "PALMEIRA"
+    },
+    {
+      "ibge": "4212106",
+      "tse": "82376",
+      "uf": "sc",
+      "name": "Palmitos",
+      "officialName": "PALMITOS"
+    },
+    {
+      "ibge": "4212205",
+      "tse": "82392",
+      "uf": "sc",
+      "name": "Papanduva",
+      "officialName": "PAPANDUVA"
+    },
+    {
+      "ibge": "4212239",
+      "tse": "80705",
+      "uf": "sc",
+      "name": "Paraíso",
+      "officialName": "PARAÍSO"
+    },
+    {
+      "ibge": "4212270",
+      "tse": "80624",
+      "uf": "sc",
+      "name": "Passos Maia",
+      "officialName": "PASSOS MAIA"
+    },
+    {
+      "ibge": "4212304",
+      "tse": "82414",
+      "uf": "sc",
+      "name": "Paulo Lopes",
+      "officialName": "PAULO LOPES"
+    },
+    {
+      "ibge": "4212502",
+      "tse": "82457",
+      "uf": "sc",
+      "name": "Penha",
+      "officialName": "PENHA"
+    },
+    {
+      "ibge": "4212601",
+      "tse": "82473",
+      "uf": "sc",
+      "name": "Peritiba",
+      "officialName": "PERITIBA"
+    },
+    {
+      "ibge": "4212700",
+      "tse": "82490",
+      "uf": "sc",
+      "name": "Petrolândia",
+      "officialName": "PETROLÂNDIA"
+    },
+    {
+      "ibge": "4212809",
+      "tse": "82511",
+      "uf": "sc",
+      "name": "Balneário Piçarras",
+      "officialName": "BALNEÁRIO PIÇARRAS"
+    },
+    {
+      "ibge": "4212908",
+      "tse": "82538",
+      "uf": "sc",
+      "name": "Pinhalzinho",
+      "officialName": "PINHALZINHO"
+    },
+    {
+      "ibge": "4213005",
+      "tse": "82554",
+      "uf": "sc",
+      "name": "Pinheiro Preto",
+      "officialName": "PINHEIRO PRETO"
+    },
+    {
+      "ibge": "4213104",
+      "tse": "82570",
+      "uf": "sc",
+      "name": "Piratuba",
+      "officialName": "PIRATUBA"
+    },
+    {
+      "ibge": "4213153",
+      "tse": "80543",
+      "uf": "sc",
+      "name": "Planalto Alegre",
+      "officialName": "PLANALTO ALEGRE"
+    },
+    {
+      "ibge": "4213203",
+      "tse": "82597",
+      "uf": "sc",
+      "name": "Pomerode",
+      "officialName": "POMERODE"
+    },
+    {
+      "ibge": "4213302",
+      "tse": "82619",
+      "uf": "sc",
+      "name": "Ponte Alta",
+      "officialName": "PONTE ALTA"
+    },
+    {
+      "ibge": "4213351",
+      "tse": "80926",
+      "uf": "sc",
+      "name": "Ponte Alta do Norte",
+      "officialName": "PONTE ALTA DO NORTE"
+    },
+    {
+      "ibge": "4213401",
+      "tse": "82635",
+      "uf": "sc",
+      "name": "Ponte Serrada",
+      "officialName": "PONTE SERRADA"
+    },
+    {
+      "ibge": "4213500",
+      "tse": "82651",
+      "uf": "sc",
+      "name": "Porto Belo",
+      "officialName": "PORTO BELO"
+    },
+    {
+      "ibge": "4213609",
+      "tse": "82678",
+      "uf": "sc",
+      "name": "Porto União",
+      "officialName": "PORTO UNIÃO"
+    },
+    {
+      "ibge": "4213708",
+      "tse": "82694",
+      "uf": "sc",
+      "name": "Pouso Redondo",
+      "officialName": "POUSO REDONDO"
+    },
+    {
+      "ibge": "4213906",
+      "tse": "82732",
+      "uf": "sc",
+      "name": "Presidente Castello Branco",
+      "officialName": "PRESIDENTE CASTELLO BRANCO"
+    },
+    {
+      "ibge": "4214003",
+      "tse": "82759",
+      "uf": "sc",
+      "name": "Presidente Getúlio",
+      "officialName": "PRESIDENTE GETÚLIO"
+    },
+    {
+      "ibge": "4214102",
+      "tse": "82775",
+      "uf": "sc",
+      "name": "Presidente Nereu",
+      "officialName": "PRESIDENTE NEREU"
+    },
+    {
+      "ibge": "4214151",
+      "tse": "81647",
+      "uf": "sc",
+      "name": "Princesa",
+      "officialName": "PRINCESA"
+    },
+    {
+      "ibge": "4214201",
+      "tse": "82791",
+      "uf": "sc",
+      "name": "Quilombo",
+      "officialName": "QUILOMBO"
+    },
+    {
+      "ibge": "4214300",
+      "tse": "82813",
+      "uf": "sc",
+      "name": "Rancho Queimado",
+      "officialName": "RANCHO QUEIMADO"
+    },
+    {
+      "ibge": "4214409",
+      "tse": "82830",
+      "uf": "sc",
+      "name": "Rio das Antas",
+      "officialName": "RIO DAS ANTAS"
+    },
+    {
+      "ibge": "4214508",
+      "tse": "82856",
+      "uf": "sc",
+      "name": "Rio do Campo",
+      "officialName": "RIO DO CAMPO"
+    },
+    {
+      "ibge": "4214607",
+      "tse": "82872",
+      "uf": "sc",
+      "name": "Rio do Oeste",
+      "officialName": "RIO DO OESTE"
+    },
+    {
+      "ibge": "4214706",
+      "tse": "82899",
+      "uf": "sc",
+      "name": "Rio dos Cedros",
+      "officialName": "RIO DOS CEDROS"
+    },
+    {
+      "ibge": "4214805",
+      "tse": "82910",
+      "uf": "sc",
+      "name": "Rio do Sul",
+      "officialName": "RIO DO SUL"
+    },
+    {
+      "ibge": "4215000",
+      "tse": "82953",
+      "uf": "sc",
+      "name": "Rio Negrinho",
+      "officialName": "RIO NEGRINHO"
+    },
+    {
+      "ibge": "4215059",
+      "tse": "80608",
+      "uf": "sc",
+      "name": "Rio Rufino",
+      "officialName": "RIO RUFINO"
+    },
+    {
+      "ibge": "4215075",
+      "tse": "80560",
+      "uf": "sc",
+      "name": "Riqueza",
+      "officialName": "RIQUEZA"
+    },
+    {
+      "ibge": "4215109",
+      "tse": "82970",
+      "uf": "sc",
+      "name": "Rodeio",
+      "officialName": "RODEIO"
+    },
+    {
+      "ibge": "4215208",
+      "tse": "82996",
+      "uf": "sc",
+      "name": "Romelândia",
+      "officialName": "ROMELÂNDIA"
+    },
+    {
+      "ibge": "4215307",
+      "tse": "83011",
+      "uf": "sc",
+      "name": "Salete",
+      "officialName": "SALETE"
+    },
+    {
+      "ibge": "4215356",
+      "tse": "81523",
+      "uf": "sc",
+      "name": "Saltinho",
+      "officialName": "SALTINHO"
+    },
+    {
+      "ibge": "4215406",
+      "tse": "83038",
+      "uf": "sc",
+      "name": "Salto Veloso",
+      "officialName": "SALTO VELOSO"
+    },
+    {
+      "ibge": "4215505",
+      "tse": "83054",
+      "uf": "sc",
+      "name": "Santa Cecília",
+      "officialName": "SANTA CECÍLIA"
+    },
+    {
+      "ibge": "4215554",
+      "tse": "80721",
+      "uf": "sc",
+      "name": "Santa Helena",
+      "officialName": "SANTA HELENA"
+    },
+    {
+      "ibge": "4215679",
+      "tse": "80349",
+      "uf": "sc",
+      "name": "Santa Terezinha",
+      "officialName": "SANTA TEREZINHA"
+    },
+    {
+      "ibge": "4215687",
+      "tse": "81507",
+      "uf": "sc",
+      "name": "Santa Terezinha do Progresso",
+      "officialName": "SANTA TEREZINHA DO PROGRESSO"
+    },
+    {
+      "ibge": "4215695",
+      "tse": "81205",
+      "uf": "sc",
+      "name": "Santiago do Sul",
+      "officialName": "SANTIAGO DO SUL"
+    },
+    {
+      "ibge": "4215703",
+      "tse": "83097",
+      "uf": "sc",
+      "name": "Santo Amaro da Imperatriz",
+      "officialName": "SANTO AMARO DA IMPERATRIZ"
+    },
+    {
+      "ibge": "4215752",
+      "tse": "81485",
+      "uf": "sc",
+      "name": "São Bernardino",
+      "officialName": "SÃO BERNARDINO"
+    },
+    {
+      "ibge": "4215802",
+      "tse": "83119",
+      "uf": "sc",
+      "name": "São Bento do Sul",
+      "officialName": "SÃO BENTO DO SUL"
+    },
+    {
+      "ibge": "4215901",
+      "tse": "83135",
+      "uf": "sc",
+      "name": "São Bonifácio",
+      "officialName": "SÃO BONIFÁCIO"
+    },
+    {
+      "ibge": "4216008",
+      "tse": "83151",
+      "uf": "sc",
+      "name": "São Carlos",
+      "officialName": "SÃO CARLOS"
+    },
+    {
+      "ibge": "4216057",
+      "tse": "80942",
+      "uf": "sc",
+      "name": "São Cristóvão do Sul",
+      "officialName": "SÃO CRISTÓVÃO DO SUL"
+    },
+    {
+      "ibge": "4216107",
+      "tse": "83178",
+      "uf": "sc",
+      "name": "São Domingos",
+      "officialName": "SÃO DOMINGOS"
+    },
+    {
+      "ibge": "4216206",
+      "tse": "83194",
+      "uf": "sc",
+      "name": "São Francisco do Sul",
+      "officialName": "SÃO FRANCISCO DO SUL"
+    },
+    {
+      "ibge": "4216255",
+      "tse": "80640",
+      "uf": "sc",
+      "name": "São João do Oeste",
+      "officialName": "SÃO JOÃO DO OESTE"
+    },
+    {
+      "ibge": "4216305",
+      "tse": "83216",
+      "uf": "sc",
+      "name": "São João Batista",
+      "officialName": "SÃO JOÃO BATISTA"
+    },
+    {
+      "ibge": "4216354",
+      "tse": "81124",
+      "uf": "sc",
+      "name": "São João do Itaperiú",
+      "officialName": "SÃO JOÃO DO ITAPERIÚ"
+    },
+    {
+      "ibge": "4216503",
+      "tse": "83259",
+      "uf": "sc",
+      "name": "São Joaquim",
+      "officialName": "SÃO JOAQUIM"
+    },
+    {
+      "ibge": "4216602",
+      "tse": "83275",
+      "uf": "sc",
+      "name": "São José",
+      "officialName": "SÃO JOSÉ"
+    },
+    {
+      "ibge": "4216701",
+      "tse": "83291",
+      "uf": "sc",
+      "name": "São José do Cedro",
+      "officialName": "SÃO JOSÉ DO CEDRO"
+    },
+    {
+      "ibge": "4216800",
+      "tse": "83313",
+      "uf": "sc",
+      "name": "São José do Cerrito",
+      "officialName": "SÃO JOSÉ DO CERRITO"
+    },
+    {
+      "ibge": "4216909",
+      "tse": "83330",
+      "uf": "sc",
+      "name": "São Lourenço do Oeste",
+      "officialName": "SÃO LOURENÇO DO OESTE"
+    },
+    {
+      "ibge": "4217154",
+      "tse": "80780",
+      "uf": "sc",
+      "name": "São Miguel da Boa Vista",
+      "officialName": "SÃO MIGUEL DA BOA VISTA"
+    },
+    {
+      "ibge": "4217204",
+      "tse": "83399",
+      "uf": "sc",
+      "name": "São Miguel do Oeste",
+      "officialName": "SÃO MIGUEL DO OESTE"
+    },
+    {
+      "ibge": "4217253",
+      "tse": "81183",
+      "uf": "sc",
+      "name": "São Pedro de Alcântara",
+      "officialName": "SÃO PEDRO DE ALCÂNTARA"
+    },
+    {
+      "ibge": "4217303",
+      "tse": "83410",
+      "uf": "sc",
+      "name": "Saudades",
+      "officialName": "SAUDADES"
+    },
+    {
+      "ibge": "4217402",
+      "tse": "83437",
+      "uf": "sc",
+      "name": "Schroeder",
+      "officialName": "SCHROEDER"
+    },
+    {
+      "ibge": "4217501",
+      "tse": "83453",
+      "uf": "sc",
+      "name": "Seara",
+      "officialName": "SEARA"
+    },
+    {
+      "ibge": "4217550",
+      "tse": "80284",
+      "uf": "sc",
+      "name": "Serra Alta",
+      "officialName": "SERRA ALTA"
+    },
+    {
+      "ibge": "4217758",
+      "tse": "80446",
+      "uf": "sc",
+      "name": "Sul Brasil",
+      "officialName": "SUL BRASIL"
+    },
+    {
+      "ibge": "4217808",
+      "tse": "83518",
+      "uf": "sc",
+      "name": "Taió",
+      "officialName": "TAIÓ"
+    },
+    {
+      "ibge": "4217907",
+      "tse": "83534",
+      "uf": "sc",
+      "name": "Tangará",
+      "officialName": "TANGARÁ"
+    },
+    {
+      "ibge": "4217956",
+      "tse": "81680",
+      "uf": "sc",
+      "name": "Tigrinhos",
+      "officialName": "TIGRINHOS"
+    },
+    {
+      "ibge": "4218004",
+      "tse": "83550",
+      "uf": "sc",
+      "name": "Tijucas",
+      "officialName": "TIJUCAS"
+    },
+    {
+      "ibge": "4218202",
+      "tse": "83577",
+      "uf": "sc",
+      "name": "Timbó",
+      "officialName": "TIMBÓ"
+    },
+    {
+      "ibge": "4218251",
+      "tse": "80209",
+      "uf": "sc",
+      "name": "Timbó Grande",
+      "officialName": "TIMBÓ GRANDE"
+    },
+    {
+      "ibge": "4218301",
+      "tse": "83593",
+      "uf": "sc",
+      "name": "Três Barras",
+      "officialName": "TRÊS BARRAS"
+    },
+    {
+      "ibge": "4218509",
+      "tse": "83631",
+      "uf": "sc",
+      "name": "Treze Tílias",
+      "officialName": "TREZE TÍLIAS"
+    },
+    {
+      "ibge": "4218608",
+      "tse": "83658",
+      "uf": "sc",
+      "name": "Trombudo Central",
+      "officialName": "TROMBUDO CENTRAL"
+    },
+    {
+      "ibge": "4218756",
+      "tse": "83682",
+      "uf": "sc",
+      "name": "Tunápolis",
+      "officialName": "TUNÁPOLIS"
+    },
+    {
+      "ibge": "4218855",
+      "tse": "80144",
+      "uf": "sc",
+      "name": "União do Oeste",
+      "officialName": "UNIÃO DO OESTE"
+    },
+    {
+      "ibge": "4218905",
+      "tse": "83712",
+      "uf": "sc",
+      "name": "Urubici",
+      "officialName": "URUBICI"
+    },
+    {
+      "ibge": "4218954",
+      "tse": "80160",
+      "uf": "sc",
+      "name": "Urupema",
+      "officialName": "URUPEMA"
+    },
+    {
+      "ibge": "4219101",
+      "tse": "83755",
+      "uf": "sc",
+      "name": "Vargeão",
+      "officialName": "VARGEÃO"
+    },
+    {
+      "ibge": "4219150",
+      "tse": "80462",
+      "uf": "sc",
+      "name": "Vargem",
+      "officialName": "VARGEM"
+    },
+    {
+      "ibge": "4219176",
+      "tse": "80969",
+      "uf": "sc",
+      "name": "Vargem Bonita",
+      "officialName": "VARGEM BONITA"
+    },
+    {
+      "ibge": "4219200",
+      "tse": "83771",
+      "uf": "sc",
+      "name": "Vidal Ramos",
+      "officialName": "VIDAL RAMOS"
+    },
+    {
+      "ibge": "4219309",
+      "tse": "83798",
+      "uf": "sc",
+      "name": "Videira",
+      "officialName": "VIDEIRA"
+    },
+    {
+      "ibge": "4219358",
+      "tse": "80128",
+      "uf": "sc",
+      "name": "Vitor Meireles",
+      "officialName": "VITOR MEIRELES"
+    },
+    {
+      "ibge": "4219408",
+      "tse": "83810",
+      "uf": "sc",
+      "name": "Witmarsum",
+      "officialName": "WITMARSUM"
+    },
+    {
+      "ibge": "4219507",
+      "tse": "83836",
+      "uf": "sc",
+      "name": "Xanxerê",
+      "officialName": "XANXERÊ"
+    },
+    {
+      "ibge": "4219606",
+      "tse": "83852",
+      "uf": "sc",
+      "name": "Xavantina",
+      "officialName": "XAVANTINA"
+    },
+    {
+      "ibge": "4219705",
+      "tse": "83879",
+      "uf": "sc",
+      "name": "Xaxim",
+      "officialName": "XAXIM"
+    },
+    {
+      "ibge": "4219853",
+      "tse": "81825",
+      "uf": "sc",
+      "name": "Zortéa",
+      "officialName": "ZORTÉA"
+    },
+    {
+      "ibge": "3106200",
+      "tse": "41238",
+      "uf": "mg",
+      "name": "Belo Horizonte",
+      "officialName": "BELO HORIZONTE"
+    },
+    {
+      "ibge": "4314902",
+      "tse": "88013",
+      "uf": "rs",
+      "name": "Porto Alegre",
+      "officialName": "PORTO ALEGRE"
+    },
+    {
+      "ibge": "2927408",
+      "tse": "38490",
+      "uf": "ba",
+      "name": "Salvador",
+      "officialName": "SALVADOR"
+    },
+    {
+      "ibge": "2304400",
+      "tse": "13897",
+      "uf": "ce",
+      "name": "Fortaleza",
+      "officialName": "FORTALEZA"
+    },
+    {
+      "ibge": "1302603",
+      "tse": "02550",
+      "uf": "am",
+      "name": "Manaus",
+      "officialName": "MANAUS"
+    },
+    {
+      "ibge": "5300108",
+      "tse": "97012",
+      "uf": "df",
+      "name": "Brasília",
+      "officialName": "BRASÍLIA"
+    }
+  ]
+}

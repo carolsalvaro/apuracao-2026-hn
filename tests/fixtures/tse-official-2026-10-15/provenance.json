@@ -1,0 +1,56 @@
+{
+  "capturedAt": "2026-10-15T19:27:29.647217+00:00",
+  "purpose": "Captured official contract fixtures; never use as runtime fallback. All EA20 captures have zero counted sections.",
+  "files": [
+    {
+      "file": "ele-c.json",
+      "url": "https://resultados.tse.jus.br/oficial/comum/config/ele-c.json",
+      "sha256": "64e36d9bdab655f32d803843663b3e57594a4d673f92e7aa74a14cb01687bd5a"
+    },
+    {
+      "file": "br-c0001-e006258-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json",
+      "sha256": "d57a0b93daff57aca9767c05cf2c9b10a293dc5eea42be96cb1cfd3993c131c9"
+    },
+    {
+      "file": "sc-c0001-e006258-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/sc/sc-c0001-e006258-u.json",
+      "sha256": "7f772bc9842204c20068f2e5d1faa8d0d8673c5def094adff8d974c1b4648518"
+    },
+    {
+      "file": "ac-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/ac/ac-c0003-e006260-u.json",
+      "sha256": "14c8997becaa73a1d9e264f4e403ebe73ec42648d7f4f128fd46ddfd9f8e6d7d"
+    },
+    {
+      "file": "am-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/am/am-c0003-e006260-u.json",
+      "sha256": "5e0eb4e21f5018f4eae7e55319b68a6765178490bfb46338a3448c55fa1be703",
+      "capturedAt": "2026-10-15T20:04:57.986830+00:00"
+    },
+    {
+      "file": "df-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/df/df-c0003-e006260-u.json",
+      "sha256": "3bf09d77cfea77c496f191371cb94dde8664c4dff9b778f64086d60947bbfab6",
+      "capturedAt": "2026-10-15T20:04:57.986830+00:00"
+    },
+    {
+      "file": "es-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/es/es-c0003-e006260-u.json",
+      "sha256": "d5e92ec6a126bd66f92e9ff19fb9d55cb6d61d0e140baa33a76410665758c4e7",
+      "capturedAt": "2026-10-15T20:04:57.986830+00:00"
+    },
+    {
+      "file": "rn-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/rn/rn-c0003-e006260-u.json",
+      "sha256": "a1211478cd0734b3e191fe471900250c0b1909a18abca1a9cffcb2984bf52721",
+      "capturedAt": "2026-10-15T20:04:57.986830+00:00"
+    },
+    {
+      "file": "to-c0003-e006260-u.json",
+      "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/to/to-c0003-e006260-u.json",
+      "sha256": "7a005cc9d85da42070dca4502d850d5f06f4c77f4473659d7484f37d61f399ef",
+      "capturedAt": "2026-10-15T20:04:57.986830+00:00"
+    }
+  ]
+}
