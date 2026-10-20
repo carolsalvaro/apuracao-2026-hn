@@ -2548,4 +2548,27 @@ document.getElementById('sn-update-results').addEventListener('click',run);
 #snu-preview #sn-update-results:disabled{opacity:.65;cursor:wait}
 #snu-preview #sn-update-status{font-size:11px;line-height:1.5;color:#c7d9e9;flex:1;min-width:180px}
 @media(max-width:700px){#snu-preview .sn-news-card{padding-bottom:17px}#snu-preview .sn-news-card time,#snu-preview .sn-news-card h3,#snu-preview .sn-news-card>span{margin-left:17px;margin-right:17px}}
-</style></body></html>
+</style>
+<style id="sn-whatsapp-dock-style">
+#sn-whatsapp-space{height:calc(56px + env(safe-area-inset-bottom,0px))}
+#sn-whatsapp-dock{position:fixed;inset:auto 0 0;z-index:100;background:#123759;border-top:2px solid #c8a44d;box-shadow:0 -3px 16px #102d4b18;padding-bottom:env(safe-area-inset-bottom,0px)}
+#sn-whatsapp-link{display:flex;align-items:center;justify-content:center;gap:11px;min-height:54px;box-sizing:border-box;padding:10px 18px;color:#fff;text-decoration:none;font:800 14px/1.4 Arial,sans-serif;letter-spacing:1.5px}
+#sn-whatsapp-link svg{display:block;flex:none;width:27px;height:27px;fill:#25d366}
+#sn-whatsapp-link:hover{background:#1c496d}
+#sn-whatsapp-link:focus-visible{outline:3px solid #f1d278;outline-offset:-5px}
+html{scroll-padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+</style>
+<div id="sn-whatsapp-space" aria-hidden="true"></div>
+<aside id="sn-whatsapp-dock" aria-label="Compartilhar apuração">
+<a id="sn-whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="Compartilhe a apuração pelo WhatsApp">
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.6 5.96L.02 24l6.25-1.64a11.9 11.9 0 0 0 5.78 1.47h.01C18.64 23.83 24 18.48 24 11.9c0-3.18-1.24-6.17-3.48-8.42ZM12.06 21.8a9.88 9.88 0 0 1-5.04-1.38l-.36-.21-3.71.97.99-3.62-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.47 4.45-9.92 9.92-9.92a9.85 9.85 0 0 1 7.01 2.91 9.85 9.85 0 0 1 2.9 7.01c0 5.47-4.45 9.92-9.96 9.92Zm5.44-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+<span>COMPARTILHE</span>
+</a>
+</aside>
+<script>
+(()=>{const link=document.getElementById('sn-whatsapp-link');
+const update=()=>{link.href='https://wa.me/?text='+encodeURIComponent('Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+location.origin+location.pathname);};
+update();link.addEventListener('click',update);
+})();
+</script>
+</body></html>

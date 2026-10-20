@@ -49,6 +49,10 @@ try {
     // is refused by our CSP. Unlike source-only QA, this checks post-build HTML.
     const drawer=page.locator('body > div[data-netlify-site-id][data-netlify-deploy-id]');
     if(await drawer.count()) assert.equal(await drawer.evaluate(e=>getComputedStyle(e).display),'none');
+    assert(await page.locator('#sn-whatsapp-link').isVisible());
+    const whatsapp=new URL(await page.locator('#sn-whatsapp-link').getAttribute('href'));
+    assert.equal(whatsapp.origin,'https://wa.me');
+    assert(whatsapp.searchParams.get('text').endsWith(origin+'/'));
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     const president=page.locator('.sn-nav a[href="#sn-president"]');
     await president.click();assert.equal(await president.getAttribute('aria-current'),'location');

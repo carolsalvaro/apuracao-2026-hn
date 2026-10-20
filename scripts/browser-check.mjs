@@ -63,6 +63,13 @@ try {
   assert.equal(await page.locator('#sn-br-svg path').first().getAttribute('fill'),'#c9d4dd');
   assert(!(await page.locator('body').innerText()).match(/demonstração|fictícios|simulação|45\.850\.000|52,4%/i));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  const dock=page.locator('#sn-whatsapp-dock');
+  assert(await dock.isVisible());
+  assert(await dock.evaluate(e=>Math.abs(e.getBoundingClientRect().bottom-innerHeight)<1));
+  await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));
+  assert(await page.locator('#sn-whatsapp-space').evaluate(e=>e.getBoundingClientRect().top>=document.querySelector('#sn-whatsapp-dock').getBoundingClientRect().top-1),'reserved space keeps the final content above the dock');
+  await page.evaluate(()=>scrollTo(0,0));
+  await page.screenshot({path:`artifacts/browser/whatsapp-${width}.png`,animations:'disabled'});
   await page.locator('.sn-nav a[href="#sn-president"]').click();
   assert.equal(await page.locator('.sn-nav a[href="#sn-president"]').getAttribute('aria-current'),'location');
   await page.locator('#sn-city-select').selectOption({index:1});
@@ -133,6 +140,11 @@ try {
  results.push({scenario:'newsRecovery',automaticRefresh:true,failureRetainsHeadlines:true,missingImageRemoved:true,hiddenTabPaused:true,visibleTabRecoversImmediately:true});
  // Sharing excludes query/hash, supports native share and both copy fallbacks.
  await newsPage.evaluate(()=>{history.replaceState(null,'','/?test=private#sn-fav');Object.defineProperty(navigator,'share',{configurable:true,value:async data=>{window.sharedData=data;}});});
+ await newsPage.locator('#sn-whatsapp-link').evaluate(e=>e.addEventListener('click',event=>event.preventDefault()));
+ await newsPage.locator('#sn-whatsapp-link').click();
+ const whatsapp=new URL(await newsPage.locator('#sn-whatsapp-link').getAttribute('href'));
+ assert.equal(whatsapp.origin,'https://wa.me');
+ assert.equal(whatsapp.searchParams.get('text'),'Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+origin+'/');
  await newsPage.locator('#sn-share-button').click();
  assert.equal(await newsPage.evaluate(()=>window.sharedData.url),origin+'/');
  await newsPage.evaluate(()=>{Object.defineProperty(navigator,'share',{configurable:true,value:undefined});Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.copiedLink=text;}}});});

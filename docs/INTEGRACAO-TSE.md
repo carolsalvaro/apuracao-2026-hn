@@ -3,6 +3,10 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Faixa de compartilhamento pelo WhatsApp — 20/10/2026
+
+A pedido da responsável, rodapé fixo próprio com “COMPARTILHE” e símbolo SVG do WhatsApp, em azul da página e verde. Abre `https://wa.me/?text=…` com mensagem e endereço atual sem query/hash, permitindo escolher destinatário e confirmar envio no WhatsApp. Não envia mensagens automaticamente nem carrega scripts externos. Espaço final e safe-area reservados; foco por teclado visível. Compartilhamento nativo e cópia existentes mantidos. Testes locais verificam cinco larguras, ausência de overflow, posição e reserva de espaço, conteúdo do link e ausência de pageview adicional, sem abrir WhatsApp nem enviar mensagens. Conferência visual local em viewport móvel realizada. Somente PR #1; noindex, main e produção preservados.
+
 ## Correção da faixa fixa na prévia móvel — 20/10/2026
 
 A Netlify injeta após o build um contêiner `div[data-netlify-site-id][data-netlify-deploy-id]` e o script `/.netlify/scripts/cdp`. Esse script cria o iframe externo “Netlify Drawer”, fixo no rodapé com 48px. A CSP existente (`frame-src 'none'`) bloqueia esse iframe e o Chrome mostra uma faixa com ícone de documento quebrado, reproduzida localmente com o script real da prévia. CSS oculta exclusivamente esse contêiner da ferramenta de revisão; CSP, noindex e layout permanecem preservados. O teste local cobre a injeção com estilos inline nas cinco larguras; a conferência da prévia também verifica o contêiner pós-build. Nenhuma alteração na produção ou teste de carga.
