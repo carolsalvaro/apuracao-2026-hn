@@ -117,7 +117,7 @@ try {
  }
  // Exercise news recovery locally; no HN/TSE/Google traffic is allowed.
  mode='awaiting';newsMode='live';newsRevision=1;
- const newsContext=await browser.newContext({viewport:{width:390,height:900}}),newsPage=await newsContext.newPage();
+ const newsContext=await browser.newContext({viewport:{width:390,height:900},hasTouch:true,isMobile:true}),newsPage=await newsContext.newPage();
  await newsPage.clock.install();
  await newsPage.route('**/*',r=>new URL(r.request().url()).origin===origin?r.continue():r.abort());
  let newsReads=0;newsPage.on('response',r=>{if(r.url().endsWith('/api/politica'))newsReads++;});
@@ -140,8 +140,19 @@ try {
  results.push({scenario:'newsRecovery',automaticRefresh:true,failureRetainsHeadlines:true,missingImageRemoved:true,hiddenTabPaused:true,visibleTabRecoversImmediately:true});
  // Sharing excludes query/hash, supports native share and both copy fallbacks.
  await newsPage.evaluate(()=>{history.replaceState(null,'','/?test=private#sn-fav');Object.defineProperty(navigator,'share',{configurable:true,value:async data=>{window.sharedData=data;}});});
- await newsPage.locator('#sn-whatsapp-link').evaluate(e=>e.addEventListener('click',event=>event.preventDefault()));
- await newsPage.locator('#sn-whatsapp-link').click();
+ // Intercept the popup locally: verify real browser navigation without opening
+ // WhatsApp remotely or sending a message. Checking href alone missed the
+ // legacy widget host's window-level preventDefault handler.
+ await newsContext.route('https://wa.me/**',route=>route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Local sharing destination</title>'}));
+ for(const action of ['touch','keyboard']){
+  const opened=newsPage.waitForEvent('popup',{timeout:5000});
+  if(action==='touch')await newsPage.locator('#sn-whatsapp-link svg').tap();
+  else {await newsPage.locator('#sn-whatsapp-link').focus();await newsPage.keyboard.press('Enter');}
+  const popup=await opened;await popup.waitForURL('https://wa.me/**',{waitUntil:'domcontentloaded'});
+  assert.equal(await popup.title(),'Local sharing destination');
+  assert.equal(new URL(popup.url()).searchParams.get('text'),'Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+origin+'/');
+  await popup.close();
+ }
  const whatsapp=new URL(await newsPage.locator('#sn-whatsapp-link').getAttribute('href'));
  assert.equal(whatsapp.origin,'https://wa.me');
  assert.equal(whatsapp.searchParams.get('text'),'Acompanhe a apuração das eleições com o HN Notícias e a Vertical FM. '+origin+'/');

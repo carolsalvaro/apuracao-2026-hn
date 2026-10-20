@@ -1750,6 +1750,11 @@ html>body{padding:0}</style>
   document.currentScript?.remove();
   mediaQuery.addEventListener("change", syncTheme);
   globalThis.addEventListener("click", (event) => {
+    // A standalone website has no widget host to open links on its behalf.
+    // Preserve the browser's default navigation, including WhatsApp sharing.
+    if (parentWindow === globalThis) {
+      return;
+    }
     if (event.defaultPrevented) {
       return;
     }

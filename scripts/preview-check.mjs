@@ -25,6 +25,9 @@ try {
   for(const width of [320,375,390,768,1440]) {
     const context=await browser.newContext({viewport:{width,height:900},isMobile:width<768,hasTouch:width<768,reducedMotion:'reduce'});
     const page=await context.newPage(),errors=[],failed=[];
+    // Never contact WhatsApp: locally fulfill the popup navigation to verify
+    // the deployed page actually opens it, rather than merely having an href.
+    await context.route('https://wa.me/**',route=>route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Local sharing destination</title>'}));
     page.on('pageerror',e=>errors.push(e.message));
     page.on('requestfailed',r=>failed.push({url:r.url(),error:r.failure()?.errorText}));
     await page.route('**/*',async route=>{
@@ -53,6 +56,13 @@ try {
     const whatsapp=new URL(await page.locator('#sn-whatsapp-link').getAttribute('href'));
     assert.equal(whatsapp.origin,'https://wa.me');
     assert(whatsapp.searchParams.get('text').endsWith(origin+'/'));
+    if(width===390){
+      const opened=page.waitForEvent('popup',{timeout:5000});
+      await page.locator('#sn-whatsapp-link svg').tap();
+      const popup=await opened;await popup.waitForURL('https://wa.me/**',{waitUntil:'domcontentloaded'});
+      assert.equal(await popup.title(),'Local sharing destination');
+      assert.equal(popup.url(),whatsapp.href);await popup.close();
+    }
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     const president=page.locator('.sn-nav a[href="#sn-president"]');
     await president.click();assert.equal(await president.getAttribute('aria-current'),'location');

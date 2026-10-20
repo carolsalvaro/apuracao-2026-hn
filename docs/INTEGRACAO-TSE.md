@@ -5,6 +5,8 @@ Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netl
 
 ## Faixa de compartilhamento pelo WhatsApp — 20/10/2026
 
+Correção após relato de toque sem ação: o runtime legado do widget interceptava todos os links externos com `preventDefault` e encaminhava ao host, inexistente quando o site está aberto diretamente. Agora essa interceptação não ocorre na página independente, preservando a navegação normal do navegador. O teste anterior verificava apenas href/mensagem e não detectava a falha; substituído por abertura efetiva de popup via toque no ícone e Enter, com destino atendido localmente, sem contato com WhatsApp/envio. A conferência da prévia inclui o mesmo toque com popup local.
+
 A pedido da responsável, rodapé fixo próprio com “COMPARTILHE” e símbolo SVG do WhatsApp, em azul da página e verde. Abre `https://wa.me/?text=…` com mensagem e endereço atual sem query/hash, permitindo escolher destinatário e confirmar envio no WhatsApp. Não envia mensagens automaticamente nem carrega scripts externos. Espaço final e safe-area reservados; foco por teclado visível. Compartilhamento nativo e cópia existentes mantidos. Testes locais verificam cinco larguras, ausência de overflow, posição e reserva de espaço, conteúdo do link e ausência de pageview adicional, sem abrir WhatsApp nem enviar mensagens. Conferência visual local em viewport móvel realizada. Somente PR #1; noindex, main e produção preservados.
 
 ## Correção da faixa fixa na prévia móvel — 20/10/2026
