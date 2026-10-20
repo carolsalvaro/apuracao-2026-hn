@@ -45,6 +45,10 @@ try {
     assert.equal(response.status(),200);
     assert.match((await response.allHeaders())['x-robots-tag'],/noindex/);
     assert.match(await page.locator('meta[name="robots"]').getAttribute('content'),/noindex/);
+    // The real Netlify-injected drawer must not cover the page when its iframe
+    // is refused by our CSP. Unlike source-only QA, this checks post-build HTML.
+    const drawer=page.locator('body > div[data-netlify-site-id][data-netlify-deploy-id]');
+    if(await drawer.count()) assert.equal(await drawer.evaluate(e=>getComputedStyle(e).display),'none');
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     const president=page.locator('.sn-nav a[href="#sn-president"]');
     await president.click();assert.equal(await president.getAttribute('aria-current'),'location');

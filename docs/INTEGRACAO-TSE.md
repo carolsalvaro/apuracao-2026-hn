@@ -3,6 +3,10 @@
 Branch: `feat/integracao-tse`. Projeto informado: `stupendous-muffin-2438f0.netlify.app`. Prévia separada criada pela PR em rascunho #1. Não houve alteração no Sul na Urna, publicação de produção, merge ou remoção do noindex.
 
 
+## Correção da faixa fixa na prévia móvel — 20/10/2026
+
+A Netlify injeta após o build um contêiner `div[data-netlify-site-id][data-netlify-deploy-id]` e o script `/.netlify/scripts/cdp`. Esse script cria o iframe externo “Netlify Drawer”, fixo no rodapé com 48px. A CSP existente (`frame-src 'none'`) bloqueia esse iframe e o Chrome mostra uma faixa com ícone de documento quebrado, reproduzida localmente com o script real da prévia. CSS oculta exclusivamente esse contêiner da ferramenta de revisão; CSP, noindex e layout permanecem preservados. O teste local cobre a injeção com estilos inline nas cinco larguras; a conferência da prévia também verifica o contêiner pós-build. Nenhuma alteração na produção ou teste de carga.
+
 ## Continuidade enquanto se aguarda o suporte — 20/10/2026
 
 A responsável encaminhou a resposta da Netlify: permissão escrita prévia é obrigatória para carga/benchmark. Pedido de autorização pendente; scripts remotos passam a imprimir plano por padrão e a bloquear --run antes da rede enquanto não houver aprovação escrita revisada, referência e validade registradas. O arquivo atual mantém approved=false. Não houve nova rodada de carga remota nesta etapa.

@@ -43,6 +43,18 @@ try {
   await page.goto(origin,{waitUntil:'networkidle'});
   if(width===390){await page.waitForFunction(()=>document.querySelector('#sn-update-status').textContent.includes('15 segundos'));await page.clock.fastForward(16000);}
   await page.waitForFunction(()=>document.querySelector('#sn-gov-cards .sn-gov'));
+  // Reproduce Netlify's post-build drawer, including its inline fixed styles.
+  // The external frame must stay blocked and its broken-frame strip invisible.
+  await page.evaluate(()=>{
+   const drawer=document.createElement('div');
+   drawer.dataset.netlifySiteId='preview-test';drawer.dataset.netlifyDeployId='preview-test';
+   drawer.style='position:fixed;bottom:0;z-index:2147483647;width:100vw';
+   const frame=document.createElement('iframe');frame.title='Netlify Drawer';
+   frame.src='https://app.netlify.com/cdp/';frame.style='display:block!important;width:100vw;height:48px;border:0';
+   drawer.append(frame);document.body.append(drawer);
+  });
+  assert.equal(await page.locator('body > div[data-netlify-site-id][data-netlify-deploy-id]').evaluate(e=>getComputedStyle(e).display),'none');
+  assert.match(await page.locator('meta[http-equiv="Content-Security-Policy"]').getAttribute('content'),/frame-src 'none'/);
   assert.equal(await page.locator('#sn-map-svg path').count(),45);
   assert.equal(await page.locator('#sn-br-svg path').count(),27);
   assert.equal(await page.locator('#sn-gov-cards .sn-gov').count(),6);
